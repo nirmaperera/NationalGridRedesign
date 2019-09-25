@@ -9,9 +9,9 @@ const SideDrawer = props => {
 	return (
 		<nav className={drawerClasses}>
 			<ul>
-				<li><a href="/">Leave Feedback</a></li>
+				<li><a href="https://online.nationalgridus.com/signup/KSE_feedback_pop.html">Leave Feedback</a></li>
 				<hr />
-				<li><a href="/">Contact</a></li>
+				<li><a href="https://www.nationalgridus.com/contact-us">Contact</a></li>
 			</ul>
 		</nav>
 
