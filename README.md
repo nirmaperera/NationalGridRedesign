@@ -2,4 +2,3 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## National Grid Online Login Page Redesign
 
-I
