@@ -1,0 +1,81 @@
+
+body{
+    overflow-x: hidden;
+}
+.wrapper{
+    width: 800px;
+    display: flex;
+   flex-direction: row;
+   justify-content: flex-start;
+   margin-top:-15%;
+   margin-left: -20%;
+
+}
+
+p{
+    font-size:1.1rem;
+    line-height:20px;
+    padding:20px
+
+}
+
+.main-form h1{
+ color: #53565a
+}
+
+.inputFields{
+    display: inline;
+}
+
+a, a:visited {
+    color:#00148c;
+    text-decoration: none;
+}
+
+hr{
+    width:80%;
+}
+
+.form-row{
+    display: flex;
+    justify-content: flex-start;
+    padding: 2em;
+}
+.note{
+    padding-top:2%;
+    line-height: 25px;
+}
+
+input[type="text"], input[type="password"]{
+    background-color: transparent;
+    border: 0;
+    border-bottom: solid 2px #00148c;
+    width: 45%;
+    padding-bottom: 4px;
+    color: #111;
+    font-weight: dark;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    margin-right: 20px;
+    font-size: 20px;
+  }
+
+  input[type="button"]{
+    cursor: pointer;
+    border-radius: 50px;
+    padding: 20px 30px;
+    text-align: center;
+    font-size:1.5rem;
+    letter-spacing: 4px;
+    align-content: center;
+    border: 2px solid #00148c;
+  }
+
+  input[type="button"]:hover{
+      background-color:lightgray;
+  }
+
+  .forgotCreds{
+      letter-spacing: 2px;
+      font-weight: bold;
+  }
