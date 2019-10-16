@@ -1,11 +1,12 @@
 import React from 'react';
 
+import './footer.css';
 
 const Footer = props => (
-    <div>
-        <p>&copy; 2019 National Grid</p>
-        <a href="https://www.nationalgridus.com/Our-Company/Privacy-Policy"> Privacy Policy</a>
-    </div>
+	<div className="main-footer">
+		<p> &copy; 2019 National Grid</p>
+		<a href="https://www.nationalgridus.com/Our-Company/Privacy-Policy"> Privacy Policy</a>
+	</div>
 );
 
 export default Footer;

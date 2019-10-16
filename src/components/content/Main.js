@@ -6,7 +6,7 @@ import Login from '../content/login/Login';
 
 const Main = () => (
 
-    <div className="container">
+    <div >
         <Login />
     </div>
 
