@@ -35,13 +35,8 @@ class Login extends Component {
                     </div>
                 </div>
             </form>
-
-
         )
     }
-
-
-
 }
 
 export default Login;
