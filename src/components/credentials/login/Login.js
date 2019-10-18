@@ -8,7 +8,7 @@ class Login extends Component {
             <form className="base-container" ref={this.props.containerRef}>
                 <div className="header">
                     <h3>NYC Gas and MA Gas Sign in</h3>
-                    <p> All other customers, go to our <a href="https://www.nationalgridus.com/NY-Home/Default.aspx"> homepage</a>  and change your location on the top left of the page to sign in.</p>
+                    <p> All other customers, go to our <a className="homeLink" href="https://www.nationalgridus.com/NY-Home/Default.aspx"> homepage</a>  and change your location on the top left of the page to sign in.</p>
                 </div>
                 <div className="content">
                     <div className="form">

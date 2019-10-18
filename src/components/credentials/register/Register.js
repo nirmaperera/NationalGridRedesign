@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom';
 import './register.css';
 
 class Register extends Component {
@@ -28,6 +29,12 @@ class Register extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
         console.log("Signing Up")
+
+        this.props.history.push({
+            pathname: '/dashboard',
+            search: '?query=abc',
+            state: { firstName: this.state.firstName, lastName: this.state.lastName }
+        })
     }
 
     /** Verification */
@@ -125,4 +132,5 @@ class Register extends Component {
     }
 }
 
-export default Register;
+
+export default withRouter(Register);
