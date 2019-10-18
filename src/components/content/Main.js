@@ -2,12 +2,13 @@
 
 import React from 'react';
 import './main.css';
-import Login from '../content/login/Login';
+
+import ToggleLogin from './ToggleLogin';
 
 const Main = () => (
 
     <div >
-        <Login />
+        <ToggleLogin />
     </div>
 
 );
