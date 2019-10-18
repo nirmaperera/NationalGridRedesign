@@ -2,7 +2,7 @@ import React from 'react';
 import Login from './login/Login';
 import Register from './register/Register';
 
-import '../content/login/login.css';
+import '../credentials/login/login.css';
 
 class ToggleLogin extends React.Component {
   constructor(props) {
