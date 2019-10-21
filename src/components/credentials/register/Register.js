@@ -8,7 +8,7 @@ class Register extends Component {
         this.state = {
             firstName: "",
             lastName: "",
-            userId: "",
+            userID: "",
             ssn: "",
             email: "",
             verifyEmail: "",
@@ -23,12 +23,18 @@ class Register extends Component {
     }
 
     handleUserInput = (event) => {
-        this.setState({ [event.target.name]: event.target.value });
+        this.setState({
+            [event.target.name]: event.target.value
+        });
     }
 
     handleSubmit = (event) => {
         event.preventDefault();
         console.log("Signing Up")
+
+        const { userID, password } = this.state;
+        localStorage.setItem('userID', userID);
+        localStorage.setItem('password', password);
 
         this.props.history.push({
             pathname: '/dashboard',
@@ -73,7 +79,7 @@ class Register extends Component {
                         <div className="form-group-reg">
 
                             <div className="form-row-reg">
-                                <input type="text" name="userId" placeholder="User ID" required onChange={this.handleUserInput} />
+                                <input type="text" name="userID" placeholder="User ID" required onChange={this.handleUserInput} />
                             </div>
                             <div className="form-row-reg">
                                 <input type="number" name="ssn" placeholder="ssn (last 4 digits)" required onChange={this.handleUserInput} />

@@ -1,8 +1,58 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom';
 
 import './login.css';
 
 class Login extends Component {
+    state = {
+        userID: '',
+        password: "",
+        verify: "* Your're userID and/or password is incorrect.",
+        showError: false,
+        visible: false,
+    };
+
+
+    componentDidMount() {
+        const userID = localStorage.getItem('userID');
+        const password = localStorage.getItem('password');
+        console.log('the userID in local storage is', userID);
+        console.log('the password in local storae is', password);
+
+
+    }
+
+    handleUserInput = (event) => {
+        this.setState({ [event.target.name]: event.target.value });
+
+    }
+
+    handleSubmit = (event) => {
+        event.preventDefault()
+        const userID = localStorage.getItem('userID');
+        const password = localStorage.getItem('password');
+
+        if ((userID !== this.state.userID) || (password !== this.state.password)) {
+            this.setState({
+                visible: true,
+                showError: true
+            })
+            this.inputUerID.value = "";
+            this.inputPassword.value = "";
+        }
+        else {
+            console.log('username and password are correct! Logging in')
+            this.setState({
+                visible: false,
+                showError: false
+            })
+            this.props.history.push({
+                pathname: '/dashboard',
+                search: '?query=abc',
+            })
+        }
+
+    }
     render() {
         return (
             <form className="base-container" ref={this.props.containerRef}>
@@ -14,17 +64,22 @@ class Login extends Component {
                     <div className="form">
                         <div className="form-group">
 
-                            <input type="text" name="username" placeholder="User ID" required />
+                            <input type="text" name="userID" placeholder="User ID" required onChange={this.handleUserInput} ref={el => this.inputUerID = el} />
                         </div>
                         <div className="form-group">
 
-                            <input type="password" name="password" placeholder="Password" required />
+                            <input type="password" name="password" placeholder="Password" required onChange={this.handleUserInput} ref={el => this.inputPassword = el} />
                         </div>
                     </div>
                 </div>
                 <div className="footer">
-                    <input type="submit" className="btn" value="Login" />
+                    <input type="submit" className="btn" value="Login" onClick={this.handleSubmit} />
 
+                    <div className="messageError">
+
+                        {this.state.showError && (<input className="message-box" id="message" disabled={true} readOnly={true} value={this.state.verify} size="30" />)}
+
+                    </div>
 
 
                     <div className="forgotCreds">
@@ -39,4 +94,4 @@ class Login extends Component {
     }
 }
 
-export default Login;
+export default withRouter(Login);

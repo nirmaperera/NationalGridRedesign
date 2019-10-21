@@ -11,7 +11,7 @@ class Dashboard extends Component {
 
     render() {
         return (
-            <div className="message"><h2>Hello {this.props.location.state.firstName} {this.props.location.state.lastName} </h2></div>
+            <div className="message"><h2>Hello there! </h2></div>
 
         )
     }
