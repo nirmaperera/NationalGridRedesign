@@ -4,7 +4,7 @@ import SideDrawer from './sideDrawer/SideDrawer'
 import Backdrop from '../backdrop/Backdrop';
 
 
-class App extends Component {
+class Navigation extends Component {
     state = {
         sideDrawerOpen: false
     }
@@ -35,4 +35,4 @@ class App extends Component {
     }
 }
 
-export default App;
+export default Navigation;

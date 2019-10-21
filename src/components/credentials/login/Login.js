@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom';
 
 import './login.css';
+import Toolbar from '../../navigation/Toolbar/Toolbar';
+import SideDrawer from '../../navigation/sideDrawer/SideDrawer';
 
 class Login extends Component {
     state = {
@@ -10,6 +12,7 @@ class Login extends Component {
         verify: "* Your're userID and/or password is incorrect.",
         showError: false,
         visible: false,
+        success: false
     };
 
 
@@ -35,7 +38,8 @@ class Login extends Component {
         if ((userID !== this.state.userID) || (password !== this.state.password)) {
             this.setState({
                 visible: true,
-                showError: true
+                showError: true,
+                success: false
             })
             this.inputUerID.value = "";
             this.inputPassword.value = "";
@@ -44,11 +48,12 @@ class Login extends Component {
             console.log('username and password are correct! Logging in')
             this.setState({
                 visible: false,
-                showError: false
+                showError: false,
+                success: true
             })
             this.props.history.push({
                 pathname: '/dashboard',
-                search: '?query=abc',
+                state: { success: this.state.success }
             })
         }
 
@@ -80,6 +85,8 @@ class Login extends Component {
                         {this.state.showError && (<input className="message-box" id="message" disabled={true} readOnly={true} value={this.state.verify} size="30" />)}
 
                     </div>
+                    <Toolbar success={this.state.success} />
+                    <SideDrawer success={this.state.success} />
 
 
                     <div className="forgotCreds">
