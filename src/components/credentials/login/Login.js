@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import './login.css';
 import Toolbar from '../../navigation/Toolbar/Toolbar';
 import SideDrawer from '../../navigation/sideDrawer/SideDrawer';
+import Dashboard from '../../dashboard/Dashboard';
 
 class Login extends Component {
     state = {
@@ -85,10 +86,6 @@ class Login extends Component {
                         {this.state.showError && (<input className="message-box" id="message" disabled={true} readOnly={true} value={this.state.verify} size="30" />)}
 
                     </div>
-                    <Toolbar success={this.state.success} />
-                    <SideDrawer success={this.state.success} />
-
-
                     <div className="forgotCreds">
                         <a href="https://online.nationalgridus.com/forgetpass/KSE_Password.jsp">Forgot Password?</a>
                         <span>  |  </span>
@@ -96,7 +93,7 @@ class Login extends Component {
 
                     </div>
                 </div>
-            </form>
+            </form >
         )
     }
 }

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import './toolbar.css';
 import ToggleBtn from '../sideDrawer/ToggleBtn';
 import logo from '../../../assets/images/logo.jpg';
+import SideDrawer from "../sideDrawer/SideDrawer";
 
 
 class Toolbar extends Component {
@@ -16,7 +17,6 @@ class Toolbar extends Component {
 
 
     componentDidMount() {
-
         this.setState({
             success: this.props.success
         })
@@ -58,7 +58,6 @@ class Toolbar extends Component {
                         <li><a href='#'>Direct Pay</a></li>
                         <li><a href='#'>Balanced Bill</a></li>
                     </ul>
-
                 </li>
                 <li><a href="/">Services</a>
                     <ul className="dropdown">
@@ -69,8 +68,6 @@ class Toolbar extends Component {
                         <li><a href='#'>Usage History</a></li>
                         <li><a href='#'>Enroll in National Grid Paperless</a></li>
                     </ul>
-
-
                 </li>
                 <li><a href='https://www.nationalgridus.com/contact-us'>Contact</a></li>
                 <li onClick={this.handleClick}><Link to="/">Logout</Link></li>

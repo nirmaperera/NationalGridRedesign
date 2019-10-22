@@ -7,31 +7,33 @@ class SideDrawer extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			success: false
+			show: false
 		}
 	}
 
 	componentDidMount() {
 		this.setState({
-			success: this.props.success
+			show: this.props.show
 		})
 	}
 
 	componentWillReceiveProps(nextProps) {
 		this.setState({
-			success: nextProps.success
+			show: nextProps.show
 		})
 
 	}
-	handleClick = () => {
-		this.setState({
-			success: false
-		});
-	}
 
-	toggleNavbar() {
+	// }
+	// handleClick = () => {
+	// 	this.setState({
+	// 		success: false
+	// 	});
+	// }
+
+	toggleDropdown() {
 		console.log("this.state.success in sideDrawer is ", this.state.success);
-		let loginStat = this.state.success;
+		let loginStat = this.state.show;
 
 		if (loginStat === true) {
 			return <ul>
@@ -60,10 +62,10 @@ class SideDrawer extends Component {
 		}
 		return (
 			<nav className={drawerClasses}>
-				{this.toggleNavbar()}
+				{this.toggleDropdown()}
 			</nav>
 
-		);
+		)
 
 	}
 
