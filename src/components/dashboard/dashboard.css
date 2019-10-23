@@ -14,12 +14,65 @@ padding-top:10%;
 .first-dash{
     background-color: #00148c;
     color:#fff;
-    padding: 130px;
     flex:1;
     border-radius:5px;
 
 
+
+
+
 }
+
+.first-dash .info{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top:10%;
+    line-height:60px;
+
+
+}
+.first-dash .info p{
+ font-size:15px;
+}
+
+.first-dash .info button{
+ padding: 20px 40px;
+ border-radius: 10px;
+ margin: 5px;
+ font-size:20px;
+ color:#00148c;
+ letter-spacing: 2px;
+ cursor: pointer;
+
+
+}
+.first-dash .info button:hover{
+    background-color:#00148c;
+    color:white;
+    border:1px solid white;
+}
+
+
+.first-dash .account-info {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.account-info h4{
+   flex: 1;
+   padding:10px;
+   font-size:15px;
+
+}
+
+
+.account-info h4:last-child {
+    flex: 0.6;
+}
+
 
 .second-dash{
     flex:1;
@@ -34,20 +87,90 @@ padding-top:10%;
     background-size: cover;
     background-repeat:no-repeat;
     color:white;
-    text-align: center;
     margin:10px;
     border-radius:5px;
     border:2px solid  #00148c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 
 
 }
 
+.second-dash-a h3{
+    text-align: center;
+    letter-spacing: 3px;
+    margin-bottom: 23px;
+}
+.second-dash-a .info{
+    background-color:#f8f8f8;
+    width:60%;
+    padding:10px;
+    border:2px solid #00148c;
+    margin-bottom: 23px;
+    box-sizing: border-box;
+
+}
+.second-dash-a label{
+    text-align: center;
+    display: block;
+    line-height: 30px;
+    color:#00148c;
+}
+
+.second-dash-a span{
+    font-weight: 200;
+    font-size:15px;
+}
+
 .second-dash-b{
     flex:1;
-    background-color:#fff;
+    padding: 13px;
+    background-color:#C5CFD9;
     margin:10px;
     border-radius:5px;
     border:2px solid  #00148c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
 
+}
+
+.second-dash-b h3{
+    text-align: center;
+    color:#00148c;
+    letter-spacing: 2px;
+    margin-bottom: 23px;
+}
+
+.second-dash-b img{
+    border: 3px solid #00148c;
+
+
+}
+
+
+.second-dash-b button{
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin: auto;
+    font-size: 20px;
+    background-color: #00148c;
+    color: white;
+    letter-spacing: 2px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+
+}
+
+.second-dash-b button:hover{
+    background-color: #fff;
+    color: #00148c;
+    border: 2px solid #00148c;
 
 }

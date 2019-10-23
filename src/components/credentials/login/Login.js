@@ -10,7 +10,7 @@ class Login extends Component {
     state = {
         userID: '',
         password: "",
-        verify: "* Your're userID and/or password is incorrect.",
+        verify: "Invalid User ID or Password.",
         showError: false,
         visible: false,
         success: false

@@ -40,7 +40,7 @@ class Toolbar extends Component {
 
         if (loginStat === true) {
             return <ul>
-                <li><a href='/'>Account/Billing </a>
+                <li><a href='/'>Account/Billing </a> <i class="fa fa-angle-down"></i>
                     <ul className="dropdown">
                         <li><a href='#'>My Account</a></li>
                         <li><a href='#'>View My Bills</a></li>
@@ -50,7 +50,7 @@ class Toolbar extends Component {
                         <li><a href='#'>Choose a Different Account</a></li>
                     </ul>
                 </li>
-                <li><a href='/'>Payments</a>
+                <li><a href='/'>Payments</a> <i class="fa fa-angle-down"></i>
                     <ul className="dropdown">
                         <li><a href='#'>Make a Payment</a></li>
                         <li><a href='#'>Make a credit or debit payment</a></li>
@@ -59,11 +59,10 @@ class Toolbar extends Component {
                         <li><a href='#'>Balanced Bill</a></li>
                     </ul>
                 </li>
-                <li><a href="/">Services</a>
+                <li><a href="/">Services</a> <i class="fa fa-angle-down"></i>
                     <ul className="dropdown">
                         <li><a href='#'>Enter Meter</a></li>
-                        <li><a href='#'>Start Service</a></li>
-                        <li><a href='#'>Stop Service</a></li>
+                        <li><a href='#'>Start or Stop Service</a></li>
                         <li><a href='#'>Manage Orders</a></li>
                         <li><a href='#'>Usage History</a></li>
                         <li><a href='#'>Enroll in National Grid Paperless</a></li>
@@ -76,8 +75,8 @@ class Toolbar extends Component {
         }
         else {
             return <ul>
-                <li><a href='https://online.nationalgridus.com/signup/KSE_feedback_pop.html'>Leave Feedback</a></li>
-                <li><a href='https://www.nationalgridus.com/contact-us'>Contact</a></li>
+                <li className="home-links"><a href='https://online.nationalgridus.com/signup/KSE_feedback_pop.html'>Leave Feedback</a></li>
+                <li className="home-links"><a href='https://www.nationalgridus.com/contact-us'>Contact</a></li>
             </ul>
         }
     }
