@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+
 import { connect } from 'react-redux';
 
 import contact from '../../assets/images/contact.png';
@@ -23,8 +24,8 @@ class Dashboard extends Component {
 					<div className="info">
 						<h1> $235.65</h1>
 						<h4> balanced due on <span>November 20</span></h4>
-						<button> <i class="fas fa-money-bill-alt"></i> Pay this Bill</button>
-						<button> <i class="fas fa-file-invoice-dollar"></i> View Current Bill</button>
+						<button> <i className="fas fa-money-bill-alt"></i> Pay this Bill</button>
+						<button> <i className="fas fa-file-invoice-dollar"></i> View Current Bill</button>
 						<p> Your previous bill on<span> October 20</span> was <span> $130.52</span> </p>
 					</div>
 				</div>

@@ -16,7 +16,6 @@
 	padding: 0 1rem;
 }
 
-
 .navbar-logo{
 	flex-shrink: 0;
 }
@@ -44,8 +43,6 @@
 .navbar-items a{
 	color:#00148c;
 	text-decoration:none;
-
-
 }
 
 .navbar-items .home-links a::before{
@@ -67,7 +64,7 @@
 	top:19px;
 	align-content: flex-start;
 	background-color:white;
-font-size: 15px;
+	font-size: 15px;
 }
 
 .navbar-items li:hover .dropdown > li:hover{
@@ -77,7 +74,6 @@ font-size: 15px;
 .dropdown li{
 	display: none;
 	position: relative;
-
 }
 
 .dropdown {
@@ -85,10 +81,7 @@ font-size: 15px;
     display: flex;
 	width: 100%;
 	flex-direction: column;
-
-
 }
-
 
 @media(max-width:768px){
 	.navbar-items{
