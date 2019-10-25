@@ -1,14 +1,14 @@
-export const GET_TOKEN = 'get_token';
-export const DEL_TOKEN = 'del_token';
+export const SIGN_IN = 'SIGN_IN';
+export const SIGN_OUT = 'SIGN_OUT';
 
 
-export const getToken = () => {
+export const sign_in = () => {
     return {
-        type: GET_TOKEN
+        type: SIGN_IN
     };
 };
-export const delToken = () => {
+export const sign_out = () => {
     return {
-        type: DEL_TOKEN
+        type: SIGN_OUT
     };
 };

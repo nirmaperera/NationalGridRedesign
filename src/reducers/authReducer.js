@@ -1,20 +1,9 @@
-import { GET_TOKEN, DEL_TOKEN } from "../actions/authAction";
-
-
-const initState = {
-    username: " ",
-    success: false
-}
-
-const authReducer = (state = initState, action) => {
+const authReducer = (state = false, action) => {
     switch (action.type) {
-        case GET_TOKEN:
-            return {
-                username: action.username,
-                success: true
-            }
-        case DEL_TOKEN:
-            return initState;
+        case 'SIGN_IN':
+            return true;
+        case 'SIGN_OUT':
+            return false;
         default:
             return state;
     }

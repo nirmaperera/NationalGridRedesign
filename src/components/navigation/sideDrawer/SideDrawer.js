@@ -3,42 +3,33 @@ import { Link } from "react-router-dom";
 import "./sideDrawer.css";
 
 import { connect } from "react-redux";
-import { delToken } from "../../../actions/authAction";
-
+import { sign_out } from "../../../actions/authAction";
 
 class SideDrawer extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			success: false
+			isLogged: false
 		}
 	}
 
 	componentDidMount() {
 		this.setState({
-			success: this.props.success
-		})
-	}
-
-	componentWillReceiveProps(nextProps) {
-		this.setState({
-			success: nextProps.success
-		})
-
+			isLogged: this.props.isLogged
+		});
 	}
 
 	handleClick = () => {
 		this.setState({
-			success: false
-		});
-		this.props.delToken();
+			isLogged: false
+		}, () => {
+			this.props.sign_out();
+
+		})
 	}
 
 	toggleDropdown() {
-		console.log('IN SIDE DRAWER');
-		console.log("this.state.success in sideDrawer is ", this.props.success);
-
-		let loginStat = this.props.success;
+		let loginStat = this.props.isLogged;
 
 		if (loginStat === true) {
 			return <ul>
@@ -47,7 +38,6 @@ class SideDrawer extends Component {
 				<li><a href="/">Services</a></li>
 				<li><a href='https://www.nationalgridus.com/contact-us'>Contact</a></li>
 				<li onClick={this.handleClick}><Link to="/">Logout</Link></li>
-
 
 			</ul>
 		}
@@ -79,7 +69,7 @@ class SideDrawer extends Component {
 
 const mapStateToProps = (state) => {
 	return {
-		success: state.success
+		isLogged: state.isLogged
 	}
 }
-export default connect(mapStateToProps, { delToken })(SideDrawer);
+export default connect(mapStateToProps, { sign_out })(SideDrawer);
