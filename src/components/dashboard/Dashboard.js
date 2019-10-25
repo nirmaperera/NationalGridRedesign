@@ -14,8 +14,6 @@ class Dashboard extends Component {
 	}
 
 	render() {
-		const fName = localStorage.getItem('firstName');
-		const lName = localStorage.getItem('lastName');
 		return (
 			<div className="containerDashboard" style={{ height: '100%' }}>
 				<div className="first-dash">
@@ -25,7 +23,6 @@ class Dashboard extends Component {
 
 					</div>
 					<div className="info">
-						<h3>Hello, {fName} {lName}</h3>
 						<h1> $235.65</h1>
 						<h4> balanced due on <span>November 20</span></h4>
 						<button> <i className="fas fa-money-bill-alt"></i> Pay this Bill</button>

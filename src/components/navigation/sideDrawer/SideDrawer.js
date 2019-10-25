@@ -28,9 +28,10 @@ class SideDrawer extends Component {
 		})
 	}
 
-
 	toggleDropdown() {
 		let loginStat = this.props.isLogged;
+		const fName = localStorage.getItem('firstName');
+		const lName = localStorage.getItem('lastName');
 
 		if (loginStat === true) {
 			return <ul>
@@ -63,8 +64,13 @@ class SideDrawer extends Component {
 					</ul>
 				</li>
 				<li><a href='https://www.nationalgridus.com/contact-us'>Contact</a></li>
-				<li onClick={this.handleClick}><Link to="/">Logout</Link></li>
-			</ul>
+				<li>Hello, {fName} {lName}
+					<ul className="dropdown-side">
+						<li><a href='/'>Profile</a></li>
+						<li onClick={this.handleClick}><Link to="/">Logout</Link></li>
+					</ul>
+				</li>
+			</ul >
 		}
 		else {
 			return <ul>

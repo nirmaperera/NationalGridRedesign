@@ -37,6 +37,8 @@ class Toolbar extends Component {
 	toggleNavbar() {
 		console.log("this.state.success in toolbar is ", this.state.isLogged);
 		let loginStat = this.props.isLogged;
+		const fName = localStorage.getItem('firstName');
+		const lName = localStorage.getItem('lastName');
 
 		if (loginStat === true) {
 			return <ul>
@@ -69,9 +71,16 @@ class Toolbar extends Component {
 					</ul>
 				</li>
 				<li><a href='https://www.nationalgridus.com/contact-us'>Contact</a></li>
-				<li onClick={this.handleClick}><Link to="/">Logout</Link></li>
 
-			</ul>
+				<li>Hello, {fName} {lName}<i class="fas fa-user-circle"></i>
+					<ul className="dropdown">
+						<li><a href='/'>Profile</a></li>
+						<li onClick={this.handleClick}><Link to="/">Logout</Link></li>
+					</ul>
+				</li>
+
+
+			</ul >
 		}
 		else {
 			return <ul>
