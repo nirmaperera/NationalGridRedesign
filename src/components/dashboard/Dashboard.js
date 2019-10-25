@@ -14,14 +14,18 @@ class Dashboard extends Component {
 	}
 
 	render() {
+		const fName = localStorage.getItem('firstName');
+		const lName = localStorage.getItem('lastName');
 		return (
 			<div className="containerDashboard" style={{ height: '100%' }}>
 				<div className="first-dash">
 					<div className="account-info">
 						<h4> Account Status: <img src={greenlight} width="20" height="20" alt="greenlight" /></h4>
 						<h4> Account Number: <span>34234464</span></h4>
+
 					</div>
 					<div className="info">
+						<h3>Hello, {fName} {lName}</h3>
 						<h1> $235.65</h1>
 						<h4> balanced due on <span>November 20</span></h4>
 						<button> <i className="fas fa-money-bill-alt"></i> Pay this Bill</button>

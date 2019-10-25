@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom';
 
+import { connect } from 'react-redux';
+import { sign_in } from "../../../actions/authAction";
+
 import './register.css';
 
 class Register extends Component {
@@ -32,13 +35,15 @@ class Register extends Component {
 	handleSubmit = (event) => {
 		event.preventDefault();
 		console.log("Signing Up")
-		const { userID, password } = this.state;
+		this.props.sign_in();
+		const { userID, password, firstName, lastName } = this.state;
 		localStorage.setItem('userID', userID);
 		localStorage.setItem('password', password);
+		localStorage.setItem('firstName', firstName);
+		localStorage.setItem('lastName', lastName);
 
 		this.props.history.push({
 			pathname: '/dashboard',
-			search: '?query=abc',
 			state: { firstName: this.state.firstName, lastName: this.state.lastName }
 		})
 	}
@@ -129,4 +134,9 @@ class Register extends Component {
 	}
 }
 
-export default withRouter(Register);
+const mapStateToProps = (state) => {
+	return {
+		isLogged: state.isLogged
+	}
+}
+export default withRouter(connect(mapStateToProps, { sign_in })(Register));
