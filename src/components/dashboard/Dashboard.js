@@ -1,30 +1,24 @@
 import React, { Component } from 'react'
 import contact from '../../assets/images/contact.png';
 import greenlight from '../../assets/images/greenlight.png';
+import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
 import './dashboard.css';
 import Toolbar from '../navigation/Toolbar/Toolbar';
-import SideDrawer from '../navigation/sideDrawer/SideDrawer';
+
 
 class Dashboard extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            success: true
-        }
-    }
 
     componentDidMount() {
         document.title = 'Dashboard | National Grid';
-        console.log('success in dashboard is ', this.state.success);
+
 
     }
 
     render() {
         return (
             <div className="containerDashboard" style={{ height: '100%' }}>
-                <Toolbar success={this.state.success} />
                 <div className="first-dash">
                     <div className="account-info">
                         <h4> Account Status: <img src={greenlight} width="20" height="20" alt="greenlight" /></h4>
@@ -70,6 +64,12 @@ class Dashboard extends Component {
     }
 }
 
+const mapStateToProps = (state) => {
+    return {
+        success: state.success
+    }
+}
 
-export default withRouter(Dashboard);
+export default connect(mapStateToProps)(Dashboard);
+
 

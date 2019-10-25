@@ -2,38 +2,43 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./sideDrawer.css";
 
+import { connect } from "react-redux";
+import { delToken } from "../../../actions/authAction";
+
 
 class SideDrawer extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			show: false
+			success: false
 		}
 	}
 
 	componentDidMount() {
 		this.setState({
-			show: this.props.show
+			success: this.props.success
 		})
 	}
 
 	componentWillReceiveProps(nextProps) {
 		this.setState({
-			show: nextProps.show
+			success: nextProps.success
 		})
 
 	}
 
-	// }
-	// handleClick = () => {
-	// 	this.setState({
-	// 		success: false
-	// 	});
-	// }
+	handleClick = () => {
+		this.setState({
+			success: false
+		});
+		this.props.delToken();
+	}
 
 	toggleDropdown() {
-		console.log("this.state.success in sideDrawer is ", this.state.success);
-		let loginStat = this.state.show;
+		console.log('IN SIDE DRAWER');
+		console.log("this.state.success in sideDrawer is ", this.props.success);
+
+		let loginStat = this.props.success;
 
 		if (loginStat === true) {
 			return <ul>
@@ -41,7 +46,8 @@ class SideDrawer extends Component {
 				<li><a href='/'>Payments</a></li>
 				<li><a href="/">Services</a></li>
 				<li><a href='https://www.nationalgridus.com/contact-us'>Contact</a></li>
-				{/* <Link> Log out</Link> */}
+				<li onClick={this.handleClick}><Link to="/">Logout</Link></li>
+
 
 			</ul>
 		}
@@ -71,11 +77,9 @@ class SideDrawer extends Component {
 
 };
 
-
-
-
-
-
-
-
-export default SideDrawer;
+const mapStateToProps = (state) => {
+	return {
+		success: state.success
+	}
+}
+export default connect(mapStateToProps, { delToken })(SideDrawer);

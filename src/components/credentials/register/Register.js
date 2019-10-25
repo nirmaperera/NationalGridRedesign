@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom';
 import './register.css';
+
+import { connect } from 'react-redux';
+import { getToken } from "../../../actions/authAction";
 
 class Register extends Component {
     constructor(props) {
@@ -31,7 +33,7 @@ class Register extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
         console.log("Signing Up")
-
+        this.props.getToken();
         const { userID, password } = this.state;
         localStorage.setItem('userID', userID);
         localStorage.setItem('password', password);
@@ -139,4 +141,9 @@ class Register extends Component {
 }
 
 
-export default withRouter(Register);
+const mapStateToProps = (state) => {
+    return {
+        success: state.success
+    }
+}
+export default connect(mapStateToProps, { getToken })(Register);

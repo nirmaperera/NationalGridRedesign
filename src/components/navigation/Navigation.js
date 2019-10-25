@@ -10,7 +10,7 @@ class Navigation extends Component {
     }
     drawerToggleClickHandler = () => {
         this.setState((prevState) => {
-            return { sideDrawerOpen: !prevState.sideDrawerOpen };
+            return { sideDrawerOpen: !prevState.sideDrawerOpen }
         });
 
     };

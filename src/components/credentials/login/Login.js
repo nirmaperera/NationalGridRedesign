@@ -4,11 +4,14 @@ import { withRouter } from 'react-router-dom';
 import './login.css';
 import Toolbar from '../../navigation/Toolbar/Toolbar';
 import SideDrawer from '../../navigation/sideDrawer/SideDrawer';
-import Dashboard from '../../dashboard/Dashboard';
+
+import { connect } from 'react-redux';
+import { getToken } from "../../../actions/authAction";
+
 
 class Login extends Component {
     state = {
-        userID: '',
+        userID: "",
         password: "",
         verify: "Invalid User ID or Password.",
         showError: false,
@@ -33,8 +36,11 @@ class Login extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
+
+        this.props.getToken();
         const userID = localStorage.getItem('userID');
         const password = localStorage.getItem('password');
+
 
         if ((userID !== this.state.userID) || (password !== this.state.password)) {
             this.setState({
@@ -53,13 +59,13 @@ class Login extends Component {
                 success: true
             })
             this.props.history.push({
-                pathname: '/dashboard',
-                state: { success: this.state.success }
+                pathname: '/dashboard'
             })
         }
 
     }
     render() {
+
         return (
             <form className="base-container" ref={this.props.containerRef}>
                 <div className="header">
@@ -85,6 +91,8 @@ class Login extends Component {
 
                         {this.state.showError && (<input className="message-box" id="message" disabled={true} readOnly={true} value={this.state.verify} size="30" />)}
 
+
+
                     </div>
                     <div className="forgotCreds">
                         <a href="https://online.nationalgridus.com/forgetpass/KSE_Password.jsp">Forgot Password?</a>
@@ -97,5 +105,9 @@ class Login extends Component {
         )
     }
 }
-
-export default withRouter(Login);
+const mapStateToProps = (state) => {
+    return {
+        auth: state.auth
+    }
+}
+export default withRouter(connect(mapStateToProps, { getToken })(Login));
