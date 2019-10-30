@@ -27,6 +27,7 @@ class Register extends Component {
 	}
 
 	handleUserInput = (event) => {
+
 		this.setState({
 			[event.target.name]: event.target.value
 		});
@@ -65,6 +66,12 @@ class Register extends Component {
 
 		}
 	}
+
+	maxLengthCheck = (object) => {
+		if (object.target.value.length > object.target.maxLength) {
+			object.target.value = object.target.value.slice(0, object.target.maxLength)
+		}
+	}
 	render() {
 		return (
 			<form className="base-container" ref={this.props.containerRef}>
@@ -85,7 +92,7 @@ class Register extends Component {
 								<input onKeyDown={handleEnter} type="text" name="userID" placeholder="User ID" required onChange={this.handleUserInput} />
 							</div>
 							<div className="form-row-reg">
-								<input onKeyDown={handleEnter} type="number" name="ssn" placeholder="ssn (last 4 digits)" required onChange={this.handleUserInput} />
+								<input maxLength={4} onKeyDown={handleEnter} maxLength="4" onInput={this.maxLengthCheck} type="number" name="ssn" maxlength="4" min="4" placeholder="ssn (last 4 digits)" required onChange={this.handleUserInput} />
 							</div>
 						</div>
 						<div className="form-group-reg">
@@ -121,7 +128,13 @@ class Register extends Component {
 							</div>
 						</div>
 						<div className="form-group-reg">
-							<input onKeyDown={handleEnter} className="form-row-reg" type="number" placeholder="zipCode" required onChange={this.handleUserInput} />
+							<input onKeyDown={handleEnter}
+								maxLength="5"
+								onInput={this.maxLengthCheck}
+								className="form-row-reg"
+								type="number"
+								placeholder="zipCode"
+							/>
 						</div>
 					</div>
 				</div>
@@ -142,6 +155,8 @@ function handleEnter(event) {
 		event.preventDefault();
 	}
 }
+
+
 
 const mapStateToProps = (state) => {
 	return {
