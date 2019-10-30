@@ -73,36 +73,36 @@ class Register extends Component {
 					<div className="form">
 						<div className="form-group-reg">
 							<div className="form-row-reg">
-								<input type="text" name="firstName" placeholder="First Name" required onChange={this.handleUserInput} />
+								<input onKeyDown={handleEnter} type="text" name="firstName" placeholder="First Name" required onChange={this.handleUserInput} />
 							</div>
 							<div className="form-row-reg">
-								<input type="text" name="lastName" placeholder="Last Name" required onChange={this.handleUserInput} />
-							</div>
-						</div>
-
-						<div className="form-group-reg">
-							<div className="form-row-reg">
-								<input type="text" name="userID" placeholder="User ID" required onChange={this.handleUserInput} />
-							</div>
-							<div className="form-row-reg">
-								<input type="number" name="ssn" placeholder="ssn (last 4 digits)" required onChange={this.handleUserInput} />
-							</div>
-						</div>
-						<div className="form-group-reg">
-							<div className="form-row-reg">
-								<input type="password" name="password" placeholder="password" required onChange={this.handleUserInput} />
-							</div>
-							<div className="form-row-reg">
-								<input type="password" name="verifyPassword" placeholder="confirm password" required onChange={this.handleUserInput} onKeyUp={this.Verification} />
+								<input onKeyDown={handleEnter} type="text" name="lastName" placeholder="Last Name" required onChange={this.handleUserInput} />
 							</div>
 						</div>
 
 						<div className="form-group-reg">
 							<div className="form-row-reg">
-								<input type="email" name="email" placeholder="email" required onChange={this.handleUserInput} />
+								<input onKeyDown={handleEnter} type="text" name="userID" placeholder="User ID" required onChange={this.handleUserInput} />
 							</div>
 							<div className="form-row-reg">
-								<input type="email" name="verifyEmail" placeholder="confirm email" required onChange={this.handleUserInput} onKeyUp={this.Verification} />
+								<input onKeyDown={handleEnter} type="number" name="ssn" placeholder="ssn (last 4 digits)" required onChange={this.handleUserInput} />
+							</div>
+						</div>
+						<div className="form-group-reg">
+							<div className="form-row-reg">
+								<input onKeyDown={handleEnter} type="password" name="password" placeholder="password" required onChange={this.handleUserInput} />
+							</div>
+							<div className="form-row-reg">
+								<input onKeyDown={handleEnter} type="password" name="verifyPassword" placeholder="confirm password" required onChange={this.handleUserInput} onKeyUp={this.Verification} />
+							</div>
+						</div>
+
+						<div className="form-group-reg">
+							<div className="form-row-reg">
+								<input onKeyDown={handleEnter} type="email" name="email" placeholder="email" required onChange={this.handleUserInput} />
+							</div>
+							<div className="form-row-reg">
+								<input onKeyDown={handleEnter} type="email" name="verifyEmail" placeholder="confirm email" required onChange={this.handleUserInput} onKeyUp={this.Verification} />
 							</div>
 						</div>
 
@@ -117,11 +117,11 @@ class Register extends Component {
 									<option value="q4">What's the your first teacher's last name?</option>
 								</select>
 
-								<input className="form-row-reg" type="text" placeholder="securityAnswer" required onChange={this.handleUserInput} />
+								<input onKeyDown={handleEnter} className="form-row-reg" type="text" placeholder="securityAnswer" required onChange={this.handleUserInput} />
 							</div>
 						</div>
 						<div className="form-group-reg">
-							<input className="form-row-reg" type="number" placeholder="zipCode" required onChange={this.handleUserInput} />
+							<input onKeyDown={handleEnter} className="form-row-reg" type="number" placeholder="zipCode" required onChange={this.handleUserInput} />
 						</div>
 					</div>
 				</div>
@@ -131,6 +131,15 @@ class Register extends Component {
 				{this.state.showError && (<input className="message-box" id="message" disabled={true} readOnly={true} value={this.state.verify} size="30" />)}
 			</form >
 		)
+	}
+}
+
+function handleEnter(event) {
+	if (event.keyCode === 13) {
+		const form = event.target.form;
+		const index = Array.prototype.indexOf.call(form, event.target);
+		form.elements[index + 1].focus();
+		event.preventDefault();
 	}
 }
 
