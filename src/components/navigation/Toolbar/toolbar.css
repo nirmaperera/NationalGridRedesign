@@ -64,7 +64,7 @@
 	top:19px;
 	align-content: flex-start;
 	background-color:white;
-	font-size: 15px;
+	font-size: 13px;
 }
 .navbar-items li:hover > i.fa.fa-angle-down{
     -webkit-transform: rotate(180deg);

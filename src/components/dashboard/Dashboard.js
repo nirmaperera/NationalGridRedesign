@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from "react-router-dom";
 
 import { connect } from 'react-redux';
 
@@ -25,7 +26,7 @@ class Dashboard extends Component {
 					<div className="info">
 						<h1> $235.65</h1>
 						<h4> balanced due on <span>November 20</span></h4>
-						<button> <i className="fas fa-money-bill-alt"></i> Pay this Bill</button>
+						<button> <i className="fas fa-money-bill-alt"></i> <Link to="/paybill">Pay This Bill</Link></button>
 						<button> <i className="fas fa-file-invoice-dollar"></i> View Current Bill</button>
 						<p> Your previous bill on<span> October 20</span> was <span> $130.52</span> </p>
 					</div>
@@ -38,7 +39,11 @@ class Dashboard extends Component {
 							<label>Street: <span> 232 Eli Street</span> </label>
 							<label>City: <span>New York</span> </label>
 							<label>State:  <span>New York</span></label>
-							<label>zipcode: <span>23923</span> </label>
+							<label>Zip Code: <span>23923</span> </label>
+						</div>
+						<div>
+							<button className="stopServ">Stop Service <i class="fas fa-times"></i></button>
+							<button className="transferServ">Transfer Service <i class="fas fa-angle-double-right"></i></button>
 						</div>
 					</div>
 					<div className="second-dash-b">

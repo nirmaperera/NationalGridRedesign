@@ -37,7 +37,7 @@ class SideDrawer extends Component {
 			return <ul>
 				<li><a href='/'>Account/Billing </a> <i className="fa fa-angle-down"></i>
 					<ul className="dropdown-side">
-						<li><a href='/'>My Account</a></li>
+						<li><Link to="/dashboard">Dasboard</Link></li>
 						<li><a href='/'>View My Bills</a></li>
 						<li><a href='/'>Request Copy of Current Bill</a></li>
 						<li><a href='/'>Running Balance</a></li>
@@ -47,7 +47,7 @@ class SideDrawer extends Component {
 				</li>
 				<li><a href='/'>Payments</a> <i className="fa fa-angle-down"></i>
 					<ul className="dropdown-side">
-						<li><a href='/'>Make a Payment</a></li>
+						<li><Link to="/paybill">Make a Payment</Link></li>
 						<li><a href='/'>Make a credit or debit payment</a></li>
 						<li><a href='/'>E@sy Bill</a></li>
 						<li><a href='/'>Direct Pay</a></li>
@@ -66,7 +66,7 @@ class SideDrawer extends Component {
 				<li><a href='https://www.nationalgridus.com/contact-us'>Contact</a></li>
 				<li>Hello, {fName} {lName}
 					<ul className="dropdown-side">
-						<li><a href='/'>Profile</a></li>
+						<li><Link to="/Profile">Profile</Link></li>
 						<li onClick={this.handleClick}><Link to="/">Logout</Link></li>
 					</ul>
 				</li>
