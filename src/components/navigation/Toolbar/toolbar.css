@@ -30,13 +30,13 @@
 }
 
 .navbar-items ul li{
-	padding: 0 1.3rem;
+	padding: 0 0.9rem;
 	font-family: Helvetica,Helvetica,Arial,sans-serif;
     font-weight: 700;
-    font-size: 16px;
-    line-height: 18px;
+    font-size: 15px;
 	letter-spacing: 0.5px;
 	position: relative;
+	color:#00148c;
 
 }
 
@@ -65,6 +65,13 @@
 	align-content: flex-start;
 	background-color:white;
 	font-size: 15px;
+}
+.navbar-items li:hover > i.fa.fa-angle-down{
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
 }
 
 .navbar-items li:hover .dropdown > li:hover{

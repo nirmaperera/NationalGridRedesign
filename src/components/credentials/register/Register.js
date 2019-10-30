@@ -99,7 +99,7 @@ class Register extends Component {
 								<input onKeyDown={handleEnter} type="text" name="userID" placeholder="User ID" required onChange={this.handleUserInput} />
 							</div>
 							<div className="form-row-reg">
-								<input maxLength={4} onKeyDown={handleEnter} onInput={this.maxLengthCheck} type="number" name="ssn" placeholder="ssn (last 4 digits)" required onChange={this.handleUserInput} />
+								<input maxLength={4} minLength={4} onKeyDown={handleEnter} onInput={this.maxLengthCheck} type="number" name="ssn" placeholder="ssn (last 4 digits)" required onChange={this.handleUserInput} />
 							</div>
 						</div>
 						<div className="form-group-reg">
@@ -135,7 +135,7 @@ class Register extends Component {
 							</div>
 						</div>
 						<div className="form-group-reg">
-							<input maxLength={5} onKeyDown={handleEnter} onInput={this.maxLengthCheck} type="number" name="zipCode" placeholder="zipcode" required onChange={this.handleUserInput} />
+							<input maxLength={5} minLength={5} onKeyDown={handleEnter} onInput={this.maxLengthCheck} type="number" name="zipCode" placeholder="zipcode" required onChange={this.handleUserInput} />
 
 						</div>
 					</div>

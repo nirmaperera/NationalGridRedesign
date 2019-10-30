@@ -78,8 +78,6 @@ class Toolbar extends Component {
 						<li onClick={this.handleClick}><Link to="/">Logout</Link></li>
 					</ul>
 				</li>
-
-
 			</ul >
 		}
 		else {
