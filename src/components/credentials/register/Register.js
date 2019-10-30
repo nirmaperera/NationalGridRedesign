@@ -21,6 +21,7 @@ class Register extends Component {
 			securityAnswer: "",
 			zipCode: "",
 			verify: "* The fields do not match",
+			empty: "Please fill out empty field(s)",
 			visible: true,
 			showError: false
 		}
@@ -35,6 +36,7 @@ class Register extends Component {
 
 	handleSubmit = (event) => {
 		event.preventDefault();
+
 		console.log("Signing Up")
 		this.props.sign_in();
 		const { userID, password, firstName, lastName } = this.state;
@@ -58,21 +60,26 @@ class Register extends Component {
 				showError: true
 			})
 		}
+
 		else {
 			this.setState({
 				visible: false,
-				showError: false
+				showError: false,
+				ShowEmptyError: false,
 			})
 
 		}
 	}
 
+	// check the length of ssn and zipcode
 	maxLengthCheck = (object) => {
 		if (object.target.value.length > object.target.maxLength) {
 			object.target.value = object.target.value.slice(0, object.target.maxLength)
 		}
 	}
 	render() {
+		const { email, password, userID, firstName, lastName, zipCode, securityAnswer, ssn } = this.state;
+		const enabled = email.length > 0 && password.length > 0 && userID.length > 0 && firstName.length > 0 && lastName.length > 0 && zipCode.length > 0 && securityAnswer.length > 0 && ssn.length > 0;
 		return (
 			<form className="base-container" ref={this.props.containerRef}>
 				<div className="header-reg"><h3>Register</h3></div>
@@ -92,7 +99,7 @@ class Register extends Component {
 								<input onKeyDown={handleEnter} type="text" name="userID" placeholder="User ID" required onChange={this.handleUserInput} />
 							</div>
 							<div className="form-row-reg">
-								<input maxLength={4} onKeyDown={handleEnter} maxLength="4" onInput={this.maxLengthCheck} type="number" name="ssn" maxlength="4" min="4" placeholder="ssn (last 4 digits)" required onChange={this.handleUserInput} />
+								<input maxLength={4} onKeyDown={handleEnter} onInput={this.maxLengthCheck} type="number" name="ssn" placeholder="ssn (last 4 digits)" required onChange={this.handleUserInput} />
 							</div>
 						</div>
 						<div className="form-group-reg">
@@ -124,24 +131,20 @@ class Register extends Component {
 									<option value="q4">What's the your first teacher's last name?</option>
 								</select>
 
-								<input onKeyDown={handleEnter} className="form-row-reg" type="text" placeholder="securityAnswer" required onChange={this.handleUserInput} />
+								<input onKeyDown={handleEnter} className="form-row-reg" type="text" name="securityAnswer" placeholder="securityAnswer" required onChange={this.handleUserInput} />
 							</div>
 						</div>
 						<div className="form-group-reg">
-							<input onKeyDown={handleEnter}
-								maxLength="5"
-								onInput={this.maxLengthCheck}
-								className="form-row-reg"
-								type="number"
-								placeholder="zipCode"
-							/>
+							<input maxLength={5} onKeyDown={handleEnter} onInput={this.maxLengthCheck} type="number" name="zipCode" placeholder="zipcode" required onChange={this.handleUserInput} />
+
 						</div>
 					</div>
 				</div>
 				<div className="footer-reg">
-					<input type="submit" className="btn-reg" value="Register" onClick={this.handleSubmit} />
+					<input disabled={!enabled} type="submit" className="btn-reg" value="Register" onClick={this.handleSubmit} />
+					{this.state.showError && (<input className="message-box" id="message" disabled={true} readOnly={true} value={this.state.verify} size="30" />)}
 				</div>
-				{this.state.showError && (<input className="message-box" id="message" disabled={true} readOnly={true} value={this.state.verify} size="30" />)}
+
 			</form >
 		)
 	}
@@ -151,9 +154,11 @@ function handleEnter(event) {
 	if (event.keyCode === 13) {
 		const form = event.target.form;
 		const index = Array.prototype.indexOf.call(form, event.target);
+
 		form.elements[index + 1].focus();
 		event.preventDefault();
 	}
+
 }
 
 

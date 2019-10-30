@@ -72,7 +72,7 @@ class Toolbar extends Component {
 				</li>
 				<li><a href='https://www.nationalgridus.com/contact-us'>Contact</a></li>
 
-				<li>Hello, {fName} {lName}<i class="fas fa-user-circle"></i>
+				<li>Hello, {fName} {lName}<i className="fas fa-user-circle"></i>
 					<ul className="dropdown">
 						<li><a href='/'>Profile</a></li>
 						<li onClick={this.handleClick}><Link to="/">Logout</Link></li>
