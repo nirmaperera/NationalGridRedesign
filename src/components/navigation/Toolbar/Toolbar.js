@@ -44,7 +44,7 @@ class Toolbar extends Component {
 			return <ul>
 				<li><a href='/'>Account/Billing </a> <i className="fa fa-angle-down"></i>
 					<ul className="dropdown">
-						<li><Link to="/dashboard">Dasboard</Link></li>
+						<li><Link to="/dashboard">Dashboard</Link></li>
 						<li><a href='/'>View My Bills</a></li>
 						<li><a href='/'>Request Copy of Current Bill</a></li>
 						<li><a href='/'>Running Balance</a></li>

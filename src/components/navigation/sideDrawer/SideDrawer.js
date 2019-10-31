@@ -37,7 +37,7 @@ class SideDrawer extends Component {
 			return <ul>
 				<li><a href='/'>Account/Billing </a> <i className="fa fa-angle-down"></i>
 					<ul className="dropdown-side">
-						<li><Link to="/dashboard">Dasboard</Link></li>
+						<li><Link to="/dashboard">Dashboard</Link></li>
 						<li><a href='/'>View My Bills</a></li>
 						<li><a href='/'>Request Copy of Current Bill</a></li>
 						<li><a href='/'>Running Balance</a></li>
@@ -67,7 +67,7 @@ class SideDrawer extends Component {
 				<li>Hello, {fName} {lName}
 					<ul className="dropdown-side">
 						<li><Link to="/Profile">Profile</Link></li>
-						<li onClick={this.handleClick}><Link to="/">Logout</Link></li>
+						<li onClick={this.handleClick}><Link to="/">Log Out</Link></li>
 					</ul>
 				</li>
 			</ul >

@@ -1,201 +1,244 @@
 .containerDashboard{
-    background-color:#F0F0F0;
-    padding-top:10%;
-    max-width:100%;
-    height: 100%;
-    margin: 0 auto;
-    display: flex;
-    font-size: 23px;
-    box-sizing: border-box;
-
+	background-color:#F0F0F0;
+	padding-top:8%;
+	max-width:100%;
+	height: 100%;
+	margin: 0 auto;
+	display: flex;
+	font-size: 2vw;
+	box-sizing: border-box;
 }
 
+/* Payment box */
 .first-dash{
-    background-color: #00148c;
-    color:#fff;
-    flex:1;
-    margin:10px;
-    border-radius:5px;
+	background-color: #00148c;
+	color:#fff;
+	flex:1;
+	margin:10px;
+	border-radius:5px;
 }
 
 .first-dash .info{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin-top:10%;
-    line-height:60px;
-
-
+	width: 100%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	margin-top:10%;
+	line-height:60px;
 }
+
+.first-dash .info button a{
+	text-decoration: none;
+}
+
+.first-dash button a:hover{
+	color:#fff;
+}
+
 .first-dash .info p{
- font-size:15px;
+	font-size: 1.5vw;
 }
 
 .first-dash .info button{
- padding: 20px 40px;
- border-radius: 10px;
- margin: 5px;
- font-size:20px;
- color:#00148c;
- letter-spacing: 2px;
- cursor: pointer;
+	padding: 20px 40px;
+	border-radius: 10px;
+	margin: 15px;
+	font-size:1.6vw;
+	color:#00148c;
+	letter-spacing: 2px;
+	cursor: pointer;
 
 
 }
 .first-dash .info button:hover{
-    background-color:#00148c;
-    color:white;
-    border:1px solid white;
+	background-color:#00148c;
+	color:white;
+	border:1px solid white;
 }
 
-
 .first-dash .account-info {
-    display: flex;
-    flex-direction: row;
-
+	display: flex;
+	flex-direction: row;
 }
 
 .account-info h4{
    flex: 1;
    padding:10px;
-   font-size:15px;
-
+   font-size: 1.1vw;
 }
-
 
 .account-info h4:last-child {
-    flex: 0.6;
+	flex: 0.6;
 }
 
+/* Service address box */
 
 .second-dash{
-    flex:1;
-    display: flex;
-    flex-direction: column;
-    align-content: flex-start;
+	flex:1;
+	display: flex;
+	flex-direction: column;
+	align-content: flex-start;
 }
 
 .second-dash-a{
-    flex: 1;
-    background-image: url('../../assets/images/houses.jpg');
-    background-size: cover;
-    background-repeat:no-repeat;
-    color:white;
-    margin:10px;
-    border-radius:5px;
-    border:2px solid  #00148c;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-
+	flex: 1;
+	background-image: url('../../assets/images/houses.jpg');
+	background-size: cover;
+	background-repeat:no-repeat;
+	color:white;
+	margin:10px;
+	border-radius:5px;
+	border:2px solid  #00148c;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 .second-dash-a h3{
-    text-align: center;
-    letter-spacing: 3px;
-    margin: 23px;
+	text-align: center;
+	letter-spacing: 3px;
+	margin: 23px;
+	font-size: 2.5vw;
 }
-.second-dash-a .info{
-    background-color:#f8f8f8;
-    width:60%;
-    padding:10px;
-    border:2px solid #00148c;
-    margin-bottom: 23px;
-    box-sizing: border-box;
 
+.second-dash-a .info{
+	background-color:#f8f8f8;
+	width:60%;
+	padding:10px;
+	border:2px solid #00148c;
+	margin-bottom: 23px;
+	box-sizing: border-box;
 }
+
 .second-dash-a label{
-    text-align: center;
-    display: block;
-    line-height: 30px;
-    color:#00148c;
+	text-align: center;
+	display: block;
+	line-height: 30px;
+	color:#00148c;
 }
 
 .second-dash-a span{
-    font-weight: 200;
-    font-size:15px;
+	font-weight: 200;
+	font-size: 1.2vw;
 }
 
 .second-dash-a button{
-    padding: 10px 20px;
-    border-radius: 10px;
-    margin: 5px;
-    font-size: 15px;
-    background-color: #00148c;
-    color: white;
-    letter-spacing: 2px;
-    cursor: pointer;
-    display: inline-block;
-
-}
-
-.second-dash-b{
-    flex:1;
-    padding: 13px;
-    background:linear-gradient(0deg,rgba(228, 225, 225, 0.3),rgba(0, 0, 0, 0.3)),url(../../assets/images/pattern.jpg);
-    background-size:cover;
-    margin:10px;
-    border-radius:5px;
-    border:2px solid  #00148c;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-sizing: border-box;
-
-}
-
-.second-dash-b h3{
-    text-align: center;
-    color:#00148c;
-    letter-spacing: 2px;
-    margin-bottom: 23px;
-}
-
-.second-dash-b img{
-    border: 3px solid #00148c;
-
-
-}
-
-
-
-
-.second-dash-b button{
-    padding: 10px 20px;
-    border-radius: 10px;
-    margin: auto;
-    font-size: 20px;
-    background-color: #00148c;
-    color: white;
-    letter-spacing: 2px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-
-
+	padding: 10px 20px;
+	border-radius: 10px;
+	margin: 5px;
+	font-size: 1.2vw;
+	background-color: #00148c;
+	color: white;
+	letter-spacing: 2px;
+	cursor: pointer;
+	display: inline-block;
 }
 
 .second-dash-a button:hover ,.second-dash-b button:hover{
-    background-color: #fff;
-    color: #00148c;
-    border: 2px solid #00148c;
-
+	background-color: #fff;
+	color: #00148c;
+	border: 2px solid #00148c;
 }
 
-.fa-user-circle:before {
-    font-size:16px;
-    padding: 3px;
+
+.meter-read span{
+	font-weight: 200;
 }
 
-.first-dash .info button a{
-    text-decoration: none;
+.meter-read label{
+	color:#00148c;
+	background-color:#fff;
+	border: 1px solid #00148c;
+	padding:10px;
+	font-size: 1.2vw;
+	font-weight: 600;
 }
 
-.first-dash button a:hover{
-    color:#fff;
+/* update contact box */
+.second-dash-b{
+	flex:1;
+	padding: 13px;
+	background:linear-gradient(0deg,rgba(228, 225, 225, 0.3),rgba(0, 0, 0, 0.3)),url(../../assets/images/pattern.jpg);
+	background-size:cover;
+	margin:10px;
+	border-radius:5px;
+	border:2px solid  #00148c;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	box-sizing: border-box;
 }
 
+.second-dash-b h3{
+	text-align: center;
+	color:#00148c;
+	letter-spacing: 2px;
+	margin-bottom: 23px;
+	font-size: 2.2vw;
+}
+
+.second-dash-b img{
+	border: 3px solid #00148c;
+}
+
+.second-dash-b button{
+	padding: 10px 20px;
+	border-radius: 10px;
+	margin: auto;
+	font-size: 1.5vw;
+	background-color: #00148c;
+	color: white;
+	letter-spacing: 2px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+@media screen and (max-width:768px){
+	.containerDashboard{
+		margin-top:10%;
+		flex-direction: column;
+		font-size: 3vw;
+	}
+	.first-dash .info p{
+		font-size: 2.2vw;
+
+	}
+	.first-dash .info button{
+		font-size:2vw;
+	}
+
+	.account-info h4{
+		font-size: 2.1vw;
+	 }
+	 .second-dash-a h3{
+
+		font-size: 3vw;
+	}
+
+	 .second-dash-a button{
+		font-size: 2.1vw;
+		margin-bottom: 5%;
+	 }
+
+	 .second-dash-a span{
+		font-size: 2.1vw;
+	 }
+
+	 .meter-read label{
+		font-size: 2vw;
+		margin-bottom: 5%;
+	 }
+
+	 .second-dash-b h3{
+		font-size: 3vw;
+
+	 }
+	 .second-dash-b button{
+		font-size: 2.1vw;
+		margin-top: 5%;
+
+	 }
+}

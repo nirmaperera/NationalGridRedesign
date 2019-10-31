@@ -26,7 +26,7 @@ class Dashboard extends Component {
 					<div className="info">
 						<h1> $235.65</h1>
 						<h4> balanced due on <span>November 20</span></h4>
-						<button> <i className="fas fa-money-bill-alt"></i> <Link to="/paybill">Pay This Bill</Link></button>
+						<button> <i className="fas fa-money-bill-alt"></i> <Link to="/paybill"></Link>Pay This Bill</button>
 						<button> <i className="fas fa-file-invoice-dollar"></i> View Current Bill</button>
 						<p> Your previous bill on<span> October 20</span> was <span> $130.52</span> </p>
 					</div>
@@ -40,6 +40,9 @@ class Dashboard extends Component {
 							<label>City: <span>New York</span> </label>
 							<label>State:  <span>New York</span></label>
 							<label>Zip Code: <span>23923</span> </label>
+						</div>
+						<div className="meter-read">
+							<label>Next meter read: <span> November 22</span></label>
 						</div>
 						<div>
 							<button className="stopServ">Stop Service <i class="fas fa-times"></i></button>
