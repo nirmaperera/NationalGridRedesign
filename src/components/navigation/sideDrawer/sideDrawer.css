@@ -58,9 +58,8 @@
 }
 
 .dropdown-side li a{
-	font-size: 15px;
+	font-size: 1.9vh;
 	color: black;
-	align-items: flex-end;
 }
 
 .dropdown-side li a:hover{

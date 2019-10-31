@@ -122,15 +122,14 @@ class Register extends Component {
 
 						<div className="form-group-reg">
 							<div className="form-row-reg">
-								<select >
-									<label>Security Question</label>
-									<i className="fas fa-arrow-down"></i>
+								<select  >
+									<label>Security Question </label>
 									<option value="q1">What is your mother's maiden name?</option>
 									<option value="q2">What's the name of your favorite pet?</option>
 									<option value="q3">What's your favorite color?</option>
 									<option value="q4">What's the your first teacher's last name?</option>
 								</select>
-
+								<i className="fas fa-arrow-down"></i>
 								<input onKeyDown={handleEnter} className="form-row-reg" type="text" name="securityAnswer" placeholder="securityAnswer" required onChange={this.handleUserInput} />
 							</div>
 						</div>
