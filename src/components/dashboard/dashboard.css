@@ -41,12 +41,13 @@
 
 .first-dash .info button{
 	padding: 20px 40px;
-	border-radius: 10px;
+	border-radius: 15px;
 	margin: 15px;
 	font-size:1.6vw;
 	color:#00148c;
 	letter-spacing: 2px;
 	cursor: pointer;
+
 
 
 }
@@ -153,6 +154,7 @@
 	padding:10px;
 	font-size: 1.2vw;
 	font-weight: 600;
+	margin-bottom:5px;
 }
 
 /* update contact box */

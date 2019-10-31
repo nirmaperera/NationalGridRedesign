@@ -1,13 +1,38 @@
 import React, { Component } from 'react'
-import { Link } from "react-router-dom";
 
 import { connect } from 'react-redux';
+
+import ModalBill from '../account/payBill/ModalBill';
 
 import contact from '../../assets/images/contact.png';
 import greenlight from '../../assets/images/greenlight.png';
 import './dashboard.css';
+import '../account/payBill/ModalBill';;
+
+
+const Modal = ({ handleClose, show, children }) => {
+	const showHideClassName = show ? "modal display-block" : "modal display-none";
+
+	return (
+		<div className={showHideClassName}>
+			<section className="modal-main">
+				<button className="close-modal" onClick={handleClose}> <i className="fas fa-times"></i></button>
+				{children}
+			</section>
+		</div>
+	);
+};
 
 class Dashboard extends Component {
+	state = { show: false };
+
+	showModal = () => {
+		this.setState({ show: true });
+	};
+
+	hideModal = () => {
+		this.setState({ show: false });
+	};
 
 	componentDidMount() {
 		document.title = 'Dashboard | National Grid';
@@ -26,7 +51,7 @@ class Dashboard extends Component {
 					<div className="info">
 						<h1> $235.65</h1>
 						<h4> balanced due on <span>November 20</span></h4>
-						<button> <i className="fas fa-money-bill-alt"></i> <Link to="/paybill"></Link>Pay This Bill</button>
+						<button type="button" onClick={this.showModal}> <i className="fas fa-money-bill-alt"></i> Pay This Bill</button>
 						<button> <i className="fas fa-file-invoice-dollar"></i> View Current Bill</button>
 						<p> Your previous bill on<span> October 20</span> was <span> $130.52</span> </p>
 					</div>
@@ -45,7 +70,7 @@ class Dashboard extends Component {
 							<label>Next meter read: <span> November 22</span></label>
 						</div>
 						<div>
-							<button className="stopServ">Stop Service <i class="fas fa-times"></i></button>
+							<button className="stopServ">Stop Service <i className="fas fa-times"></i></button>
 							<button className="transferServ">Transfer Service <i class="fas fa-angle-double-right"></i></button>
 						</div>
 					</div>
@@ -57,10 +82,16 @@ class Dashboard extends Component {
 						</div>
 					</div>
 				</div>
+
+				<Modal show={this.state.show} handleClose={this.hideModal}>
+					<ModalBill />
+				</Modal>
 			</div >
 		)
 	}
 }
+
+
 
 const mapStateToProps = (state) => {
 	return {
