@@ -223,7 +223,7 @@ select.payAmount{
   width:50%;
 
 }
-.paymentSubmit button{
+.paymentSubmit input{
   background-color:#00148c;
   padding:10px 20px;
   font-size:3.5vh;
@@ -233,7 +233,7 @@ select.payAmount{
   cursor: pointer;
 }
 
-.paymentSubmit button:hover{
+.paymentSubmit input:hover{
 border:3px solid #00148c;
 background-color:#fff;
 color:#00148c;
@@ -293,7 +293,7 @@ i.fas.fa-angle-down{
     flex-direction: column;
 
   }
-  .paymentSubmit button{
+  .paymentSubmit input{
    width:100%;
    font-size:2.5vh;
 

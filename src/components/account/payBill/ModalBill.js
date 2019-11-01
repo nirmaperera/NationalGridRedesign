@@ -5,13 +5,13 @@ class ModalBill extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			paymentMethod: "",
+			paymentMethod: "Last Bank Account used ending in 2312",
 			enrollDirect: false,
 			paymentDate: "",
-			paymentAmount: "",
-			totalAmount: "",
+			paymentAmount: "Balanced Due",
+			totalAmount: "235.65",
 			finalPayment: "",
-			BalancedDue: "235.65"
+			BalancedDue: "235.65",
 		}
 	}
 
@@ -25,11 +25,27 @@ class ModalBill extends Component {
 			this.finalPayment.value = "";
 		}
 
+		this.setState({ finalPayment: this.state.totalAmount });
+
 
 	}
+
+	handleSubmit = (event) => {
+		event.preventDefault();
+
+		console.log('total payment:', this.state.totalAmount);
+		console.log('payment method:', this.state.paymentMethod);
+		console.log('enroll direct?:', this.state.enrollDirect);
+		console.log('payment date:', this.state.paymentDate);
+		console.log('balanced or other:', this.state.paymentAmount);
+		console.log('final Payment:', this.state.finalPayment);
+
+	}
+
 	render() {
+		const { enrollDirect } = this.state;
 		return (
-			<div>
+			<form onSubmit={this.handleSubmit}>
 				<h2 className="modal-title">How would You like to Pay?</h2>
 				<div className="containerPay">
 					<div className="paymentMethod">
@@ -46,7 +62,7 @@ class ModalBill extends Component {
 					<div className="enrollDirectPay">
 						<label class="enrollDirect">
 							<div className="itemsDirect"> Enroll
-							<input type="checkbox" />
+							<input type="checkbox" value={this.state.enrollDirect} onClick={() => this.setState({ enrollDirect: !enrollDirect })} />
 								<span class="checkmark"></span>
 							</div>
 						</label>
@@ -57,8 +73,8 @@ class ModalBill extends Component {
 
 				<div className="containerPay">
 					<div className="paymentDate">
-						<input type="date"></input>
-						<i className="fas fa-calendar-alt"></i>
+						<input type="date" name="paymentDate" onChange={this.handleInput}></input>
+						<i className="fas fa-calendar-alt" ></i>
 					</div>
 
 					<div className="paymentAmount">
@@ -70,22 +86,19 @@ class ModalBill extends Component {
 						<i className="fas fa-angle-down"></i>
 
 						<div className="payAmount">
-							<label>Payment Amount</label>
+							<label>Payment Amount:$ </label>
 							<input type="number" name="totalAmount" defaultValue={this.state.BalancedDue} onChange={this.handleInput} ref={el => this.totalAmount = el} ></input>
 						</div>
 					</div>
-
 				</div>
-
-
 
 				<div className="paymentSummary">
-					<div>Payment Amount: <input type="number" readOnly={true} value={this.state.totalAmount} ref={el => this.finalPayment = el}></input></div>
+					<div>Payment Amount:$ <input type="number" readOnly={true} value={this.state.totalAmount} ref={el => this.finalPayment = el}></input></div>
 					<div className="paymentSubmit">
-						<button type="submit"><i className="fas fa-money-bill-alt"></i>Pay Bill</button>
+						<input type="submit" value="Pay Bill"></input>
 					</div>
 				</div>
-			</div>
+			</form>
 
 		);
 	}
