@@ -5,22 +5,188 @@
     width:100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.6);
+    display:flex;
+    overflow-y: auto;
+
+  }
+
+  .containerPay{
+    flex:1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .modal-main {
-    position:fixed;
+    border-radius:10px;
+    border:3px solid #00148c;
+    overflow-y: auto;
+    position: absolute;
     background: white;
-    width: 80%;
+    width: 70%;
     height: auto;
-    top:50%;
+    top:75%;
     left:50%;
+
+    background-color:#F0F0F0;
+    animation: slideIn ease-in 0.6s;
     transform: translate(-50%,-50%);
   }
+  .close-modal{
+    display: flex;
+    padding:5px;
+    font-size:20px;
+    background:none;
+    border:none;
+    flex:1;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+.modal-title {
+  text-align: center;
+  color:#00148c;
+  font-size: 4vh;
+}
 
-  .display-block {
+.paymentSelect{
+  border-bottom:3px solid #00148c;
+  border-radius: none;
+  margin-top:8%;
+}
+
+.display-block {
     display: block;
-  }
 
-  .display-none {
+}
+
+.display-none {
     display: none;
+
+}
+
+.paymentMethod{
+  text-align: center;
+
+}
+.enrollDirectPay{
+  margin-top: 40px;
+  display: flex;
+}
+.enrollDirect{
+  flex:1;
+  flex-direction: column;
+  align-items: center;
+  font-size:2vh;
+  padding:10px;
+  justify-content: center; /* center items vertically, in this case */
+  align-items: center;     /* center items horizontally, in this case */
+
+}
+
+.paymentDate {
+  margin-top: 40px;
+  display: flex;
+  flex: 1;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding:20px;
+
+
+}
+
+.paymentDate input{
+  outline: 0 none;
+  border:none;
+  width:30%;
+  border-bottom:3px solid #00148c;
+  background:none;
+  padding:20px 40px;
+  font-size: 3vh;
+}
+.paymentAmount{
+  display: flex;
+
+}
+
+.payAmount{
+  margin: 40px;
+  flex:1;
+  width:20%;
+ flex-direction: column;
+ align-items: center;
+ font-size:3vh;
+ justify-content: center; /* center items vertically, in this case */
+ align-items: center;
+
+}
+
+select.payAmount{
+  border-bottom:2px solid #00148c;
+
+
+}
+
+.payAmount input{
+  outline: 0 none;
+  border:none;
+  background:none;
+  margin-left:20px;
+  font-size:4vh;
+  border-bottom: 3px solid #00148c;
+
+}
+
+.paymentSummary{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin:50px;
+  font-size:4vh;
+
+}
+
+.paymentSubmit{
+  margin-top:20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:50%;
+
+}
+.paymentSubmit button{
+  background-color:#00148c;
+  padding:10px 20px;
+  font-size:3.5vh;
+  width:100%;
+  color:#fff;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.paymentSubmit button:hover{
+border:3px solid #00148c;
+background-color:#fff;
+color:#00148c;
+}
+
+/* icons */
+.fas.fa-money-bill-alt{
+  margin-right: 10px;
+}
+i.fas.fa-calendar-alt, i.fas.fa-arrow-down{
+  color:#00148c;
+}
+
+@keyframes slideIn {
+  0%{
+    opacity:0;
+    transform:translate(0,50)
   }
+  100%{
+    opacity:1;
+    transform: translate(-50%,-50%);
+
+  }
+}
