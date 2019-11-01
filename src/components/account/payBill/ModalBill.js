@@ -10,18 +10,18 @@ function ModalBill() {
 					<select className="paymentSelect">
 						<label>Payment methods</label>
 						<option value="m1">Payment Method</option>
-						<option value="m2">Last Bank Account used ending in <span>3432</span></option>
+						<option value="m2">Last Bank Account used ending in 2312</option>
 						<option value="m3">Bank Account (Checking)</option>
 						<option value="m4">Bank Account(Savings)</option>
 						<option value="m5">Credit or Debit Card (fees may apply)</option>
 					</select>
-					<i className="fas fa-arrow-down"></i>
+					<i class="fas fa-angle-down"></i>
 				</div>
 
 				<div className="enrollDirectPay">
 					<label class="enrollDirect">
-						<div className="itemsDirect">
-							Enroll<input type="checkbox" />
+						<div className="itemsDirect"> Enroll
+							<input type="checkbox" />
 							<span class="checkmark"></span>
 						</div>
 					</label>
@@ -33,7 +33,7 @@ function ModalBill() {
 			<div className="containerPay">
 				<div className="paymentDate">
 					<input type="date"></input>
-					<i class="fas fa-calendar-alt"></i>
+					<i className="fas fa-calendar-alt"></i>
 				</div>
 
 				<div className="paymentAmount">
@@ -42,6 +42,7 @@ function ModalBill() {
 						<option value="m1">Balanced Due</option>
 						<option value="m2">Other Amount</option>
 					</select>
+					<i className="fas fa-angle-down"></i>
 
 					<div className="payAmount">
 						<label>Payment Amount</label>

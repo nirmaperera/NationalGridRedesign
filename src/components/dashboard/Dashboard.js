@@ -10,8 +10,8 @@ import './dashboard.css';
 import '../account/payBill/ModalBill';;
 
 
-const Modal = ({ handleClose, show, children }) => {
-	const showHideClassName = show ? "modal display-block" : "modal display-none";
+const Modal = ({ handleClose, showModal, children }) => {
+	const showHideClassName = showModal ? "modal display-block" : "modal display-none";
 
 	return (
 		<div className={showHideClassName}>
@@ -24,14 +24,14 @@ const Modal = ({ handleClose, show, children }) => {
 };
 
 class Dashboard extends Component {
-	state = { show: false };
+	state = { showModal: false };
 
 	showModal = () => {
-		this.setState({ show: true });
+		this.setState({ showModal: true });
 	};
 
 	hideModal = () => {
-		this.setState({ show: false });
+		this.setState({ showModal: false });
 	};
 
 	componentDidMount() {
@@ -71,7 +71,7 @@ class Dashboard extends Component {
 						</div>
 						<div>
 							<button className="stopServ">Stop Service <i className="fas fa-times"></i></button>
-							<button className="transferServ">Transfer Service <i class="fas fa-angle-double-right"></i></button>
+							<button className="transferServ">Transfer Service <i className="fas fa-angle-double-right"></i></button>
 						</div>
 					</div>
 					<div className="second-dash-b">
@@ -83,7 +83,7 @@ class Dashboard extends Component {
 					</div>
 				</div>
 
-				<Modal show={this.state.show} handleClose={this.hideModal}>
+				<Modal showModal={this.state.showModal} handleClose={this.hideModal}>
 					<ModalBill />
 				</Modal>
 			</div >

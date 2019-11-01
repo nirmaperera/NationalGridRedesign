@@ -78,45 +78,43 @@ class Register extends Component {
 		}
 	}
 	render() {
-		const { email, password, userID, firstName, lastName, zipCode, securityAnswer, ssn } = this.state;
-		const enabled = email.length > 0 && password.length > 0 && userID.length > 0 && firstName.length > 0 && lastName.length > 0 && zipCode.length > 0 && securityAnswer.length > 0 && ssn.length > 0;
 		return (
-			<form className="base-container" ref={this.props.containerRef}>
+			<form className="base-container" ref={this.props.containerRef} onSubmit={this.handleSubmit}>
 				<div className="header-reg"><h3>Register</h3></div>
 				<div className="content">
 					<div className="form">
 						<div className="form-group-reg">
 							<div className="form-row-reg">
-								<input onKeyDown={handleEnter} type="text" name="firstName" placeholder="First Name" required onChange={this.handleUserInput} />
+								<input onKeyDown={handleEnter} type="text" name="firstName" placeholder="First Name" onChange={this.handleUserInput} required />
 							</div>
 							<div className="form-row-reg">
-								<input onKeyDown={handleEnter} type="text" name="lastName" placeholder="Last Name" required onChange={this.handleUserInput} />
-							</div>
-						</div>
-
-						<div className="form-group-reg">
-							<div className="form-row-reg">
-								<input onKeyDown={handleEnter} type="text" name="userID" placeholder="User ID" required onChange={this.handleUserInput} />
-							</div>
-							<div className="form-row-reg">
-								<input maxLength={4} minLength={4} onKeyDown={handleEnter} onInput={this.maxLengthCheck} type="number" name="ssn" placeholder="ssn (last 4 digits)" required onChange={this.handleUserInput} />
-							</div>
-						</div>
-						<div className="form-group-reg">
-							<div className="form-row-reg">
-								<input onKeyDown={handleEnter} type="password" name="password" placeholder="password" required onChange={this.handleUserInput} />
-							</div>
-							<div className="form-row-reg">
-								<input onKeyDown={handleEnter} type="password" name="verifyPassword" placeholder="confirm password" required onChange={this.handleUserInput} onKeyUp={this.Verification} />
+								<input onKeyDown={handleEnter} type="text" name="lastName" placeholder="Last Name" onChange={this.handleUserInput} required />
 							</div>
 						</div>
 
 						<div className="form-group-reg">
 							<div className="form-row-reg">
-								<input onKeyDown={handleEnter} type="email" name="email" placeholder="email" required onChange={this.handleUserInput} />
+								<input onKeyDown={handleEnter} type="text" name="userID" placeholder="User ID" onChange={this.handleUserInput} required />
 							</div>
 							<div className="form-row-reg">
-								<input onKeyDown={handleEnter} type="email" name="verifyEmail" placeholder="confirm email" required onChange={this.handleUserInput} onKeyUp={this.Verification} />
+								<input maxLength={4} minLength={4} onKeyDown={handleEnter} onInput={this.maxLengthCheck} type="number" name="ssn" placeholder="ssn (last 4 digits)" onChange={this.handleUserInput} required />
+							</div>
+						</div>
+						<div className="form-group-reg">
+							<div className="form-row-reg">
+								<input onKeyDown={handleEnter} type="password" name="password" placeholder="password" onChange={this.handleUserInput} required />
+							</div>
+							<div className="form-row-reg">
+								<input onKeyDown={handleEnter} type="password" name="verifyPassword" placeholder="confirm password" onChange={this.handleUserInput} onKeyUp={this.Verification} required />
+							</div>
+						</div>
+
+						<div className="form-group-reg">
+							<div className="form-row-reg">
+								<input onKeyDown={handleEnter} type="email" name="email" placeholder="email" onChange={this.handleUserInput} required />
+							</div>
+							<div className="form-row-reg">
+								<input onKeyDown={handleEnter} type="email" name="verifyEmail" placeholder="confirm email" onChange={this.handleUserInput} onKeyUp={this.Verification} required />
 							</div>
 						</div>
 
@@ -129,18 +127,18 @@ class Register extends Component {
 									<option value="q3">What's your favorite color?</option>
 									<option value="q4">What's the your first teacher's last name?</option>
 								</select>
-								<i className="fas fa-arrow-down"></i>
-								<input onKeyDown={handleEnter} className="form-row-reg" type="text" name="securityAnswer" placeholder="securityAnswer" required onChange={this.handleUserInput} />
+								<i className="fas fa-angle-down"></i>
+								<input onKeyDown={handleEnter} className="form-row-reg" type="text" name="securityAnswer" placeholder="securityAnswer" onChange={this.handleUserInput} required />
 							</div>
 						</div>
 						<div className="form-group-reg">
-							<input maxLength={5} minLength={5} onKeyDown={handleEnter} onInput={this.maxLengthCheck} type="number" name="zipCode" placeholder="zipcode" required onChange={this.handleUserInput} />
+							<input maxLength={5} minLength={5} onKeyDown={handleEnter} onInput={this.maxLengthCheck} type="number" name="zipCode" placeholder="zipcode" onChange={this.handleUserInput} required />
 
 						</div>
 					</div>
 				</div>
 				<div className="footer-reg">
-					<input disabled={!enabled} type="submit" className="btn-reg" value="Register" onClick={this.handleSubmit} />
+					<input type="submit" className="btn-reg" value="Register" />
 					{this.state.showError && (<input className="message-box" id="message" disabled={true} readOnly={true} value={this.state.verify} size="30" />)}
 				</div>
 
