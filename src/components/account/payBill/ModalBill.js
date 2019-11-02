@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './modal.css';
+import ConfirmPay from './ConfirmPay';
 
 class ModalBill extends Component {
 	constructor(props) {
@@ -12,6 +13,7 @@ class ModalBill extends Component {
 			totalAmount: "235.65",
 			finalPayment: "",
 			BalancedDue: "235.65",
+			paidBill: false
 		}
 	}
 
@@ -56,10 +58,19 @@ class ModalBill extends Component {
 		console.log('payment date:', this.state.paymentDate);
 		console.log('balanced or other:', this.state.paymentAmount);
 		console.log('final Payment:', this.state.finalPayment);
+
+		this.togglePopup();
 	}
 
+	togglePopup() {
+		this.setState({
+			paidBill: !this.state.paidBill
+		});
+	}
+
+
 	render() {
-		const { enrollDirect } = this.state;
+		const { enrollDirect } = this.state; /*Toggle enroll direct */
 		return (
 			<form action="/dashboard" onSubmit={this.handleSubmit}>
 				<h2 className="modal-title">How Would You like to Pay?</h2>
@@ -81,12 +92,11 @@ class ModalBill extends Component {
 							<span class="checkmark"></span>
 						</div>
 					</label>
-
 					<div className="enrollDirect"> I would like to enroll this account in the Direct Payment Program. I understand that starting next month, the full amount I owe will be deducted automatically from this account</div>
 				</div>
 
 				<div className="paymentDate">
-					<input type="date" name="paymentDate" onChange={this.handleInput}></input>
+					<input type="date" name="paymentDate" onChange={this.handleInput} required></input>
 					<i className="fas fa-calendar-alt" ></i>
 				</div>
 
@@ -102,13 +112,22 @@ class ModalBill extends Component {
 					</div>
 				</div>
 
-
 				<div className="paymentSummary">
 					<div>Payment Amount:$ <input type="number" readOnly={true} value={this.state.totalAmount} ref={el => this.finalPayment = el}></input></div>
 					<div className="paymentSubmit">
 						<input type="submit" value="Pay Bill"></input>
 					</div>
 				</div>
+
+
+				{this.state.paidBill ?
+					<ConfirmPay
+						text={["The payment of ", <strong>{this.state.totalAmount}</strong>, " will be paid on ", <strong>{this.state.paymentDate}</strong>, " from ", <strong>{this.state.paymentMethod}</strong>]}
+						closePopup={this.togglePopup.bind(this)}
+
+					/>
+					: null
+				}
 			</form>
 
 		);

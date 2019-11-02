@@ -263,11 +263,15 @@ i.fas.fa-calendar-alt, i.fas.fa-arrow-down{
   color:#00148c;
 }
 .modal-main  input:focus{
-  border-bottom: 2px solid green;
+  border-bottom: 2px solid #208807;
 
 }
 .modal-main select:focus{
-  box-shadow: 0 0 3pt 2pt green;
+  box-shadow: 0 0 3pt 2pt #208807;
+}
+
+strong{
+  color:#111;
 }
 
 @keyframes slideIn {
