@@ -40,12 +40,14 @@ class ModalBill extends Component {
 		console.log('balanced or other:', this.state.paymentAmount);
 		console.log('final Payment:', this.state.finalPayment);
 
+
+
 	}
 
 	render() {
 		const { enrollDirect } = this.state;
 		return (
-			<form onSubmit={this.handleSubmit}>
+			<form action="/dashboard" onSubmit={this.handleSubmit}>
 				<h2 className="modal-title">How would You like to Pay?</h2>
 				<div className="containerPay">
 					<div className="paymentMethod">
