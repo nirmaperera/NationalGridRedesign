@@ -15,18 +15,35 @@ class ModalBill extends Component {
 		}
 	}
 
+
+	handleMethod = (event) => {
+		this.setState({
+			paymentMethod: event.target.value
+		});
+
+		console.log('this.state.paymentMethod', this.state.paymentMethod);
+
+	}
+	handleAmount = (event) => {
+
+		if (event.target.value === 'Other Amount') {
+			this.totalAmount.value = "";
+			this.finalPayment.value = "";
+		}
+		this.setState({
+			paymentAmount: event.target.value
+		});
+
+		console.log('this.state.paymentAmount', this.state.paymentAmount);
+
+	}
 	handleInput = (event) => {
 		this.setState({
 			[event.target.name]: event.target.value
 		});
 		console.log(event.target.value);
-		if (event.target.value === 'Other Amount') {
-			this.totalAmount.value = "";
-			this.finalPayment.value = "";
-		}
 
 		this.setState({ finalPayment: this.state.totalAmount });
-
 
 	}
 
@@ -39,9 +56,6 @@ class ModalBill extends Component {
 		console.log('payment date:', this.state.paymentDate);
 		console.log('balanced or other:', this.state.paymentAmount);
 		console.log('final Payment:', this.state.finalPayment);
-
-
-
 	}
 
 	render() {
@@ -51,7 +65,7 @@ class ModalBill extends Component {
 				<h2 className="modal-title">How would You like to Pay?</h2>
 				<div className="containerPay">
 					<div className="paymentMethod">
-						<select className="paymentSelect" onChange={this.handleInput} name={this.state.paymentMethod}>
+						<select className="paymentSelect" onChange={this.handleMethod} value={this.state.paymentMethod}>
 							<label>Payment methods</label>
 							<option value="Last Bank Account used ending in 2312">Last Bank Account used ending in 2312</option>
 							<option value="Bank Account (Checking)">Bank Account (Checking)</option>
@@ -80,7 +94,7 @@ class ModalBill extends Component {
 					</div>
 
 					<div className="paymentAmount">
-						<select className="payAmount" onChange={this.handleInput} name={this.state.paymentAmount}>
+						<select className="payAmount" onChange={this.handleAmount} value={this.state.paymentAmount}>
 							<label>Payment Amount</label>
 							<option value="Balanced Due">Balanced Due</option>
 							<option value="Other Amount">Other Amount</option>
