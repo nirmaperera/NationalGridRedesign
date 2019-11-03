@@ -39,11 +39,12 @@ class Register extends Component {
 
 		console.log("Signing Up")
 		this.props.sign_in();
-		const { userID, password, firstName, lastName } = this.state;
+		const { userID, password, firstName, lastName, email } = this.state;
 		localStorage.setItem('userID', userID);
 		localStorage.setItem('password', password);
 		localStorage.setItem('firstName', firstName);
 		localStorage.setItem('lastName', lastName);
+		localStorage.setItem('email', email);
 
 		this.props.history.push({
 			pathname: '/dashboard',
