@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './modal.css';
 import ConfirmPay from './ConfirmPay';
 
+
 class ModalBill extends Component {
 	constructor(props) {
 		super(props);
@@ -13,10 +14,10 @@ class ModalBill extends Component {
 			totalAmount: "235.65",
 			finalPayment: "",
 			BalancedDue: "235.65",
-			paidBill: false
+			paidBill: false,
+			showModal: false
 		}
 	}
-
 
 	handleMethod = (event) => {
 		this.setState({
@@ -51,7 +52,6 @@ class ModalBill extends Component {
 
 	handleSubmit = (event) => {
 		event.preventDefault();
-
 		console.log('total payment:', this.state.totalAmount);
 		console.log('payment method:', this.state.paymentMethod);
 		console.log('enroll direct?:', this.state.enrollDirect);
@@ -68,11 +68,10 @@ class ModalBill extends Component {
 		});
 	}
 
-
 	render() {
 		const { enrollDirect } = this.state; /*Toggle enroll direct */
 		return (
-			<form action="/dashboard" onSubmit={this.handleSubmit}>
+			<form onSubmit={this.handleSubmit}>
 				<h2 className="modal-title">How Would You like to Pay?</h2>
 
 				<div className="paymentMethod">
@@ -115,7 +114,7 @@ class ModalBill extends Component {
 				<div className="paymentSummary">
 					<div>Payment Amount:$ <input type="number" readOnly={true} value={this.state.totalAmount} ref={el => this.finalPayment = el}></input></div>
 					<div className="paymentSubmit">
-						<input type="submit" value="Pay Bill"></input>
+						<input type="submit" value="Pay Bill" ></input>
 					</div>
 				</div>
 
@@ -124,7 +123,7 @@ class ModalBill extends Component {
 					<ConfirmPay
 						text={["The payment of ", <strong>{this.state.totalAmount}</strong>, " will be paid on ", <strong>{this.state.paymentDate}</strong>, " from ", <strong>{this.state.paymentMethod}</strong>]}
 						closePopup={this.togglePopup.bind(this)}
-
+						handleClose={this.hideModal}
 					/>
 					: null
 				}

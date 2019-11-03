@@ -24,7 +24,12 @@ const Modal = ({ handleClose, showModal, children }) => {
 };
 
 class Dashboard extends Component {
-	state = { showModal: false };
+	constructor(props) {
+		super(props);
+
+		this.state = { showModal: false };
+
+	}
 
 	showModal = () => {
 		this.setState({ showModal: true });
@@ -32,6 +37,9 @@ class Dashboard extends Component {
 
 	hideModal = () => {
 		this.setState({ showModal: false });
+
+		console.log('hide Modal', this.state.showModal)
+
 	};
 
 	componentDidMount() {
@@ -84,7 +92,7 @@ class Dashboard extends Component {
 				</div>
 
 				<Modal showModal={this.state.showModal} handleClose={this.hideModal}>
-					<ModalBill />
+					<ModalBill handleClose={this.hideModal} />
 				</Modal>
 			</div >
 		)
