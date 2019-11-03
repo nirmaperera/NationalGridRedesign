@@ -26,9 +26,10 @@ const Modal = ({ handleClose, showModal, children }) => {
 class Dashboard extends Component {
 	constructor(props) {
 		super(props);
-
-		this.state = { showModal: false };
-
+		this.state = {
+			showModal: false,
+			balancedDue: "235.65"
+		};
 	}
 
 	showModal = () => {
@@ -37,15 +38,13 @@ class Dashboard extends Component {
 
 	hideModal = () => {
 		this.setState({ showModal: false });
-
-		console.log('hide Modal', this.state.showModal)
-
 	};
 
 	componentDidMount() {
 		document.title = 'Dashboard | National Grid';
 		console.log('this login state in dashboard', this.props.isLogged);
 	}
+
 
 	render() {
 		return (
@@ -57,7 +56,7 @@ class Dashboard extends Component {
 
 					</div>
 					<div className="info">
-						<h1> $235.65</h1>
+						<h1> ${localStorage.getItem('balance')}</h1>
 						<h4> balanced due on <span>November 20</span></h4>
 						<button type="button" onClick={this.showModal}> <i className="fas fa-money-bill-alt"></i> Pay This Bill</button>
 						<button> <i className="fas fa-file-invoice-dollar"></i> View Current Bill</button>

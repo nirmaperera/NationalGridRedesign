@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import './modal.css';
 import ConfirmPay from './ConfirmPay';
 
-
 class ModalBill extends Component {
 	constructor(props) {
 		super(props);
@@ -19,6 +18,10 @@ class ModalBill extends Component {
 		}
 	}
 
+	componentDidMount() {
+		let amount = this.state.totalAmount;
+		localStorage.setItem('balance', amount);
+	}
 	handleMethod = (event) => {
 		this.setState({
 			paymentMethod: event.target.value
@@ -107,7 +110,7 @@ class ModalBill extends Component {
 					</select>
 					<div className="payAmount">
 						<label>Payment Amount:</label>
-						<input type="number" name="totalAmount" defaultValue={this.state.BalancedDue} onChange={this.handleInput} ref={el => this.totalAmount = el} ></input>
+						<input type="number" step={0.1} name="totalAmount" defaultValue={this.state.BalancedDue} onChange={this.handleInput} ref={el => this.totalAmount = el} ></input>
 					</div>
 				</div>
 
@@ -123,10 +126,13 @@ class ModalBill extends Component {
 					<ConfirmPay
 						text={["The payment of ", <strong>{this.state.totalAmount}</strong>, " will be paid on ", <strong>{this.state.paymentDate}</strong>, " from ", <strong>{this.state.paymentMethod}</strong>]}
 						closePopup={this.togglePopup.bind(this)}
-						handleClose={this.hideModal}
+						BalancedDue={this.state.BalancedDue}
+						finalPayment={this.state.finalPayment}
 					/>
+
 					: null
 				}
+
 			</form>
 
 		);

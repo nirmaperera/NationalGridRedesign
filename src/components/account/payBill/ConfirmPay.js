@@ -5,6 +5,10 @@ class ConfirmPay extends React.Component {
 
     handleClose = () => {
         console.log('form submitting')
+        let amount = this.props.BalancedDue - this.props.finalPayment;
+        console.log('from handle close ', this.props.BalancedDue);
+        localStorage.setItem('balance', amount);
+        console.log('from handleClose', amount);
         window.location.reload();
 
     }
