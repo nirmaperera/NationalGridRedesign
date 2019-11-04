@@ -18,6 +18,7 @@ class Register extends Component {
 			verifyEmail: "",
 			password: "",
 			verifyPassword: "",
+			securityQuestion: "",
 			securityAnswer: "",
 			zipCode: "",
 			verify: "* The fields do not match",
@@ -25,6 +26,15 @@ class Register extends Component {
 			visible: true,
 			showError: false
 		}
+	}
+
+	handleSelect = (event) => {
+		this.setState({
+			securityQuestion: event.target.value
+		});
+
+		console.log('this.state.securityquestion', this.state.securityQuestion);
+
 	}
 
 	handleUserInput = (event) => {
@@ -39,12 +49,15 @@ class Register extends Component {
 
 		console.log("Signing Up")
 		this.props.sign_in();
-		const { userID, password, firstName, lastName, email } = this.state;
+		const { userID, password, firstName, lastName, email, securityQuestion, securityAnswer } = this.state;
 		localStorage.setItem('userID', userID);
 		localStorage.setItem('password', password);
 		localStorage.setItem('firstName', firstName);
 		localStorage.setItem('lastName', lastName);
 		localStorage.setItem('email', email);
+		localStorage.setItem('securityAns', securityAnswer);
+		localStorage.setItem('securityQues', securityQuestion);
+
 
 		this.props.history.push({
 			pathname: '/dashboard',
@@ -121,12 +134,13 @@ class Register extends Component {
 
 						<div className="form-group-reg">
 							<div className="form-row-reg">
-								<select  >
+								<select onChange={this.handleSelect} value={this.state.securityQuestion} >
 									<label>Security Question </label>
-									<option value="q1">What is your mother's maiden name?</option>
-									<option value="q2">What's the name of your favorite pet?</option>
-									<option value="q3">What's your favorite color?</option>
-									<option value="q4">What's the your first teacher's last name?</option>
+									<option>Security Question</option>
+									<option value="What is your mother's maiden name?">What is your mother's maiden name?</option>
+									<option value="What's the name of your favorite pet?">What's the name of your favorite pet?</option>
+									<option value="What's your favorite color?">What's your favorite color?</option>
+									<option value="What's the your first teacher's last name?">What's the your first teacher's last name?</option>
 								</select>
 								<i className="fas fa-angle-down"></i>
 								<input onKeyDown={handleEnter} className="form-row-reg" type="text" name="securityAnswer" placeholder="securityAnswer" onChange={this.handleUserInput} required />
