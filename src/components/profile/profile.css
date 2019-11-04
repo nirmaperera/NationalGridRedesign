@@ -34,7 +34,6 @@
     border:none;
     background:none;
     outline:none;
-    border-bottom: 2px solid #DCDCDC;
     font-size:4vh;
     padding:10px;
     width:100%;
@@ -63,7 +62,7 @@ letter-spacing: 5px;
 .head, .profile-btns, .group-update{
     display: flex;
     justify-content: space-between;
-  margin-right:2px;
+
 }
 
 .signIn-creds select{
@@ -78,6 +77,10 @@ letter-spacing: 5px;
 .profile-group{
     margin:50px;
     width: 100%;
+    background-color: #f3f3f3;
+    border:3px solid white;
+    padding:10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .signIn-creds input[type="submit"]:first-child{
@@ -95,6 +98,8 @@ letter-spacing: 5px;
 
 .group-update input{
     border:none;
+    border-bottom: 2px solid #DCDCDC;
+    font-size:3vh;
 }
 
 .group-update input:focus{

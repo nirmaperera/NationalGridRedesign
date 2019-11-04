@@ -8,7 +8,7 @@ class ModalBill extends Component {
 		this.state = {
 			paymentMethod: "Last Bank Account used ending in 2312",
 			enrollDirect: false,
-			paymentDate: "",
+			paymentDate: getDate(),
 			paymentAmount: "Balanced Due",
 			totalAmount: "235.65",
 			finalPayment: "",
@@ -19,6 +19,7 @@ class ModalBill extends Component {
 	}
 
 	componentDidMount() {
+		console.log(this.state.paymentDate);
 		let amount = this.state.totalAmount;
 		localStorage.setItem('balance', amount);
 	}
@@ -98,7 +99,7 @@ class ModalBill extends Component {
 				</div>
 
 				<div className="paymentDate">
-					<input type="date" name="paymentDate" onChange={this.handleInput} required></input>
+					<input type="date" value={this.state.paymentDate} onChange={this.handleInput} required></input>
 					<i className="fas fa-calendar-alt" ></i>
 				</div>
 
@@ -138,5 +139,18 @@ class ModalBill extends Component {
 		);
 	}
 }
+function getDate() {
+	var today = new Date();
 
+	if (today.getDate() <= 9) {
+		let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + 0 + today.getDate();
+		return date;
+	}
+	else {
+		let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+		return date;
+
+	}
+
+}
 export default ModalBill;

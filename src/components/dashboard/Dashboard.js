@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import { connect } from 'react-redux';
+import { Link } from "react-router-dom";
 
 import ModalBill from '../account/payBill/ModalBill';
 
@@ -97,7 +98,8 @@ class Dashboard extends Component {
 						<h3 className="dash-title">Has your contact info changed?</h3>
 						<div className="info">
 							<img src={contact} width="200" height="100" alt="houses-bg" />
-							<button>Update Info</button>
+							<Link to="/profile"> <button>Update Info</button></Link>
+
 						</div>
 					</div>
 				</div>

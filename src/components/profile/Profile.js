@@ -22,6 +22,8 @@ class Profile extends Component {
     }
 
     componentDidMount() {
+        window.scrollTo(0, 0)
+        document.title = 'Profile | National Grid';
         const firstName = localStorage.getItem('firstName');
         const lastName = localStorage.getItem('lastName');
         const userID = localStorage.getItem('userID');
