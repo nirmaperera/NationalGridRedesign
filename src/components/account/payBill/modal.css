@@ -24,7 +24,6 @@
     top:90%;
     left:50%;
     background-color:#F0F0F0;
-    animation: slideIn ease-in 0.6s;
     transform: translate(-50%,-50%);
   }
   .close-modal{
@@ -275,17 +274,7 @@ strong{
   color:#111;
 }
 
-@keyframes slideIn {
-  0%{
-    opacity:0;
-    transform:translate(0,50)
-  }
-  100%{
-    opacity:1;
-    transform: translate(-50%,-50%);
 
-  }
-}
 
 @media screen and (max-width:768px){
   .modal{

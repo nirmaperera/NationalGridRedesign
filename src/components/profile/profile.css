@@ -6,5 +6,97 @@
 	margin: 0 auto;
 	display: flex;
 	font-size: 2vw;
-	box-sizing: border-box;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.containerProfile h1{
+    color:#00148c;
+    letter-spacing: 3px;
+}
+.signIn-creds{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:50%;
+    padding:20px;
+    font-size:4vh;
+}
+
+.signIn-creds hr{
+    width: 90%;
+}
+.signIn-creds input{
+    border:none;
+    background:none;
+    outline:none;
+    border-bottom: 2px solid #DCDCDC;
+    font-size:4vh;
+    padding:10px;
+    width:100%;
+}
+
+.signIn-creds label{
+color:#00148c;
+font-size: 3vh;
+font-weight: 600;
+letter-spacing: 5px;
+}
+
+.signIn-creds .edit-btn{
+    background-color:#00148c;
+    color:#fff;
+    font-size:2vh;
+    border-radius:5px;
+    padding:10px 20px;
+    cursor: pointer;
+}
+
+.signIn-creds .edit-btn:hover{
+    background-color:#000f53;
+}
+
+.head, .profile-btns, .group-update{
+    display: flex;
+    justify-content: space-between;
+  margin-right:2px;
+}
+
+.signIn-creds select{
+    background:none;
+    border:none;
+
+    border-bottom:3px solid #00148c;
+    border-radius: none;
+
+}
+
+.profile-group{
+    margin:50px;
+    width: 100%;
+}
+
+.signIn-creds input[type="submit"]:first-child{
+   color:#208807;
+   font-weight: 600;
+   font-size: 3vh;
+   cursor: pointer;
+}
+
+.signIn-creds input[type="submit"]:last-child{
+    color:	#808080;
+    font-size: 3vh;
+    cursor: pointer;
+ }
+
+.group-update input{
+    border:none;
+}
+
+.group-update input:focus{
+    border-bottom: 2px solid #208807;
 }

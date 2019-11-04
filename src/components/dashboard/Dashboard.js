@@ -11,11 +11,11 @@ import '../account/payBill/ModalBill';;
 
 
 const Modal = ({ handleClose, showModal, children }) => {
-	const showHideClassName = showModal ? "modal display-block" : "modal display-none";
+	const showHideClassName = showModal ? "modal animated slideInDown display-block" : "modal display-none";
 
 	return (
 		<div className={showHideClassName}>
-			<section className="modal-main">
+			<section className="modal-main ">
 				<button className="close-modal" onClick={handleClose}> <i className="fas fa-times"></i></button>
 				{children}
 			</section>
