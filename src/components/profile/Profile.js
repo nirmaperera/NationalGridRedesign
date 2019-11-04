@@ -82,6 +82,27 @@ class Profile extends Component {
         });
     }
 
+    handleSelect = (event) => {
+        this.setState({
+            securityQuestion: event.target.value
+        });
+
+        console.log('this.state.securityquestion', this.state.securityQuestion);
+
+    }
+
+    handleSubmit = () => {
+        const { userID, password, firstName, lastName, email, securityQuestion, securityAnswer } = this.state;
+        localStorage.setItem('userID', userID);
+        localStorage.setItem('password', password);
+        localStorage.setItem('firstName', firstName);
+        localStorage.setItem('lastName', lastName);
+        localStorage.setItem('email', email);
+        localStorage.setItem('securityAns', securityAnswer);
+        localStorage.setItem('securityQues', securityQuestion);
+
+    }
+
     render() {
         return (
             <div className="containerProfile">
@@ -92,14 +113,16 @@ class Profile extends Component {
                         <label>Name</label>
                         <input type="text" value={this.state.firstName + " " + this.state.lastName} readOnly={true}></input>
                         <button value="edit" onClick={this.handleName}> edit</button>
-                        {this.state.editName ?
-                            <form>
-                                <input onChange={this.handleUpdate} className="updatedInfo" type="text" placeholder={this.state.firstName + " " + this.state.lastName}></input>
-                                <input type="submit" value="save" />
-                                <input type="submit" value="cancel" />
-                            </form>
-                            : null
-                        }
+                        <form>
+                            {this.state.editName ?
+                                <div>
+                                    <input onChange={this.handleUpdate} name="firstName" className="updatedInfo" type="text" placeholder={this.state.firstName}></input>
+                                    <input onChange={this.handleUpdate} name="lastName" className="updatedInfo" type="text" placeholder={this.state.lastName}></input>
+                                    <input onClick={this.handleSubmit} type="submit" value="save" />
+                                    <input type="submit" value="cancel" />
+                                </div>
+                                : null}
+                        </form>
                     </div>
                     <div className="editUsername">
                         <label>User ID</label>
@@ -108,8 +131,8 @@ class Profile extends Component {
                         <form>
                             {this.state.editUser ?
                                 <div>
-                                    <input onChange={this.handleUpdate} name="firstName" className="updatedInfo" type="text" placeholder={this.state.userID}></input>
-                                    <input type="submit" value="save" />
+                                    <input onChange={this.handleUpdate} name="userID" className="updatedInfo" type="text" placeholder={this.state.userID}></input>
+                                    <input onClick={this.handleSubmit} type="submit" value="save" />
                                     <input type="submit" value="cancel" />
                                 </div>
                                 : null}
@@ -125,7 +148,7 @@ class Profile extends Component {
                             {this.state.editEmail ?
                                 <div>
                                     <input onChange={this.handleUpdate} name="email" className="updatedInfo" type="text" placeholder={this.state.email}></input>
-                                    <input type="submit" value="save" />
+                                    <input onClick={this.handleSubmit} type="submit" value="save" />
                                     <input type="submit" value="cancel" />
                                 </div>
                                 : null}
@@ -141,7 +164,7 @@ class Profile extends Component {
                             {this.state.editPassword ?
                                 <div>
                                     <input onChange={this.handleUpdate} name="password" className="updatedInfo" type="password" placeholder={this.state.password}></input>
-                                    <input type="submit" value="save" />
+                                    <input onClick={this.handleSubmit} type="submit" value="save" />
                                     <input type="submit" value="cancel" />
                                 </div>
 
@@ -158,9 +181,16 @@ class Profile extends Component {
                         <form>
                             {this.state.editSecurity ?
                                 <div>
-                                    <input onChange={this.handleUpdate} name="securityQuestion" type="text" placeholder={this.state.securityQuestion} />
+                                    <select onChange={this.handleSelect} value={this.state.securityQuestion} >
+                                        <label>Security Question </label>
+                                        <option>Security Question</option>
+                                        <option value="What is your mother's maiden name?">What is your mother's maiden name?</option>
+                                        <option value="What's the name of your favorite pet?">What's the name of your favorite pet?</option>
+                                        <option value="What's your favorite color?">What's your favorite color?</option>
+                                        <option value="What's the your first teacher's last name?">What's the your first teacher's last name?</option>
+                                    </select>
                                     <input onChange={this.handleUpdate} name="securityAnswer" type="password" placeholder={this.state.securityAnswer} />
-                                    <input type="submit" value="save" />
+                                    <input onClick={this.handleSubmit} type="submit" value="save" />
                                     <input type="submit" value="cancel" />
                                 </div>
                                 : null}
