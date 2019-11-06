@@ -1,7 +1,8 @@
-import React from "react";
+import React, { Component } from 'react'
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import Navigation from './components/navigation/Navigation';
+import { PrivateRoute } from './components/helpers/PrivateRoute';
 import Footer from './components/footer/Footer';
 
 import ToggleLogin from "./components/credentials/ToggleLogin";
@@ -13,21 +14,27 @@ import ModalBill from './components/account/payBill/ModalBill';
 
 
 
-const App = () => (
-	<div>
-		<BrowserRouter>
-			<Navigation />
-			<Switch>
-				<Route path="/" component={ToggleLogin} exact />
-				<Route path="/dashboard" component={Dashboard} />
-				<Route path="/profile" component={Profile} />
-				<Route path="/paybill" component={ModalBill} />
-				{/* <Route path="/paybill" component={ModalBill} /> */}
-			</Switch>
-			<Footer />
-		</BrowserRouter>
-	</div>
+export default class App extends Component {
+	constructor(props) {
+		super(props);
+	}
+	render() {
+		return (
+			<div>
+				<BrowserRouter>
+					<Navigation />
+					<Switch>
+						<Route exact path="/" component={ToggleLogin} />
+						<PrivateRoute exact path="/dashboard" component={Dashboard} />
+						<PrivateRoute exact path="/profile" component={Profile} />
 
-);
+					</Switch>
+					<Footer />
+				</BrowserRouter>
+			</div>
+		)
+	}
 
-export default App;
+}
+
+
