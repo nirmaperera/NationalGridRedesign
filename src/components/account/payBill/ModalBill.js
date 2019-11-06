@@ -111,7 +111,7 @@ class ModalBill extends Component {
 					</select>
 					<div className="payAmount">
 						<label>Payment Amount:</label>
-						<input type="number" step={0.1} name="totalAmount" defaultValue={this.state.BalancedDue} onChange={this.handleInput} ref={el => this.totalAmount = el} ></input>
+						<input type="number" step={"any"} name="totalAmount" defaultValue={this.state.BalancedDue} onChange={this.handleInput} ref={el => this.totalAmount = el} ></input>
 					</div>
 				</div>
 
