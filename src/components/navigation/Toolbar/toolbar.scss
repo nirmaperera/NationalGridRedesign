@@ -1,7 +1,6 @@
 @import '../../../main.scss';
 $highlight-blue:#00aff0;
 
-
 .navbar{
 	width:100%;
 	position:fixed;
@@ -26,40 +25,40 @@ $highlight-blue:#00aff0;
 .spacer{
 	flex: 1;
 }
+
 .navbar-items ul{
 	list-style: none;
 	margin:0;
 	padding: 0;
 	display: flex;
-}
 
-.navbar-items ul li{
-	padding: 0 0.9rem;
-	font-family: Helvetica,Helvetica,Arial,sans-serif;
-	font-weight: 700;
-	font-size: 15px;
-	letter-spacing: 0.5px;
-	position: relative;
-	color:$primary-blue;
+	li{
+		padding: 0 0.9rem;
+		font-family: Helvetica,Helvetica,Arial,sans-serif;
+		font-weight: 700;
+		font-size: 15px;
+		letter-spacing: 0.5px;
+		position: relative;
+		color:$primary-blue;
+	}
 
-}
+	a{
+		color:$primary-blue;
+		text-decoration:none;
+	}
 
-.navbar-items a{
-	color:$primary-blue;
-	text-decoration:none;
-}
-
-.navbar-items .home-links a::before{
-	content: '';
-	display: block;
-	width: 0;
-	height:4px;
-	background: $highlight-blue;
-	transition: width .3s;
-}
-.navbar-items .home-links a:hover::before{
-	width: 100%;
-	transition:width .3s;
+	.home-links a::before{
+		content: '';
+		display: block;
+		width: 0;
+		height:4px;
+		background: $highlight-blue;
+		transition: width .3s;
+	}
+	.home-links a:hover::before{
+		width: 100%;
+		transition:width .3s;
+	}
 }
 
 .navbar-items li:hover .dropdown > li{
@@ -70,28 +69,29 @@ $highlight-blue:#00aff0;
 	background-color:#fff;
 	font-size: 13px;
 }
+
 .navbar-items li:hover > i.fa.fa-angle-down{
-		-webkit-transform: rotate(180deg);
-		-moz-transform: rotate(180deg);
-		-ms-transform: rotate(180deg);
-		-o-transform: rotate(180deg);
-		transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	transform: rotate(180deg);
 }
 
 .navbar-items li:hover .dropdown > li:hover{
 	background:$navlink-grey;
 }
 
-.dropdown li{
-	display: none;
-	position: relative;
-}
-
 .dropdown {
 	position:absolute;
-    display: flex;
+	display: flex;
 	width: 100%;
 	flex-direction: column;
+
+	li{
+		display: none;
+		position: relative;
+	}
 }
 
 .fa-user-circle:before {

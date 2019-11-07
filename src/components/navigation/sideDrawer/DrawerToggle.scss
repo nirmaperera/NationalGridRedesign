@@ -12,14 +12,14 @@
 	padding:0;
 	box-sizing:border-box;
 
+	&:focus{
+		outline:none;
+	}
+	.toggleBtn-line{
+		width: 30px;
+		height:2px;
+		background: $primary-blue;
 
-}
-.toggleBtn-line{
-	width: 30px;
-	height:2px;
-	background: $primary-blue;
+	}
 
-}
-.toggle-btn:focus{
-	outline:none;
 }
