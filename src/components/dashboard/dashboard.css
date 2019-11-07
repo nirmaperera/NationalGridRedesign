@@ -204,7 +204,7 @@
 
 @media screen and (max-width:768px){
 	.containerDashboard{
-		margin-top:5%;
+		margin-top:10%;
 		flex-direction: column;
 		font-size: 3vw;
 	}
@@ -226,10 +226,8 @@
 	.account-info h4{
 		font-size: 2.1vw;
 	 }
-	 .second-dash-a .dash-title{
-		text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-
-		font-size: 3vw;
+	 .second-dash-a h3.dash-title,.second-dash-b h3.dash-title{
+		font-size: 5vw;
 
 	}
 

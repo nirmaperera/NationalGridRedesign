@@ -19,7 +19,7 @@
     overflow-y: auto;
     position: absolute;
     background: white;
-    width: 70%;
+    width: 90%;
     height: auto;
     top:90%;
     left:50%;
@@ -154,7 +154,7 @@ background-color:grey;
 .paymentDate input{
   outline: 0 none;
   border:none;
-  width:30%;
+
   border-bottom:3px solid #00148c;
   background:none;
   padding:20px 40px;
@@ -210,6 +210,13 @@ select.payAmount{
   align-items: center;
   margin:50px;
   font-size:4vh;
+}
+
+.finalPay{
+  display: flex;
+  flex-direction: column;
+
+
 }
 
 .paymentSummary input{
@@ -281,18 +288,47 @@ strong{
     flex-direction: column;
   }
   .modal-main{
-    top:90%;
+    width: 100%;
+  }
+
+  .itemsDirect{
+    padding-left: 40px;
+
   }
   .paymentSelect{
-    width:50%;
+    width: 90%;
+    font-size: 4vw;
+
+  }
+  .paymentDate{
+display: flex;
 
   }
   .paymentDate input{
-    font-size: 1.5vh;
+    font-size: 4vw;
+    width:50%;
+  }
+
+  .paymentAmount{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
   }
   .payAmount{
-  font-size: 1.5vh;
-  margin: 10px;
+    display: flex;
+    width: 30%;
+    flex-direction: column;
+    flex: 1;
+    margin: 0
+  }
+  .payAmount label{
+    margin:0;
+    padding-bottom: 20px;
+    font-size: 4vw;
+  }
+  .payAmount input{
+    width:100%;
   }
   .paymentSubmit{
     flex-direction: column;
@@ -302,5 +338,12 @@ strong{
    width:100%;
    font-size:2.5vh;
 
+  }
+.finalPay{
+    font-size: 5vw;
+  }
+
+  .paymentSummary input{
+    margin: 20px;
   }
 }
