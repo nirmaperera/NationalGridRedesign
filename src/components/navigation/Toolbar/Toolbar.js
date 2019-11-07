@@ -74,7 +74,7 @@ class Toolbar extends Component {
 				<li>Hello, {fName} {lName}<i className="fas fa-user-circle"></i>
 					<ul className="dropdown">
 						<li><Link to="/Profile">Profile</Link></li>
-						<li onClick={this.handleClick}><Link to="/">Log Out <i class="fas fa-sign-out-alt"></i></Link></li>
+						<li onClick={this.handleClick}><Link to="/">Log Out <i className="fas fa-sign-out-alt"></i></Link></li>
 					</ul>
 				</li>
 			</ul >

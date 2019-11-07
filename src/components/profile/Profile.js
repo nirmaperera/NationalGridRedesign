@@ -108,14 +108,14 @@ class Profile extends Component {
     render() {
         return (
             <div className="containerProfile">
-                <h1 className="animated slideInDown">Profile <i class="fas fa-users-cog"></i></h1>
+                <h1 className="animated slideInDown">Profile <i className="fas fa-users-cog"></i></h1>
                 <div className="signIn-creds">
                     <hr />
 
                     <div className="profile-group">
                         <div className="head">
                             <label>Name</label>
-                            <button className="edit-btn" value="edit" onClick={this.handleName}><i class="fas fa-user-edit"></i></button>
+                            <button className="edit-btn" value="edit" onClick={this.handleName}><i className="fas fa-user-edit"></i></button>
                         </div>
                         <input type="text" value={this.state.firstName + " " + this.state.lastName} readOnly={true}></input>
                         <form>
@@ -134,7 +134,7 @@ class Profile extends Component {
                     <div className="profile-group">
                         <div className="head">
                             <label>User ID</label>
-                            <button className="edit-btn" onClick={this.handleUserId}><i class="fas fa-user-edit"></i></button>
+                            <button className="edit-btn" onClick={this.handleUserId}><i className="fas fa-user-edit"></i></button>
                         </div>
                         <input type="text" value={this.state.userID} readOnly={true}></input>
                         <form>
@@ -154,7 +154,7 @@ class Profile extends Component {
                     <div className="profile-group">
                         <div className="head">
                             <label>Email</label>
-                            <button className="edit-btn" onClick={this.handleEmail}> <i class="fas fa-user-edit"></i></button>
+                            <button className="edit-btn" onClick={this.handleEmail}> <i className="fas fa-user-edit"></i></button>
                         </div>
                         <input type="text" value={this.state.email} readOnly={true}></input>
                         <form>
@@ -174,7 +174,7 @@ class Profile extends Component {
                     <div className="profile-group">
                         <div className="head">
                             <label>Password</label>
-                            <button className="edit-btn" onClick={this.handlePassword}> <i class="fas fa-user-edit"></i></button>
+                            <button className="edit-btn" onClick={this.handlePassword}> <i className="fas fa-user-edit"></i></button>
                         </div>
                         <input type="password" value={this.state.password} readOnly={true}></input>
 
@@ -196,7 +196,7 @@ class Profile extends Component {
                     <div className="profile-group">
                         <div className="head">
                             <label>Security Question</label>
-                            <button className="edit-btn" onClick={this.handleSecurity}> <i class="fas fa-user-edit"></i></button>
+                            <button className="edit-btn" onClick={this.handleSecurity}> <i className="fas fa-user-edit"></i></button>
                         </div>
                         <input type="text" value={this.state.securityQuestion} readOnly={true} />
                         <input type="password" value={this.state.securityAnswer} readOnly={true} />

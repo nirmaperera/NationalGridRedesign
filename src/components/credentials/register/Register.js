@@ -135,7 +135,6 @@ class Register extends Component {
 						<div className="form-group-reg">
 							<div className="form-row-reg">
 								<select onChange={this.handleSelect} value={this.state.securityQuestion} >
-									<label>Security Question </label>
 									<option>Security Question</option>
 									<option value="What is your mother's maiden name?">What is your mother's maiden name?</option>
 									<option value="What's the name of your favorite pet?">What's the name of your favorite pet?</option>
