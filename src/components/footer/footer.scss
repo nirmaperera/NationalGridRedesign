@@ -6,9 +6,10 @@
 	width: 100%;
 	background-color:$primary-grey;
 	text-align: center;
+
+	a, a:visited{
+		color:$primary-blue;
+		text-decoration: none;
+	}
 }
 
-.main-footer a, a:visited{
-	color:$primary-blue;
-	text-decoration: none;
-}
