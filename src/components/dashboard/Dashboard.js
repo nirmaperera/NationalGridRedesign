@@ -12,7 +12,7 @@ import '../account/payBill/ModalBill';;
 
 
 const Modal = ({ handleClose, showModal, children }) => {
-	const showHideClassName = showModal ? "modal animated slideInDown display-block" : "modal display-none";
+	const showHideClassName = showModal ? "modal animated bounceInDown display-block" : "modal display-none";
 
 	return (
 		<div className={showHideClassName}>
