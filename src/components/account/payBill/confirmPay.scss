@@ -16,50 +16,49 @@
 	left:20%;
 	border-radius: 10px;
 	transform: translate(-1%,20%);
+
+	.popup-btns{
+		display: flex;
+		flex:1;
+		margin: 20px;
+
+		button{
+			flex: 1;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding:10px;
+			border-radius: 10px;
+			color:#fff;
+			margin-top:20px;
+			box-sizing: border-box;
+			font-size:2vh;
+			cursor: pointer;
+
+			&:first-child{
+				background: $primary-green;
+			}
+			&:hover:first-child{
+				background: $secondary-green;
+			}
+			&:last-child{
+				background:$warning-red;
+			}
+			&:hover:last-child{
+				background:$secondary-red;
+			}
+		}
+	}
 }
 
-.popup-btns{
-	display: flex;
-	flex:1;
-	margin: 20px;
-}
-
-.popup-btns button{
-	flex: 1;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding:10px;
-	border-radius: 10px;
-	color:#fff;
-	margin-top:20px;
-	box-sizing: border-box;
-	font-size:2vh;
-	cursor: pointer;
-}
-.popup-btns button:first-child{
-	background: $primary-green;
-}
-
-.popup-btns button:hover:first-child{
-	background: $secondary-green;
-}
-
-.popup-btns button:last-child{
-	background:$warning-red;
-}
-
-.popup-btns button:hover:last-child{
-	background:$secondary-red;
-}
 
 @media screen and (max-width:768px){
 	.popup{
 		height: auto;
-    width: 80%;
-    left: 10%;
-	right: 10%;
-	letter-spacing: 2px;
+		width: 80%;
+		left: 10%;
+		right: 10%;
+		letter-spacing: 2px;
 
 	}
 
