@@ -112,6 +112,10 @@
 	box-sizing: border-box;
 }
 
+.second-dash-a h3.dash-title{
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
 .second-dash-a label{
 	text-align: center;
 	display: block;
@@ -200,9 +204,14 @@
 
 @media screen and (max-width:768px){
 	.containerDashboard{
-		margin-top:10%;
+		margin-top:5%;
 		flex-direction: column;
 		font-size: 3vw;
+	}
+
+	.first-dash .info h1{
+		font-size: 8vw;
+
 	}
 	.first-dash .info p{
 		font-size: 2.2vw;
@@ -217,9 +226,11 @@
 	.account-info h4{
 		font-size: 2.1vw;
 	 }
-	 .second-dash-a h3{
+	 .second-dash-a .dash-title{
+		text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 
 		font-size: 3vw;
+
 	}
 
 	 .second-dash-a button{
