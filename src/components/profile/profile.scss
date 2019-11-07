@@ -14,11 +14,13 @@
 	justify-content: center;
 	align-items: center;
 
+	h1{
+		color:$primary-blue;
+		letter-spacing: 3px;
+
+	}
 }
-.containerProfile h1{
-	color:$primary-blue;
-	letter-spacing: 3px;
-}
+
 .signIn-creds{
 	display: flex;
 	flex-direction: column;
@@ -27,53 +29,65 @@
 	width:50%;
 	padding:20px;
 	font-size:4vh;
+
+		hr{
+			width: 90%;
+		}
+
+		input{
+			border:none;
+			background:none;
+			outline:none;
+			font-size: 2vw;
+			padding:10px;
+			width:100%;
+		}
+
+		label{
+			color:$primary-blue;
+			font-size: 3vh;
+			font-weight: 600;
+			letter-spacing: 5px;
+		}
+		select{
+			background:none;
+			border:none;
+			border-bottom:3px solid $primary-blue;
+			border-radius: none;
+
+		}
+		.edit-btn{
+			background-color:$primary-blue;
+			color:#fff;
+			font-size:2vh;
+			border-radius:5px;
+			padding:10px 20px;
+			cursor: pointer;
+
+			&:hover{
+				background-color:#000f53;
+			}
+		}
 }
 
-.signIn-creds hr{
-	width: 90%;
-}
-.signIn-creds input{
-	border:none;
-	background:none;
-	outline:none;
+.signIn-creds input[type="submit"]:first-child{
+	color:$primary-green;
+	font-weight: 600;
 	font-size: 2vw;
-	padding:10px;
-	width:100%;
-}
-
-.signIn-creds label{
-color:$primary-blue;
-font-size: 3vh;
-font-weight: 600;
-letter-spacing: 5px;
-}
-
-.signIn-creds .edit-btn{
-	background-color:$primary-blue;
-	color:#fff;
-	font-size:2vh;
-	border-radius:5px;
-	padding:10px 20px;
 	cursor: pointer;
-}
+	border:none;
+ }
 
-.signIn-creds .edit-btn:hover{
-	background-color:#000f53;
-}
+ .signIn-creds input[type="submit"]:last-child{
+	 color:	$seconday-grey;
+	 font-size: 1.5vw;
+	 cursor: pointer;
+	 border:none;
+  }
 
 .head, .profile-btns, .group-update{
 	display: flex;
 	justify-content: space-between;
-
-}
-
-.signIn-creds select{
-	background:none;
-	border:none;
-
-	border-bottom:3px solid $primary-blue;
-	border-radius: none;
-
 }
 
 .profile-group{
@@ -85,25 +99,14 @@ letter-spacing: 5px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.signIn-creds input[type="submit"]:first-child{
-   color:$primary-green;
-   font-weight: 600;
-   font-size: 2vw;
-   cursor: pointer;
-   border:none;
-}
-
-.signIn-creds input[type="submit"]:last-child{
-	color:	$seconday-grey;
-	font-size: 1.5vw;
-	cursor: pointer;
-	border:none;
- }
-
 .group-update input{
 	border:none;
 	border-bottom: 2px solid $background-grey;
 	font-size: 2vw;
+
+	&:focus{
+		border-bottom: 2px solid $primary-green;
+	}
 }
 
 .group-update.animated.slideInDown input[type="password"]:last-child{
@@ -112,23 +115,25 @@ letter-spacing: 5px;
 }
 
 
-.group-update input:focus{
-	border-bottom: 2px solid $primary-green;
-}
-
 @media screen and (max-width:768px){
 	.containerProfile{
 		padding-top: 20%;
-	}
-
-	.containerProfile h1{
-		font-size:5vw;
-
+		h1{
+			font-size:5vw;
+		}
 	}
 
 	.signIn-creds{
 		width:70%;
 		font-size:3vw;
+
+		.edit-btn{
+			padding: 5px 10px;
+			font-size:1vh;
+		}
+		label{
+			font-size: 3vw;
+		}
 	}
 
 	.group-update {
@@ -136,19 +141,10 @@ letter-spacing: 5px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-	}
 
-	.group-update  input[type='submit']{
-		border:none;
-	}
-
-	.signIn-creds .edit-btn{
-		padding: 5px 10px;
-		font-size:1vh;
-	}
-
-	.signIn-creds label{
-		font-size: 3vw;
+		input[type='submit']{
+			border:none;
+		}
 	}
 
 }
