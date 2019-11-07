@@ -208,8 +208,13 @@
 		font-size: 2.2vw;
 
 	}
+
+	.first-dash .info h1{
+
+	}
 	.first-dash .info button{
-		font-size:2vw;
+		font-size:2vh;
+		padding:10px 20px;
 	}
 
 	.account-info h4{
