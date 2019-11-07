@@ -95,6 +95,14 @@
 	padding: 3px;
 }
 
+
+@media(max-width:875px){
+	.navbar-items ul li{
+		padding: 0 0.8rem;
+		font-size: 12px;
+	}
+}
+
 @media(max-width:768px){
 	.navbar-items{
 		display: none;
