@@ -9,7 +9,6 @@ class ConfirmPay extends React.Component {
         console.log('from handle close ', this.props.BalancedDue);
         localStorage.setItem('balance', amount);
         console.log('from handleClose', amount);
-        window.location.reload();
 
     }
     render() {

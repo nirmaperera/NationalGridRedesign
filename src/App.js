@@ -8,16 +8,8 @@ import Footer from './components/footer/Footer';
 import ToggleLogin from "./components/credentials/ToggleLogin";
 import Dashboard from './components/dashboard/Dashboard';
 import Profile from './components/profile/Profile';
-import ModalBill from './components/account/payBill/ModalBill';
-// import ModalBill from './components/account/payBill/ModalBill';
-
-
-
 
 export default class App extends Component {
-	constructor(props) {
-		super(props);
-	}
 	render() {
 		return (
 			<div>
