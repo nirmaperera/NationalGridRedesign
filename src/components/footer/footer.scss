@@ -1,0 +1,15 @@
+$primary-blue:#00148c;
+$primary-grey:#f8f8f8;
+
+.main-footer{
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color:$primary-grey;
+	text-align: center;
+}
+
+.main-footer a, a:visited{
+	color:$primary-blue;
+	text-decoration: none;
+}

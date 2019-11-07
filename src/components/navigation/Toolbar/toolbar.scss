@@ -1,8 +1,13 @@
+$primary-blue:#00148c;
+$secondary-blue:#00146c;
+$highlight-blue:#00aff0;
+$navlink-grey:#F4F5F7;
+
 .navbar{
 	width:100%;
 	position:fixed;
 	background-color:#fff;
-	border-bottom:#00148c solid 2px;
+	border-bottom: 2px solid $primary-blue;
 	height: 3.5em;
 	top:0;
 	left:0;
@@ -36,12 +41,12 @@
 	font-size: 15px;
 	letter-spacing: 0.5px;
 	position: relative;
-	color:#00148c;
+	color:$primary-blue;
 
 }
 
 .navbar-items a{
-	color:#00148c;
+	color:$primary-blue;
 	text-decoration:none;
 }
 
@@ -50,7 +55,7 @@
 	display: block;
 	width: 0;
 	height:4px;
-	background: #00aff0;
+	background: $highlight-blue;
 	transition: width .3s;
 }
 .navbar-items .home-links a:hover::before{
@@ -63,7 +68,7 @@
 	padding: 15px;
 	top:19px;
 	align-content: flex-start;
-	background-color:white;
+	background-color:#fff;
 	font-size: 13px;
 }
 .navbar-items li:hover > i.fa.fa-angle-down{
@@ -75,7 +80,7 @@
 }
 
 .navbar-items li:hover .dropdown > li:hover{
-	background:#F4F5F7;
+	background:$navlink-grey;
 }
 
 .dropdown li{

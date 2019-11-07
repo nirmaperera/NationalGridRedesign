@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 import ToggleBtn from '../sideDrawer/ToggleBtn';
 import logo from '../../../assets/images/logo.jpg';
-import './toolbar.css';
+import './toolbar.scss';
 
 class Toolbar extends Component {
 	constructor(props) {

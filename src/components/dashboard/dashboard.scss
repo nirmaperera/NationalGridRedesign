@@ -1,5 +1,9 @@
+$primary-blue:#00148c;
+$primary-grey:#f8f8f8;
+
+
 .containerDashboard{
-	background-color:#F0F0F0;
+	background-color:$primary-grey;
 	padding-top:8%;
 	max-width:100%;
 	height: 100%;
@@ -11,7 +15,7 @@
 
 /* Payment box */
 .first-dash{
-	background-color: #00148c;
+	background-color:$primary-blue;
 	color:#fff;
 	flex:1;
 	margin:10px;
@@ -44,17 +48,15 @@
 	border-radius: 15px;
 	margin: 15px;
 	font-size:1.6vw;
-	color:#00148c;
+	color:$primary-blue;
 	letter-spacing: 2px;
 	cursor: pointer;
 
-
-
 }
 .first-dash .info button:hover{
-	background-color:#00148c;
-	color:white;
-	border:1px solid white;
+	background-color:$primary-blue;
+	color:#fff;
+	border:1px solid #fff;
 }
 
 .first-dash .account-info {
@@ -86,10 +88,10 @@
 	background-image: url('../../assets/images/houses.jpg');
 	background-size: cover;
 	background-repeat:no-repeat;
-	color:white;
+	color:#fff;
 	margin:10px;
 	border-radius:5px;
-	border:2px solid  #00148c;
+	border:2px solid $primary-blue;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -104,23 +106,23 @@
 }
 
 .second-dash-a .info{
-	background-color:#f8f8f8;
+	background-color:$primary-grey;
 	width:60%;
 	padding:10px;
-	border:2px solid #00148c;
+	border:2px solid $primary-blue;
 	margin-bottom: 23px;
 	box-sizing: border-box;
 }
 
 .second-dash-a h3.dash-title{
-	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	text-shadow: -1px 0 #111, 0 1px #111, 1px 0 #111, 0 -1px #111;
 }
 
 .second-dash-a label{
 	text-align: center;
 	display: block;
 	line-height: 30px;
-	color:#00148c;
+	color:$primary-blue;
 }
 
 .second-dash-a span{
@@ -133,8 +135,8 @@
 	border-radius: 10px;
 	margin: 5px;
 	font-size: 1.2vw;
-	background-color: #00148c;
-	color: white;
+	background-color:$primary-blue;
+	color: #fff;
 	letter-spacing: 2px;
 	cursor: pointer;
 	display: inline-block;
@@ -142,8 +144,8 @@
 
 .second-dash-a button:hover ,.second-dash-b button:hover{
 	background-color: #fff;
-	color: #00148c;
-	border: 2px solid #00148c;
+	color: $primary-blue;
+	border: 2px solid $primary-blue;
 	text-decoration: none;
 }
 
@@ -152,9 +154,9 @@
 }
 
 .meter-read label{
-	color:#00148c;
+	color:$primary-blue;
 	background-color:#fff;
-	border: 1px solid #00148c;
+	border: 1px solid $primary-blue;
 	padding:10px;
 	font-size: 1.2vw;
 	font-weight: 600;
@@ -169,7 +171,7 @@
 	background-size:cover;
 	margin:10px;
 	border-radius:5px;
-	border:2px solid  #00148c;
+	border:2px solid $primary-blue;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -178,14 +180,14 @@
 
 .second-dash-b h3{
 	text-align: center;
-	color:#00148c;
+	color:$primary-blue;
 	letter-spacing: 2px;
 	margin-bottom: 23px;
 	font-size: 2.2vw;
 }
 
 .second-dash-b img{
-	border: 3px solid #00148c;
+	border: 3px solid $primary-blue;
 }
 
 .second-dash-b button{
@@ -193,8 +195,8 @@
 	border-radius: 10px;
 	margin: auto;
 	font-size: 1.5vw;
-	background-color: #00148c;
-	color: white;
+	background-color:$primary-blue;
+	color: #fff;
 	letter-spacing: 2px;
 	cursor: pointer;
 	display: flex;

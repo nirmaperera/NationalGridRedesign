@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './modal.css';
+import './modal.scss';
 import ConfirmPay from './ConfirmPay';
 
 class ModalBill extends Component {

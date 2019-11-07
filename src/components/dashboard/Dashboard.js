@@ -7,8 +7,8 @@ import ModalBill from '../account/payBill/ModalBill';
 
 import contact from '../../assets/images/contact.png';
 import greenlight from '../../assets/images/greenlight.png';
-import './dashboard.css';
-import '../account/payBill/ModalBill';;
+import './dashboard.scss';
+import '../account/payBill/ModalBill';
 
 
 const Modal = ({ handleClose, showModal, children }) => {

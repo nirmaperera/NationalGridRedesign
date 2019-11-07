@@ -1,5 +1,5 @@
 import React from 'react';
-import './confirmPay.css';
+import './confirmPay.scss';
 
 class ConfirmPay extends React.Component {
 

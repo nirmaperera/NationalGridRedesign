@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./sideDrawer.css";
+import "./sideDrawer.scss";
 
 import { connect } from "react-redux";
 import { sign_out } from "../../../actions/authAction";

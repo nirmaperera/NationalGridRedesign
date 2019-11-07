@@ -1,3 +1,9 @@
+$primary-blue:#00148c;
+$primary-green:#208807;
+$primary-grey:#f8f8f8;
+$background-grey:#DCDCDC;
+$seconday-grey:#808080;
+
 
 .modal {
     position: fixed;
@@ -15,7 +21,7 @@
 
   .modal-main {
     border-radius:10px;
-    border:3px solid #00148c;
+    border:3px solid $primary-blue;
     overflow-y: auto;
     position: absolute;
     background: white;
@@ -23,7 +29,7 @@
     height: auto;
     top:90%;
     left:50%;
-    background-color:#F0F0F0;
+    background-color:$primary-grey;
     transform: translate(-50%,-50%);
   }
   .close-modal{
@@ -38,7 +44,7 @@
   }
 .modal-title {
   text-align: center;
-  color:#00148c;
+  color:$primary-blue;
   font-size: 5vh;
 }
 
@@ -46,7 +52,7 @@
   background:none;
   border:none;
   font-size:4vh;
-  border-bottom:3px solid #00148c;
+  border-bottom:3px solid $primary-blue;
   border-radius: none;
   margin-top:8%;
 }
@@ -94,14 +100,14 @@
   font-size: 4vh;
   width:30%;
   text-align: center;
-  color:#00148c;
+  color:$primary-blue;
 }
 
 .itemsDirect .checkmark {
-margin-left: -10px;
+  margin-left: -10px;
   width: 45px;
   height: 45px;
-  background: #E0E0E0;
+  background:$background-grey;
   position: absolute;
   left: 0;
   top: 0;
@@ -109,12 +115,12 @@ margin-left: -10px;
 }
 
 .itemsDirect .checkmark:hover{
-background-color:grey;
+background-color:$seconday-grey;
 
 }
 
 .itemsDirect input:checked+.checkmark {
-  background-color: #00148c;
+  background-color: $primary-blue;
 }
 
 .itemsDirect input:checked+.checkmark:after {
@@ -122,8 +128,8 @@ background-color:grey;
   position: absolute;
   height: 4px;
   width: 9px;
-  border-left: 3px solid white;
-  border-bottom: 3px solid white;
+  border-left: 3px solid #fff;
+  border-bottom: 3px solid #fff;
   top: 45%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(-45deg);
@@ -134,8 +140,8 @@ background-color:grey;
   position: absolute;
   height: 0px;
   width: 9px;
-  border-left: 3px solid white;
-  border-bottom: 3px solid white;
+  border-left: 3px solid #fff;
+  border-bottom: 3px solid #fff;
   top: 45%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(180deg);
@@ -155,7 +161,7 @@ background-color:grey;
   outline: 0 none;
   border:none;
 
-  border-bottom:3px solid #00148c;
+  border-bottom:3px solid $primary-blue;
   background:none;
   padding:20px 40px;
   font-size: 3vh;
@@ -186,7 +192,7 @@ display: flex;
 
 }
 select.payAmount{
-  border-bottom:2px solid #00148c;
+  border-bottom:2px solid $primary-blue;
 
 
 }
@@ -199,7 +205,7 @@ select.payAmount{
   background:none;
   margin-left:20px;
   font-size:4vh;
-  border-bottom: 3px solid #00148c;
+  border-bottom: 3px solid $primary-blue;
 
 }
 
@@ -225,7 +231,7 @@ select.payAmount{
   outline: none;
   border: none;
   font-size: 4vh;
-  border-bottom: 3px solid #00148c;
+  border-bottom: 3px solid $primary-blue;
   text-align: center;
 
 }
@@ -239,7 +245,7 @@ select.payAmount{
 
 }
 .paymentSubmit input{
-  background-color:#00148c;
+  background-color:$primary-blue;
   padding:10px 20px;
   font-size:3.5vh;
   width:100%;
@@ -249,32 +255,32 @@ select.payAmount{
 }
 
 .paymentSubmit input:hover{
-border:3px solid #00148c;
+border:3px solid $primary-blue;
 background-color:#fff;
-color:#00148c;
+color:$primary-blue;
 }
 
 ::-webkit-datetime-edit { padding: 1em; }
 ::-webkit-datetime-edit-text { color: #111; padding: 0 0.3em; }
-::-webkit-datetime-edit-month-field { color: #00148c }
-::-webkit-datetime-edit-day-field { color: #00148c}
-::-webkit-datetime-edit-year-field { color: #00148c}
+::-webkit-datetime-edit-month-field { color: $primary-blue }
+::-webkit-datetime-edit-day-field { color: $primary-blue}
+::-webkit-datetime-edit-year-field { color: $primary-blue}
 ::-webkit-inner-spin-button { display: none; }
-::-webkit-calendar-picker-indicator { background: #00148c; color:#fff }
+::-webkit-calendar-picker-indicator { background: $primary-blue; color:#fff }
 
 /* icons */
 .fas.fa-money-bill-alt{
   margin-right: 10px;
 }
 i.fas.fa-calendar-alt, i.fas.fa-arrow-down{
-  color:#00148c;
+  color:$primary-blue;
 }
 .modal-main  input:focus{
-  border-bottom: 2px solid #208807;
+  border-bottom: 2px solid $primary-green;
 
 }
 .modal-main select:focus{
-  box-shadow: 0 0 3pt 2pt #208807;
+  box-shadow: 0 0 3pt 2pt $primary-green;
 }
 
 strong{

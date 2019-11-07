@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { sign_in } from "../../../actions/authAction";
 
-import './register.css';
+import './register.scss';
 
 class Register extends Component {
 	constructor(props) {

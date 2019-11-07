@@ -1,5 +1,9 @@
+$primary-blue:#00148c;
+$secondary-blue:#00146c;
+$navlink-grey:#F4F5F7;
+
 .side-drawer{
-	background:white;
+	background:#fff;
 	box-shadow: 1px  0px 3px rgb(0,0,0);
 	position:fixed;
 	top:56px;
@@ -30,14 +34,14 @@
 }
 
 .side-drawer a {
-	color: #00148c;
+	color: $primary-blue;
 	text-decoration: none;
 	font-size:1.0rem;
 	letter-spacing: 0.5px;
 }
 
 .side-drawer ul :hover{
-	background:#F4F5F7;
+	background:$navlink-grey;
 }
 
 .dropdown-side li{
@@ -59,11 +63,11 @@
 
 .dropdown-side li a{
 	font-size: 1.9vh;
-	color: black;
+	color: #111;
 }
 
 .dropdown-side li a:hover{
-	color:#00148c;
+	color:$secondary-blue;
 }
 
 

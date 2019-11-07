@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './footer.css';
+import './footer.scss';
 
 const Footer = props => (
 	<div className="main-footer">

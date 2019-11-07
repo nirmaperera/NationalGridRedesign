@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { sign_in } from "../../../actions/authAction";
 
-import './login.css';
+import './login.scss';
 
 class Login extends Component {
 	state = {
