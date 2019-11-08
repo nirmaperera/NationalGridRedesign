@@ -1,4 +1,4 @@
-@import '../../main.scss';
+@import '../../main';
 
 .containerDashboard{
 	background-color:$primary-grey;
@@ -21,9 +21,7 @@
 
 	.info{
 		width: 100%;
-		display: flex;
-		align-items: center;
-		flex-direction: column;
+		@include flexCenter(column);
 		margin-top:10%;
 		line-height:60px;
 
@@ -39,7 +37,7 @@
 			&:hover{
 				background-color:$primary-blue;
 				color:#fff;
-				border:1px solid #fff;
+				border:$white-border 1px;
 			}
 
 		}
@@ -88,11 +86,8 @@
 	color:#fff;
 	margin:10px;
 	border-radius:5px;
-	border:2px solid $primary-blue;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+	border:$blue-border;
+	@include flexCenter(column);
 
 	h3{
 		text-align: center;
@@ -110,7 +105,7 @@
 		background-color:$primary-grey;
 		width:60%;
 		padding:10px;
-		border:2px solid $primary-blue;
+		border:$blue-border;
 		margin-bottom: 23px;
 		box-sizing: border-box;
 	}
@@ -143,7 +138,7 @@
 .second-dash-a button:hover ,.second-dash-b button:hover{
 	background-color: #fff;
 	color: $primary-blue;
-	border: 2px solid $primary-blue;
+	border: $blue-border;
 	text-decoration: none;
 }
 
@@ -155,7 +150,7 @@
 	label{
 		color:$primary-blue;
 		background-color:#fff;
-		border: 1px solid $primary-blue;
+		border: $blue-border;
 		padding:10px;
 		font-size: 1.2vw;
 		font-weight: 600;
@@ -172,10 +167,8 @@
 	background-size:cover;
 	margin:10px;
 	border-radius:5px;
-	border:2px solid $primary-blue;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	border:$blue-border;
+	@include flexCenter(column);
 	box-sizing: border-box;
 
 	h3{
@@ -197,9 +190,7 @@
 		color: #fff;
 		letter-spacing: 2px;
 		cursor: pointer;
-		display: flex;
-		align-items: center;
-		cursor: pointer;
+		@include flexCenter(column);
 	}
 }
 

@@ -13,7 +13,7 @@
 
 .modal-main {
 	border-radius:10px;
-	border:3px solid $primary-blue;
+	border:$blue-border;
 	overflow-y: auto;
 	position: absolute;
 	background: white;
@@ -34,14 +34,11 @@
 }
 
 .close-modal{
-	display: flex;
 	padding:5px;
 	font-size:20px;
-	background:none;
-	border:none;
+	@include inputDeco;
 	flex:1;
-	justify-content: flex-end;
-	align-items: flex-end;
+	@include flexCenter(column);
 }
 
 .modal-title {
@@ -51,10 +48,9 @@
 }
 
 .paymentSelect{
-	background:none;
-	border:none;
+	@include inputDeco;
 	font-size:4vh;
-	border-bottom:3px solid $primary-blue;
+	border-bottom:$blue-border;
 	border-radius: none;
 	margin-top:8%;
 }
@@ -79,14 +75,10 @@
 
 	.enrollDirect{
 		letter-spacing: 1px;
-		display: flex;
+		@include flexCenter(column);
 		flex:1;
-		flex-direction: column;
-		align-items: center;
 		font-size:2vh;
 		padding:15px;
-		justify-content: center; /* center items vertically, in this case */
-		align-items: center;     /* center items horizontally, in this case */
 
 		.itemsDirect {
 			display: inline-block;
@@ -132,8 +124,8 @@ background-color:$seconday-grey;
 	position: absolute;
 	height: 4px;
 	width: 9px;
-	border-left: 3px solid #fff;
-	border-bottom: 3px solid #fff;
+	border-left: $white-border;
+	border-bottom: $white-border;
 	top: 45%;
 	left: 50%;
 	transform: translate(-50%, -50%) rotate(-45deg);
@@ -144,8 +136,8 @@ background-color:$seconday-grey;
 	position: absolute;
 	height: 0px;
 	width: 9px;
-	border-left: 3px solid #fff;
-	border-bottom: 3px solid #fff;
+	border-left: $white-border;
+	border-bottom: $white-border;
 	top: 45%;
 	left: 50%;
 	transform: translate(-50%, -50%) rotate(180deg);
@@ -153,17 +145,13 @@ background-color:$seconday-grey;
 
 .paymentDate {
 	margin-top: 40px;
-	display: flex;
+	@include flexCenter(row);
 	flex: 1;
 	width: 100%;
-	justify-content: center;
-	align-items: center;
 	padding:20px;
 	input{
-		outline: 0 none;
-		border:none;
+		@include inputDeco;
 		border-bottom:3px solid $primary-blue;
-		background:none;
 		padding:20px 40px;
 		font-size: 3vh;
 	}
@@ -173,20 +161,17 @@ background-color:$seconday-grey;
 	display: flex;
 
 	.payAmount{
-		border:none;
-		background:none;
+		@include inputDeco;
 		margin: 40px;
 		flex:1;
 		width:20%;
 		flex-direction: column;
 		align-items: center;
 		font-size:3vh;
-		justify-content: center; /* center items vertically, in this case */
-		align-items: center;
-		display: flex;
+		@include flexCenter(row);
 
 		select{
-			border-bottom:2px solid $primary-blue;
+			border-bottom:$blue-border;
 		}
 
 		label{
@@ -195,12 +180,10 @@ background-color:$seconday-grey;
 
 		input{
 			text-align: center;
-			outline: 0 none;
-			border:none;
-			background:none;
+			@include inputDeco;
 			margin-left:20px;
 			font-size:4vh;
-			border-bottom: 3px solid $primary-blue;
+			border-bottom: $blue-border 3px;
 		}
 
 	}
@@ -208,10 +191,7 @@ background-color:$seconday-grey;
 
 
 .paymentSummary{
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+	@include flexCenter(column);
 	margin:50px;
 	font-size:4vh;
 
@@ -223,12 +203,10 @@ background-color:$seconday-grey;
 	}
 
 	input{
-		background: none;
+		@include inputDeco;
 		margin-bottom: 20px;
-		outline: none;
-		border: none;
 		font-size: 4vh;
-		border-bottom: 3px solid $primary-blue;
+		border-bottom: $blue-border;
 		text-align: center;
 
 	}
@@ -236,9 +214,7 @@ background-color:$seconday-grey;
 
 .paymentSubmit{
 	margin-top:20px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	@include flexCenter(row);
 	width:50%;
 
 	input{

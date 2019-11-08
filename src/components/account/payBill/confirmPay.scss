@@ -8,7 +8,7 @@
 	width:60%;
 	height:300px;
 	background-color:$primary-grey;
-	border:2px solid $primary-blue;
+	border:$blue-border;
 	color:$primary-blue;
 	font-size:3vh;
 	bottom:100px;
@@ -24,9 +24,7 @@
 
 		button{
 			flex: 1;
-			display: flex;
-			justify-content: center;
-			align-items: center;
+			@include flexCenter(column);
 			padding:10px;
 			border-radius: 10px;
 			color:#fff;
