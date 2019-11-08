@@ -45,16 +45,6 @@ class Dashboard extends Component {
 		document.title = 'Dashboard | National Grid';
 		console.log('this login state in dashboard', this.props.isLogged);
 
-		this.setState({
-			balancedDue: localStorage.getItem('balance')
-		})
-
-		if (this.state.balancedDue !== localStorage.getItem('balance')) {
-			this.setState({
-				balancedDue: localStorage.getItem('balance')
-			})
-		}
-
 	}
 
 

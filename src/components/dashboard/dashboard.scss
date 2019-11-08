@@ -6,6 +6,7 @@
 	max-width:100%;
 	height: 100%;
 	margin: 0 auto;
+	margin-bottom:50px;
 	display: flex;
 	font-size: 2vw;
 	box-sizing: border-box;
@@ -67,7 +68,6 @@
 	flex: 0.6;
 	}
 }
-
 
 /* Service address box */
 
@@ -140,6 +140,7 @@
 	color: $primary-blue;
 	border: $blue-border;
 	text-decoration: none;
+	padding: 9px 19px;
 }
 
 .meter-read {
@@ -213,7 +214,7 @@
 		}
 
 		button{
-			font-size:2vh;
+			font-size:2.1vw;
 			padding:10px 20px;
 		}
 	}

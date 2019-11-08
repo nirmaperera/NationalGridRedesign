@@ -170,6 +170,7 @@ background-color:$seconday-grey;
 		font-size:3vh;
 		@include flexCenter(row);
 
+
 		select{
 			border-bottom:$blue-border;
 		}
@@ -183,7 +184,8 @@ background-color:$seconday-grey;
 			@include inputDeco;
 			margin-left:20px;
 			font-size:4vh;
-			border-bottom: $blue-border 3px;
+			border-bottom:$blue-border;
+
 		}
 
 	}
@@ -266,7 +268,7 @@ strong{
 		width: 100%;
 	}
 
-	.itemsDirect{
+	.enrollDirectPay .enrollDirect .itemsDirect{
 		padding-left: 45px;
 
 	}
@@ -288,7 +290,7 @@ strong{
 		flex-direction: row;
 		justify-content: center;
 		align-items: flex-end;
-	}
+
 	.payAmount{
 		display: flex;
 		width: 30%;
@@ -305,6 +307,7 @@ strong{
 			width:100%;
 		}
 	}
+}
 	.paymentSummary input{
 		margin: 20px;
 	}

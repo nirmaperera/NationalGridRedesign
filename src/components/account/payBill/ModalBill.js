@@ -11,18 +11,13 @@ class ModalBill extends Component {
 			paymentDate: getDate(),
 			paymentAmount: "Balanced Due",
 			totalAmount: "235.65",
-			finalPayment: "",
+			finalPayment: "235.65",
 			BalancedDue: "235.65",
 			paidBill: false,
 			showModal: false
 		}
 	}
 
-	componentDidMount() {
-		console.log(this.state.paymentDate);
-		let amount = this.state.totalAmount;
-		localStorage.setItem('balance', amount);
-	}
 	handleMethod = (event) => {
 		this.setState({
 			paymentMethod: event.target.value
@@ -49,9 +44,7 @@ class ModalBill extends Component {
 			[event.target.name]: event.target.value
 		});
 		console.log(event.target.value);
-
 		this.setState({ finalPayment: this.state.totalAmount });
-
 	}
 
 	handleSubmit = (event) => {
@@ -88,10 +81,10 @@ class ModalBill extends Component {
 				</div>
 
 				<div className="enrollDirectPay">
-					<label class="enrollDirect">
+					<label className="enrollDirect">
 						<div className="itemsDirect"> Enroll
 							<input type="checkbox" value={this.state.enrollDirect} onClick={() => this.setState({ enrollDirect: !enrollDirect })} />
-							<span class="checkmark"></span>
+							<span className="checkmark"></span>
 						</div>
 					</label>
 
@@ -115,7 +108,7 @@ class ModalBill extends Component {
 				</div>
 
 				<div className="paymentSummary">
-					<div className="finalPay">Payment Amount:$ <input type="number" readOnly={true} value={this.state.totalAmount} ref={el => this.finalPayment = el}></input></div>
+					<div>Payment Amount:$ <input type="number" readOnly={true} value={this.state.totalAmount} ref={el => this.finalPayment = el}></input></div>
 					<div className="paymentSubmit">
 						<input type="submit" value="Pay Bill" ></input>
 					</div>
