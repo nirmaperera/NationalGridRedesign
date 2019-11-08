@@ -88,12 +88,13 @@ class ModalBill extends Component {
 				</div>
 
 				<div className="enrollDirectPay">
-					<div className="enrollDirect">
+					<label class="enrollDirect">
 						<div className="itemsDirect"> Enroll
 							<input type="checkbox" value={this.state.enrollDirect} onClick={() => this.setState({ enrollDirect: !enrollDirect })} />
-							<span className="checkmark"></span>
+							<span class="checkmark"></span>
 						</div>
-					</div>
+					</label>
+
 					<div className="enrollDirect"> I would like to enroll this account in the Direct Payment Program. I understand that starting next month, the full amount I owe will be deducted automatically from this account</div>
 				</div>
 
