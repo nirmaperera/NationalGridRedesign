@@ -1,21 +1,17 @@
 import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
 
-const isLogged = JSON.parse(window.localStorage.getItem('state'));
-export const PrivateRoute = ({ component: Component, ...rest }) => (
+const PrivateRoute = ({ component: Component, isLogged, ...rest }) => (
     <Route
         {...rest}
-        render={props =>
-            isLogged.isLogged ? (
-                <Component {...props} />
-            ) : (
-                    <Redirect
-                        to={{
-                            pathname: "/"
-
-                        }}
-                    />
+        render={props => (
+            isLogged
+                ? (
+                    <Component {...props} />
                 )
-        }
+                : (<Redirect to={{ pathname: '/', state: { from: props.location } }} />)
+        )}
     />
 );
+
+export default PrivateRoute;
