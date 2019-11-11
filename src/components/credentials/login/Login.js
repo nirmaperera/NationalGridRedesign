@@ -78,7 +78,7 @@ class Login extends Component {
 					</div>
 					<div className="forgotCreds">
 						<a href="https://online.nationalgridus.com/forgetpass/KSE_Password.jsp">Forgot Password?</a>
-						<span>  |  </span>
+						<span className="bold-line">  |  </span>
 						<a href="https://online.nationalgridus.com/forgetpass/KSE_userid.jsp">Forgot UserID?</a>
 					</div>
 				</div>
