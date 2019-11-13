@@ -62,11 +62,11 @@
 }
 
 .account-info h4{
-   flex: 1;
-   padding:10px;
-   font-size: 1.1vw;
+	flex: 1;
+	padding:10px;
+	font-size: 1.1vw;
 
-   &:last-child {
+	&:last-child {
 	flex: 0.6;
 	}
 }
@@ -181,9 +181,11 @@
 		margin-bottom: 23px;
 		font-size: 2.2vw;
 	}
+
 	img{
 		border: 3px solid $primary-blue;
 	}
+
 	button{
 		padding: 10px 20px;
 		border-radius: 10px;
@@ -196,8 +198,6 @@
 		@include flexCenter(column);
 	}
 }
-
-
 
 @media screen and (max-width:768px){
 	.containerDashboard{
@@ -253,7 +253,6 @@
 			font-size: 2.1vw;
 			margin-top: 5%;
 
-		 }
+		}
 	}
-
 }

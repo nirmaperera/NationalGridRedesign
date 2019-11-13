@@ -10,8 +10,6 @@ import ToggleLogin from "./components/credentials/ToggleLogin";
 import Dashboard from './components/dashboard/Dashboard';
 import Profile from './components/profile/Profile';
 
-
-
 const App = (props) => {
 	return (
 		<div>
@@ -27,11 +25,11 @@ const App = (props) => {
 		</div>
 	)
 }
+
 const mapStateToProps = (state) => {
 	return {
 		isLogged: state.isLogged
 	}
 }
+
 export default connect(mapStateToProps)(App);
-
-

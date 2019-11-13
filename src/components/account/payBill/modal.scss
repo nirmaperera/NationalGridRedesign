@@ -61,18 +61,16 @@
 
 .display-block {
 	display: block;
-
 }
 
 .display-none {
 	display: none;
-
 }
 
 .paymentMethod{
 	text-align: center;
-
 }
+
 .enrollDirectPay{
 	margin-top: 40px;
 	display: flex;
@@ -115,7 +113,7 @@
 }
 
 .itemsDirect .checkmark:hover{
-background-color:$seconday-grey;
+	background-color:$seconday-grey;
 
 }
 
@@ -145,7 +143,8 @@ background-color:$seconday-grey;
 	top: 45%;
 	left: 50%;
 	transform: translate(-50%, -50%) rotate(180deg);
-	}
+
+}
 
 .paymentDate {
 	margin-top: 40px;
@@ -177,7 +176,6 @@ background-color:$seconday-grey;
 		align-items: center;
 		font-size:3vh;
 		@include flexCenter(row);
-
 
 		select{
 			border-bottom:$blue-border;
@@ -214,8 +212,6 @@ background-color:$seconday-grey;
 	.finalPay{
 		display: flex;
 		flex-direction: column;
-
-
 	}
 
 	input[type=number]{
@@ -274,25 +270,23 @@ i.fas.fa-calendar-alt, i.fas.fa-arrow-down{
 	color:$primary-blue;
 }
 
-
 strong{
 	color:#111;
 }
-
-
 
 @media screen and (max-width:768px){
 	.modal{
 		flex-direction: column;
 	}
+
 	.modal-main{
 		width: 100%;
 	}
 
 	.enrollDirectPay .enrollDirect .itemsDirect{
 		padding-left: 45px;
-
 	}
+
 	.paymentSelect{
 		width: 90%;
 		font-size: 4vw;
@@ -343,6 +337,5 @@ strong{
 	.finalPay{
 		font-size: 5vw;
 	}
-
 
 }

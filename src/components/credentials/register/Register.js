@@ -38,7 +38,6 @@ class Register extends Component {
 	}
 
 	handleUserInput = (event) => {
-
 		this.setState({
 			[event.target.name]: event.target.value
 		});
@@ -57,7 +56,6 @@ class Register extends Component {
 		localStorage.setItem('email', email);
 		localStorage.setItem('securityAns', securityAnswer);
 		localStorage.setItem('securityQues', securityQuestion);
-
 
 		this.props.history.push({
 			pathname: '/dashboard',
@@ -81,7 +79,6 @@ class Register extends Component {
 				showError: false,
 				ShowEmptyError: false,
 			})
-
 		}
 	}
 
@@ -91,10 +88,12 @@ class Register extends Component {
 			object.target.value = object.target.value.slice(0, object.target.maxLength)
 		}
 	}
+
 	render() {
 		return (
 			<form className="base-container" ref={this.props.containerRef} onSubmit={this.handleSubmit}>
 				<div className="header-reg"><h3>Register</h3></div>
+
 				<div className="content">
 					<div className="form">
 						<div className="form-group-reg">
@@ -114,6 +113,7 @@ class Register extends Component {
 								<input maxLength={4} minLength={4} onKeyDown={handleEnter} onInput={this.maxLengthCheck} type="number" name="ssn" placeholder="ssn (last 4 digits)" onChange={this.handleUserInput} required />
 							</div>
 						</div>
+
 						<div className="form-group-reg">
 							<div className="form-row-reg">
 								<input onKeyDown={handleEnter} type="password" name="password" placeholder="password" onChange={this.handleUserInput} required />
@@ -143,17 +143,17 @@ class Register extends Component {
 								<input onKeyDown={handleEnter} className="form-row-reg" type="text" name="securityAnswer" placeholder="securityAnswer" onChange={this.handleUserInput} required />
 							</div>
 						</div>
+
 						<div className="form-group-reg">
 							<input maxLength={5} minLength={5} onKeyDown={handleEnter} onInput={this.maxLengthCheck} type="number" name="zipCode" placeholder="zipcode" onChange={this.handleUserInput} required />
-
 						</div>
 					</div>
 				</div>
+
 				<div className="footer-reg">
 					<input type="submit" className="btn-reg" value="Register" />
 					{this.state.showError && (<input className="message-box" id="message" disabled={true} readOnly={true} value={this.state.verify} size="30" />)}
 				</div>
-
 			</form >
 		)
 	}
@@ -169,8 +169,6 @@ function handleEnter(event) {
 	}
 
 }
-
-
 
 const mapStateToProps = (state) => {
 	return {

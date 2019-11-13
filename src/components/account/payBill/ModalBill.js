@@ -27,7 +27,6 @@ class ModalBill extends Component {
 
 	}
 	handleAmount = (event) => {
-
 		if (event.target.value === 'Other Amount') {
 			this.totalAmount.value = "";
 			this.finalPayment.value = "";
@@ -114,7 +113,6 @@ class ModalBill extends Component {
 					</div>
 				</div>
 
-
 				{this.state.paidBill ?
 					<ConfirmPay
 						text={["The payment of ", <strong>{this.state.totalAmount}</strong>, " will be paid on ", <strong>{this.state.paymentDate}</strong>, " from ", <strong>{this.state.paymentMethod}</strong>]}
@@ -131,6 +129,7 @@ class ModalBill extends Component {
 		);
 	}
 }
+
 function getDate() {
 	var today = new Date();
 
@@ -143,6 +142,6 @@ function getDate() {
 		return date;
 
 	}
-
 }
+
 export default ModalBill;

@@ -80,8 +80,8 @@ class SideDrawer extends Component {
 	}
 
 	render() {
-
 		let drawerClasses = 'side-drawer';
+
 		if (this.props.show) {
 			drawerClasses = 'side-drawer open';
 		}
@@ -91,7 +91,6 @@ class SideDrawer extends Component {
 			</nav>
 		)
 	}
-
 };
 
 const mapStateToProps = (state) => {

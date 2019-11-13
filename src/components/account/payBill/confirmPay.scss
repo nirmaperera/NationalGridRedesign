@@ -22,10 +22,6 @@
 		flex:1;
 		margin: 20px;
 
-		i{
-			display: inline-block;
-		}
-
 		button{
 			flex: 1;
 			@include flexCenter(column);
@@ -52,7 +48,6 @@
 		}
 	}
 }
-
 
 @media screen and (max-width:768px){
 	.popup{

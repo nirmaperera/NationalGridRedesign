@@ -49,11 +49,6 @@ class Dashboard extends Component {
 
 	}
 
-	componentDidUpdate() {
-
-	}
-
-
 	render() {
 		return (
 			<div className="containerDashboard" style={{ height: '100%' }}>
@@ -89,12 +84,12 @@ class Dashboard extends Component {
 							<button className="transferServ">Transfer Service <i className="fas fa-angle-double-right"></i></button>
 						</div>
 					</div>
+
 					<div className="second-dash-b">
 						<h3 className="dash-title">Has your contact info changed?</h3>
 						<div className="info">
 							<img src={contact} width="200" height="100" alt="houses-bg" />
 							<Link style={{ textDecoration: 'none' }} to="/profile"> <button>Update Info</button></Link>
-
 						</div>
 					</div>
 				</div>
@@ -107,8 +102,6 @@ class Dashboard extends Component {
 	}
 }
 
-
-
 const mapStateToProps = (state) => {
 	return {
 		isLogged: state.isLogged
@@ -116,5 +109,3 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps)(Dashboard);
-
-

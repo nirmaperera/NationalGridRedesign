@@ -61,6 +61,7 @@ class Login extends Component {
 					<h3>NYC Gas and MA Gas Sign in</h3>
 					<p> All other customers, go to our <a className="homeLink" href="https://www.nationalgridus.com/NY-Home/Default.aspx"> homepage</a>  and change your location on the top left of the page to sign in.</p>
 				</div>
+
 				<div className="content">
 					<div className="form">
 						<div className="form-group">
@@ -71,6 +72,7 @@ class Login extends Component {
 						</div>
 					</div>
 				</div>
+
 				<div className="footer">
 					<input type="submit" className="btn" value="Login" onClick={this.handleSubmit} />
 					<div className="messageError">
@@ -82,6 +84,7 @@ class Login extends Component {
 						<a href="https://online.nationalgridus.com/forgetpass/KSE_userid.jsp">Forgot UserID?</a>
 					</div>
 				</div>
+
 			</form >
 		)
 	}
