@@ -22,6 +22,10 @@
 		flex:1;
 		margin: 20px;
 
+		i{
+			display: inline-block;
+		}
+
 		button{
 			flex: 1;
 			@include flexCenter(column);
@@ -60,6 +64,7 @@
 
 		.popup-btns{
 			font-size: 4vw;
+			flex-direction: column;
 		}
 
 	}

@@ -24,6 +24,10 @@
 		font-family: Helvetica Neue,Helvetica,Arial Nova,Arial,sans-serif;
 		font-weight: 700;
 		padding:10px;
+		color: $primary-blue;
+		span{
+			color:#111;
+		}
 	}
 	a {
 		color: $primary-blue;
@@ -58,6 +62,7 @@
 
 .side-drawer li:hover .dropdown-side > li{
 	display: flex;
+	text-align: left;
 }
 
 .side-drawer li:hover > i.fa.fa-angle-down{

@@ -28,6 +28,10 @@
 		}
 
 		input{
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			border-radius: 0;
 			@include inputDeco;
 			font-size: 2vw;
 			padding:10px;
@@ -41,6 +45,10 @@
 			letter-spacing: 5px;
 		}
 		select{
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			border-radius: 0;
 			@include inputDeco;
 			border-bottom:$blue-border;
 			border-radius: none;

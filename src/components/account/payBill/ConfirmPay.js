@@ -15,8 +15,8 @@ class ConfirmPay extends React.Component {
 					<h1>{this.props.text}</h1>
 				</div>
 				<div className="popup-btns">
-					<button onClick={this.handleClose}> <i className="fas fa-money-bill-alt"></i> Pay Bill</button>
-					<button onClick={this.props.closePopup}> <i className="fas fa-times"></i>  Cancel</button>
+					<button onClick={this.handleClose}>  Pay Bill <i className="fas fa-money-bill-alt"></i></button>
+					<button onClick={this.props.closePopup}>   Cancel <i className="fas fa-times"></i></button>
 				</div>
 			</div>
 		);

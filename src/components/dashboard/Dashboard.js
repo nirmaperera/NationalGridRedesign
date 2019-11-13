@@ -43,7 +43,13 @@ class Dashboard extends Component {
 
 	componentDidMount() {
 		document.title = 'Dashboard | National Grid';
+		window.scrollTo(0, 0)
 		console.log('this login state in dashboard', this.props.isLogged);
+		localStorage.setItem('balance', this.state.balancedDue);
+
+	}
+
+	componentDidUpdate() {
 
 	}
 
@@ -55,13 +61,13 @@ class Dashboard extends Component {
 					<div className="account-info">
 						<h4> Account Status: <img src={greenlight} width="20" height="20" alt="greenlight" /></h4>
 						<h4> Account Number: <span>34234464</span></h4>
-
 					</div>
+
 					<div className="info">
-						<h1> ${localStorage.getItem('balance')}</h1>
+						<h1> ${this.state.balancedDue}</h1>
 						<h4> balanced due on <span>November 20</span></h4>
-						<button type="button" onClick={this.showModal}> <i className="fas fa-money-bill-alt"></i> Pay This Bill</button>
-						<button> <i className="fas fa-file-invoice-dollar"></i> View Current Bill</button>
+						<button type="button" onClick={this.showModal}> Pay This Bill <i className="fas fa-money-bill-alt"></i></button>
+						<button> View Your Bill <i className="fas fa-file-invoice-dollar"></i></button>
 						<p> Your previous bill on<span> October 20</span> was <span> $130.52</span> </p>
 					</div>
 				</div>

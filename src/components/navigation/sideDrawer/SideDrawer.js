@@ -35,7 +35,7 @@ class SideDrawer extends Component {
 
 		if (loginStat === true) {
 			return <ul>
-				<li><a href='/'>Account/Billing </a> <i className="fa fa-angle-down"></i>
+				<li><a href='#'>Account/Billing </a> <i className="fa fa-angle-down"></i>
 					<ul className="dropdown-side">
 						<li><Link to="/dashboard">Dashboard</Link></li>
 						<li><a href='/dashboard'>View My Bills</a></li>
@@ -45,7 +45,7 @@ class SideDrawer extends Component {
 						<li><a href='/dashboard'>Choose a Different Account</a></li>
 					</ul>
 				</li>
-				<li><a href='/'>Payments</a> <i className="fa fa-angle-down"></i>
+				<li><a href='#'>Payments</a> <i className="fa fa-angle-down"></i>
 					<ul className="dropdown-side">
 						<li><a href='https://paynow8.speedpay.com/nationalgrid/index.asp'>Make a credit or debit payment</a></li>
 						<li><a href='/dashboard'>E@sy Bill</a></li>
@@ -53,7 +53,7 @@ class SideDrawer extends Component {
 						<li><a href='https://www.nationalgridus.com/MA-Gas-Home/Bill-Help/Balanced-Billing'>Balanced Bill</a></li>
 					</ul>
 				</li>
-				<li><a href="/">Services</a> <i className="fa fa-angle-down"></i>
+				<li><a href="#">Services</a> <i className="fa fa-angle-down"></i>
 					<ul className="dropdown-side">
 						<li><a href='https://www.nationalgridus.com/MA-Home/Metering/Automated-Meter-Reading'>Enter Meter</a></li>
 						<li><a href='https://www.nationalgridus.com/NY-Home/Check-Start-Stop-or-Transfer-Service'>Start or Stop Service</a></li>
@@ -63,7 +63,7 @@ class SideDrawer extends Component {
 					</ul>
 				</li>
 				<li><a href='https://www.nationalgridus.com/contact-us'>Contact</a></li>
-				<li>Hello, {fName} {lName}
+				<li>Hello, <span>{fName} {lName}</span>
 					<ul className="dropdown-side">
 						<li><Link to="/Profile">Profile</Link></li>
 						<li onClick={this.handleClick}><Link to="/">Log Out <i className="fas fa-sign-out-alt"></i></Link></li>

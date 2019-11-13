@@ -4,9 +4,8 @@
 	background-color:$primary-grey;
 	padding-top:8%;
 	max-width:100%;
-	height: 100%;
 	margin: 0 auto;
-	margin-bottom:50px;
+	padding-bottom:50px;
 	display: flex;
 	font-size: 2vw;
 	box-sizing: border-box;
@@ -27,24 +26,27 @@
 		line-height:60px;
 
 		button{
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
 			padding: 20px 40px;
 			border-radius: 15px;
 			margin: 15px;
 			font-size:1.6vw;
 			color:$primary-blue;
+			background-color:#fff;
 			letter-spacing: 2px;
 			cursor: pointer;
 
 			&:hover{
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				appearance: none;
 				background-color:$primary-blue;
 				color:#fff;
 				border:$white-border 1px;
 			}
 
-		}
-
-		button a{
-			text-decoration: none;
 		}
 
 		p{

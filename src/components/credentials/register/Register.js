@@ -18,7 +18,7 @@ class Register extends Component {
 			verifyEmail: "",
 			password: "",
 			verifyPassword: "",
-			securityQuestion: "",
+			securityQuestion: "What is your mother's maiden name?",
 			securityAnswer: "",
 			zipCode: "",
 			verify: "* The fields do not match",
@@ -135,13 +135,11 @@ class Register extends Component {
 						<div className="form-group-reg">
 							<div className="form-row-reg">
 								<select onChange={this.handleSelect} value={this.state.securityQuestion} >
-									<option>Security Question</option>
 									<option value="What is your mother's maiden name?">What is your mother's maiden name?</option>
 									<option value="What's the name of your favorite pet?">What's the name of your favorite pet?</option>
 									<option value="What's your favorite color?">What's your favorite color?</option>
 									<option value="What's the your first teacher's last name?">What's the your first teacher's last name?</option>
 								</select>
-								<i className="fas fa-angle-down"></i>
 								<input onKeyDown={handleEnter} className="form-row-reg" type="text" name="securityAnswer" placeholder="securityAnswer" onChange={this.handleUserInput} required />
 							</div>
 						</div>
