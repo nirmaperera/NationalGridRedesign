@@ -43,24 +43,36 @@ class Register extends Component {
 		});
 	}
 
+
 	handleSubmit = (event) => {
 		event.preventDefault();
 
+
 		console.log("Signing Up")
 		this.props.sign_in();
-		const { userID, password, firstName, lastName, email, securityQuestion, securityAnswer } = this.state;
-		localStorage.setItem('userID', userID);
-		localStorage.setItem('password', password);
-		localStorage.setItem('firstName', firstName);
-		localStorage.setItem('lastName', lastName);
-		localStorage.setItem('email', email);
-		localStorage.setItem('securityAns', securityAnswer);
-		localStorage.setItem('securityQues', securityQuestion);
 
-		this.props.history.push({
-			pathname: '/dashboard',
-			state: { firstName: this.state.firstName, lastName: this.state.lastName }
-		})
+		if (this.state.showError === true) {
+			console.log(this.state.showError);
+
+
+		}
+		if (this.state.showError === false) {
+			const { userID, password, firstName, lastName, email, securityQuestion, securityAnswer } = this.state;
+			localStorage.setItem('userID', userID);
+			localStorage.setItem('password', password);
+			localStorage.setItem('firstName', firstName);
+			localStorage.setItem('lastName', lastName);
+			localStorage.setItem('email', email);
+			localStorage.setItem('securityAns', securityAnswer);
+			localStorage.setItem('securityQues', securityQuestion);
+
+			this.props.history.push({
+				pathname: '/dashboard',
+				state: { firstName: this.state.firstName, lastName: this.state.lastName }
+			})
+
+		}
+
 	}
 
 	/** Verification */
@@ -151,7 +163,7 @@ class Register extends Component {
 				</div>
 
 				<div className="footer-reg">
-					<input type="submit" className="btn-reg" value="Register" />
+					<input type="submit" className="btn-reg" value="Register" disabled={this.state.showError} />
 					{this.state.showError && (<input className="message-box" id="message" disabled={true} readOnly={true} value={this.state.verify} size="30" />)}
 				</div>
 			</form >
