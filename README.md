@@ -3,7 +3,7 @@
 A Redesign of the National Grid Login website.
 
 ## Live Demo:
-   https://nationalgrid.herokuapp.com/
+   https://nationalgrid.herokuapp.com
 
 ## To Start
 ```

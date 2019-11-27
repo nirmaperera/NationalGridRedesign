@@ -60,10 +60,10 @@ class Dashboard extends Component {
 
 					<div className="info">
 						<h1> ${this.state.balancedDue}</h1>
-						<h4> balanced due on <span>November 20</span></h4>
+						<h4> balanced due on <span>December 20</span></h4>
 						<button type="button" onClick={this.showModal}> Pay This Bill <i className="fas fa-money-bill-alt"></i></button>
 						<button> View Your Bill <i className="fas fa-file-invoice-dollar"></i></button>
-						<p> Your previous bill on<span> October 20</span> was <span> $130.52</span> </p>
+						<p> Your previous bill on<span> November 20</span> was <span> $130.52</span> </p>
 					</div>
 				</div>
 
@@ -77,7 +77,7 @@ class Dashboard extends Component {
 							<label>Zip Code: <span>23923</span> </label>
 						</div>
 						<div className="meter-read">
-							<label>Next meter read: <span> November 22</span></label>
+							<label>Next meter read: <span> December 22</span></label>
 						</div>
 						<div>
 							<button className="stopServ">Stop Service <i className="fas fa-times"></i></button>
