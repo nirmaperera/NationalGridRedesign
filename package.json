@@ -2,8 +2,13 @@
   "name": "national-grid",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "npm": "6.1.0",
+    "node": "10.6.0"
+  },
   "dependencies": {
     "animate.css": "^3.7.2",
+    "express": "^4.17.1",
     "local-storage": "^2.0.0",
     "node-sass": "^4.13.0",
     "react": "^16.9.0",
