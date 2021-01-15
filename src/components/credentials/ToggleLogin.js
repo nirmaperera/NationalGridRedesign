@@ -39,6 +39,12 @@ class ToggleLogin extends React.Component {
 			<div className="App">
 				<div className="login">
 					<div className="container" ref={ref => (this.container = ref)}>
+						<RightSide
+							current={current}
+							currentActive={currentActive}
+							containerRef={ref => (this.rightSide = ref)}
+							onClick={this.changeState}
+						/>
 						{isLogginActive && (
 							<Login containerRef={ref => (this.current = ref)} />
 						)}
@@ -46,13 +52,6 @@ class ToggleLogin extends React.Component {
 							<Register containerRef={ref => (this.current = ref)} />
 						)}
 					</div>
-
-					<RightSide
-						current={current}
-						currentActive={currentActive}
-						containerRef={ref => (this.rightSide = ref)}
-						onClick={this.changeState}
-					/>
 				</div>
 			</div>
 		);

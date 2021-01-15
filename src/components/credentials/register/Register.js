@@ -144,7 +144,7 @@ class Register extends Component {
 							</div>
 						</div>
 
-						<div className="form-group-reg">
+						{/* <div className="form-group-reg">
 							<div className="form-row-reg">
 								<select onChange={this.handleSelect} value={this.state.securityQuestion} >
 									<option value="What is your mother's maiden name?">What is your mother's maiden name?</option>
@@ -154,7 +154,7 @@ class Register extends Component {
 								</select>
 								<input onKeyDown={handleEnter} className="form-row-reg" type="text" name="securityAnswer" placeholder="securityAnswer" onChange={this.handleUserInput} required />
 							</div>
-						</div>
+						</div> */}
 
 						<div className="form-group-reg">
 							<input maxLength={5} minLength={5} onKeyDown={handleEnter} onInput={this.maxLengthCheck} type="number" name="zipCode" placeholder="zipcode" onChange={this.handleUserInput} required />
@@ -162,8 +162,8 @@ class Register extends Component {
 					</div>
 				</div>
 
-				<div className="footer-reg">
-					<input type="submit" className="btn-reg" value="Register" disabled={this.state.showError} />
+				<div className="footer">
+					<input type="submit" className="btn" value="Register" disabled={this.state.showError} />
 					{this.state.showError && (<input className="message-box" id="message" disabled={true} readOnly={true} value={this.state.verify} size="30" />)}
 				</div>
 			</form >

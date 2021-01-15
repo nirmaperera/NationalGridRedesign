@@ -26,7 +26,7 @@ class Navigation extends Component {
 			backdrop = <Backdrop click={this.backdropClickHandler} />
 		}
 		return (
-			<div style={{ height: '100%' }}>
+			<div className="navigation">
 				<Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
 				<SideDrawer show={this.state.sideDrawerOpen} />
 				{backdrop}
