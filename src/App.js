@@ -20,7 +20,7 @@ const App = (props) => {
 				<PrivateRoute exact path="/dashboard" component={Dashboard} isLogged={props.isLogged} />
 				<PrivateRoute exact path="/profile" component={Profile} isLogged={props.isLogged} />
 			</Switch>
-			<Footer />
+
 		</BrowserRouter>
 
 	)

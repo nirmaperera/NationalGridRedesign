@@ -1,6 +1,11 @@
 import React from 'react';
 import Login from './login/Login';
 import Register from './register/Register';
+import ReactCardFlip from 'react-card-flip';
+
+
+import top_grid from '../../assets/images/topGrid.png';
+import bottom_grid from '../../assets/images/bottomGrid.png';
 
 import '../credentials/login/login.scss';
 
@@ -8,68 +13,40 @@ class ToggleLogin extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			isLogginActive: true
+			isFlipped: false
 		};
 	}
 
-	componentDidMount() {
-		//Add .right by default
-		this.rightSide.classList.add("right");
+
+
+	handleClick = (e) => {
+		e.preventDefault();
+		this.setState(prevState => ({ isFlipped: !prevState.isFlipped }));
 	}
 
-	changeState = () => {
-		const { isLogginActive } = this.state;
-
-		if (isLogginActive) {
-			this.rightSide.classList.remove("right");
-			this.rightSide.classList.add("left");
-		} else {
-			this.rightSide.classList.remove("left");
-			this.rightSide.classList.add("right");
-		}
-		this.setState(prevState => ({ isLogginActive: !prevState.isLogginActive }));
-	}
 
 	render() {
-		const { isLogginActive } = this.state;
-		const current = isLogginActive ? "Register" : "Login";
-		const currentActive = isLogginActive ? "login" : "register";
-
 		return (
 			<div className="App">
+				<img className="topGrid" width="300px" src={top_grid} />
 				<div className="login">
-					<div className="container" ref={ref => (this.container = ref)}>
-						<RightSide
-							current={current}
-							currentActive={currentActive}
-							containerRef={ref => (this.rightSide = ref)}
-							onClick={this.changeState}
-						/>
-						{isLogginActive && (
-							<Login containerRef={ref => (this.current = ref)} />
-						)}
-						{!isLogginActive && (
-							<Register containerRef={ref => (this.current = ref)} />
-						)}
-					</div>
+					<ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="horizontal">
+						<div className="glassContainer">
+							<button className="flipbtn" onClick={this.handleClick}>Register</button>
+							<Login />
+						</div>
+
+						<div className="glassContainer">
+							<button className="flipbtn" onClick={this.handleClick}>Login</button>
+							<Register />
+						</div>
+					</ReactCardFlip>
 				</div>
+				<img className="bottomGrid" width="300px" src={bottom_grid} />
 			</div>
 		);
 	}
 }
 
-const RightSide = props => {
-	return (
-		<div
-			className="right-side"
-			ref={props.containerRef}
-			onClick={props.onClick}
-		>
-			<div className="inner-container">
-				<div className="text">{props.current}</div>
-			</div>
-		</div>
-	);
-};
 
 export default ToggleLogin;
