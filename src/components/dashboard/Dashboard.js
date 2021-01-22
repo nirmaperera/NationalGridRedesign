@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Link } from "react-router-dom";
 
 import ModalBill from '../account/payBill/ModalBill';
+import Chart from '../chart/Chart';
 
 import contact from '../../assets/images/contact.png';
 import greenlight from '../../assets/images/greenlight.png';
@@ -69,27 +70,32 @@ class Dashboard extends Component {
 
 				<div className="second-dash">
 					<div className="second-dash-a">
-						<h3 className="dash-title">Service Address</h3>
-						<div className="info">
-							<label>Street: <span> 232 Eli Street</span> </label>
-							<label>City: <span>New York</span> </label>
-							<label>State:  <span>New York</span></label>
-							<label>Zip Code: <span>23923</span> </label>
-						</div>
-						<div className="meter-read">
-							<label>Next meter read: <span> December 22</span></label>
-						</div>
-						<div>
-							<button className="stopServ">Stop Service <i className="fas fa-times"></i></button>
-							<button className="transferServ">Transfer Service <i className="fas fa-angle-double-right"></i></button>
-						</div>
-					</div>
+						<Chart />
 
-					<div className="second-dash-b">
-						<h3 className="dash-title">Has your contact info changed?</h3>
-						<div className="info">
-							<img src={contact} width="200" height="100" alt="houses-bg" />
-							<Link style={{ textDecoration: 'none' }} to="/profile"> <button>Update Info</button></Link>
+					</div>
+					<div style={{ display: "flex" }}>
+						<div className="second-dash-b">
+							<h3 className="dash-title">Service Address</h3>
+							<div className="info">
+								<label>Street: <span> 232 Eli Street</span> </label><br />
+								<label>City: <span>New York</span> </label><br />
+								<label>State:  <span>New York</span></label><br />
+								<label>Zip Code: <span>23923</span> </label><br />
+							</div>
+
+							<div style={{ display: 'flex' }}>
+								<button className="stopServ">Stop Service <i className="fas fa-times"></i></button>
+								<button className="transferServ">Transfer Service <i className="fas fa-angle-double-right"></i></button>
+							</div>
+						</div>
+
+
+						<div className="second-dash-b">
+							<h3 className="dash-title">Has your contact info changed?</h3>
+							<div className="info">
+								<img src={contact} width="200" height="100" alt="houses-bg" />
+								<Link style={{ textDecoration: 'none' }} to="/profile"> <button>Update Info</button></Link>
+							</div>
 						</div>
 					</div>
 				</div>

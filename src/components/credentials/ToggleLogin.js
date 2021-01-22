@@ -13,7 +13,8 @@ class ToggleLogin extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			isFlipped: false
+			isFlipped: false,
+			isHover: false
 		};
 	}
 
@@ -24,15 +25,25 @@ class ToggleLogin extends React.Component {
 		this.setState(prevState => ({ isFlipped: !prevState.isFlipped }));
 	}
 
+	onHover = () => {
+		console.log('hi')
+		this.setState({ isHover: true });
+	}
+
+	onHoverLeave = () => {
+		this.setState({ isHover: false });
+	}
 
 	render() {
 		return (
 			<div className="App">
-				<img className="topGrid" width="300px" src={top_grid} />
+				<img className="topGrid" width="350px" src={top_grid} />
+
+				<img className="topGridRight" width="350px" src={top_grid} />
 				<div className="login">
 					<ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="horizontal">
 						<div className="glassContainer">
-							<button className="flipbtn" onClick={this.handleClick}>Register</button>
+							<button className="flipbtn" onMouseEnter={this.onHover} onMouseLeave={this.onHoverLeave} onClick={this.handleClick}>Register</button>
 							<Login />
 						</div>
 
@@ -42,7 +53,7 @@ class ToggleLogin extends React.Component {
 						</div>
 					</ReactCardFlip>
 				</div>
-				<img className="bottomGrid" width="300px" src={bottom_grid} />
+				<img className="bottomGrid" width="400px" src={bottom_grid} />
 			</div>
 		);
 	}

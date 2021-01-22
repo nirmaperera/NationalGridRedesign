@@ -15,9 +15,9 @@
 .first-dash{
 	background-color:$primary-blue;
 	color:#fff;
-	flex:1;
+	flex:0.4;
 	margin:10px;
-	border-radius:5px;
+	border-radius:20px;
 
 	.info{
 		width: 100%;
@@ -25,11 +25,15 @@
 		margin-top:10%;
 		line-height:60px;
 
-		button{
+		h4{
+			font-size: 0.8em;
+		}
+
+		button {
 			-webkit-appearance: none;
 			-moz-appearance: none;
 			appearance: none;
-			padding: 20px 40px;
+			padding: 15px 30px;
 			border-radius: 15px;
 			margin: 15px;
 			font-size:1.6vw;
@@ -50,7 +54,8 @@
 		}
 
 		p{
-			font-size: 1.5vw;
+			font-size: 1em;
+    text-align: center;
 		}
 
 	}
@@ -82,12 +87,10 @@
 
 .second-dash-a{
 	flex: 1;
-	background-image: url('../../assets/images/houses.jpg');
-	background-size: cover;
-	background-repeat:no-repeat;
-	color:#fff;
+padding:20px;
+	color:#111;
 	margin:10px;
-	border-radius:5px;
+	border-radius:20px;
 	border:$blue-border;
 	@include flexCenter(column);
 
@@ -166,13 +169,13 @@
 .second-dash-b{
 	flex:1;
 	padding: 13px;
-	background:linear-gradient(0deg,rgba(228, 225, 225, 0.3),rgba(0, 0, 0, 0.3)),url(../../assets/images/pattern.jpg);
 	background-size:cover;
 	margin:10px;
-	border-radius:5px;
-	border:$blue-border;
+	border-radius:20px;
+	box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.212);
 	@include flexCenter(column);
 	box-sizing: border-box;
+	background-color: white;
 
 	h3{
 		text-align: center;
@@ -185,17 +188,20 @@
 	img{
 		border: 3px solid $primary-blue;
 	}
+	.info{
+		font-size: 0.5em;
+	}
 
 	button{
+		margin:10px;
 		padding: 10px 20px;
 		border-radius: 10px;
-		margin: auto;
-		font-size: 1.5vw;
+		font-size: 0.6em;
 		background-color:$primary-blue;
 		color: #fff;
 		letter-spacing: 2px;
 		cursor: pointer;
-		@include flexCenter(column);
+		@include flexCenter(row);
 	}
 }
 

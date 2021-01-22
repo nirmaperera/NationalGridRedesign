@@ -8,11 +8,13 @@
   },
   "dependencies": {
     "animate.css": "^3.7.2",
+    "chart.js": "^2.9.4",
     "express": "^4.17.1",
     "local-storage": "^2.0.0",
     "node-sass": "^4.13.0",
     "react": "^16.9.0",
     "react-card-flip": "^1.0.11",
+    "react-chartjs-2": "^2.11.1",
     "react-dom": "^16.9.0",
     "react-redux": "^7.1.1",
     "react-router-dom": "^5.1.0",
