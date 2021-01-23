@@ -64,6 +64,9 @@ class Dashboard extends Component {
 						<h4> balanced due on <span>December 20</span></h4>
 						<button type="button" onClick={this.showModal}> Pay This Bill <i className="fas fa-money-bill-alt"></i></button>
 						<button> View Your Bill <i className="fas fa-file-invoice-dollar"></i></button>
+
+					</div>
+					<div>
 						<p> Your previous bill on<span> November 20</span> was <span> $130.52</span> </p>
 					</div>
 				</div>

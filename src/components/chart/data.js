@@ -79,8 +79,8 @@ const cost = {
                 226.97,
 
             ],
-            fill: false,
-            backgroundColor: 'rgb(0,20,140)',
+            fill: true,
+            backgroundColor: 'rgba(0,20,140, 0.5)',
             borderColor: 'rgba(0,20,140, 0.5)',
         },
 
