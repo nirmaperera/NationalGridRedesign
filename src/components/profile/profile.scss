@@ -19,8 +19,10 @@
 
 .signIn-creds{
 	@include flexCenter(column);
-	width:50%;
+	justify-content: space-evenly;
+	width:100%;
 	padding:20px;
+    height: 80vh;
 	font-size:4vh;
 
 		hr{
@@ -60,12 +62,20 @@
 			font-size:2vh;
 			border-radius:5px;
 			padding:10px 20px;
+			border: none;
 			cursor: pointer;
 
 			&:hover{
 				background-color:#000f53;
 			}
 		}
+}
+
+.signIn-creds .signIn-cols{
+	display: flex;
+	width: 100%;
+    justify-content: space-evenly;
+
 }
 
 .signIn-creds input[type="submit"]:first-child{
@@ -89,11 +99,12 @@
 }
 
 .profile-group{
-	margin:50px;
-	width: 100%;
+	border-radius: 20px;
+	min-width: 500px;
+	max-width: 500px;
 	background-color:$primary-grey;
 	border:3px solid white;
-	padding:10px;
+	padding:20px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 

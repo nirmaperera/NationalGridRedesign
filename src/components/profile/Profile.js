@@ -110,118 +110,89 @@ class Profile extends Component {
 			<div className="containerProfile">
 				<h1 className="animated slideInDown">Profile <i className="fas fa-users-cog"></i></h1>
 				<div className="signIn-creds">
-					<hr />
-
-					<div className="profile-group">
-						<div className="head">
-							<label>Name</label>
-							<button className="edit-btn" value="edit" onClick={this.handleName}><i className="fas fa-user-edit"></i></button>
-						</div>
-						<input type="text" value={this.state.firstName + " " + this.state.lastName} readOnly={true}></input>
-						<form>
-							{this.state.editName ?
-								<div className="group-update animated slideInDown">
-									<input onChange={this.handleUpdate} name="firstName" className="updatedInfo" type="text" placeholder={this.state.firstName}></input>
-									<input onChange={this.handleUpdate} name="lastName" className="updatedInfo" type="text" placeholder={this.state.lastName}></input>
-									<div className="profile-btns">
-										<input onClick={this.handleSubmit} type="submit" value="save" />
-										<input type="submit" value="cancel" />
+					<div className="signIn-cols">
+						<div className="profile-group">
+							<div className="head">
+								<label>Name</label>
+								<button className="edit-btn" value="edit" onClick={this.handleName}><i className="fas fa-user-edit"></i></button>
+							</div>
+							<input type="text" value={this.state.firstName + " " + this.state.lastName} readOnly={true}></input>
+							<form>
+								{this.state.editName ?
+									<div className="group-update animated slideInDown">
+										<input onChange={this.handleUpdate} name="firstName" className="updatedInfo" type="text" placeholder={this.state.firstName}></input>
+										<input onChange={this.handleUpdate} name="lastName" className="updatedInfo" type="text" placeholder={this.state.lastName}></input>
+										<div className="profile-btns">
+											<input onClick={this.handleSubmit} type="submit" value="save" />
+											<input type="submit" value="cancel" />
+										</div>
 									</div>
-								</div>
-								: null}
-						</form>
-					</div>
-					<div className="profile-group">
-						<div className="head">
-							<label>User ID</label>
-							<button className="edit-btn" onClick={this.handleUserId}><i className="fas fa-user-edit"></i></button>
+									: null}
+							</form>
 						</div>
-						<input type="text" value={this.state.userID} readOnly={true}></input>
-						<form>
-							{this.state.editUser ?
-								<div className="group-update animated slideInDown">
-									<input onChange={this.handleUpdate} name="userID" className="updatedInfo" type="text" placeholder={this.state.userID}></input>
-									<div className="profile-btns">
-										<input onClick={this.handleSubmit} type="submit" value="save" />
-										<input type="submit" value="cancel" />
+						<div className="profile-group">
+							<div className="head">
+								<label>User ID</label>
+								<button className="edit-btn" onClick={this.handleUserId}><i className="fas fa-user-edit"></i></button>
+							</div>
+							<input type="text" value={this.state.userID} readOnly={true}></input>
+							<form>
+								{this.state.editUser ?
+									<div className="group-update animated slideInDown">
+										<input onChange={this.handleUpdate} name="userID" className="updatedInfo" type="text" placeholder={this.state.userID}></input>
+										<div className="profile-btns">
+											<input onClick={this.handleSubmit} type="submit" value="save" />
+											<input type="submit" value="cancel" />
+										</div>
 									</div>
-								</div>
-								: null}
-						</form>
-					</div>
-
-					<div className="profile-group">
-						<div className="head">
-							<label>Email</label>
-							<button className="edit-btn" onClick={this.handleEmail}> <i className="fas fa-user-edit"></i></button>
+									: null}
+							</form>
 						</div>
-						<input type="text" value={this.state.email} readOnly={true}></input>
-						<form>
-							{this.state.editEmail ?
-								<div className="group-update animated slideInDown">
-									<input onChange={this.handleUpdate} name="email" className="updatedInfo" type="text" placeholder={this.state.email}></input>
-									<div className="profile-btns">
-										<input onClick={this.handleSubmit} type="submit" value="save" />
-										<input type="submit" value="cancel" />
-									</div>
-								</div>
-								: null}
-						</form>
-
 					</div>
 
-					<div className="profile-group">
-						<div className="head">
-							<label>Password</label>
-							<button className="edit-btn" onClick={this.handlePassword}> <i className="fas fa-user-edit"></i></button>
-						</div>
-						<input type="password" value={this.state.password} readOnly={true}></input>
-						<form>
-							{this.state.editPassword ?
-								<div className="group-update animated slideInDown">
-									<input onChange={this.handleUpdate} name="password" className="updatedInfo" type="password" placeholder={this.state.password}></input>
-									<div className="profile-btns">
-										<input onClick={this.handleSubmit} type="submit" value="save" />
-										<input type="submit" value="cancel" />
+					<div className="signIn-cols">
+						<div className="profile-group">
+							<div className="head">
+								<label>Email</label>
+								<button className="edit-btn" onClick={this.handleEmail}> <i className="fas fa-user-edit"></i></button>
+							</div>
+							<input type="text" value={this.state.email} readOnly={true}></input>
+							<form>
+								{this.state.editEmail ?
+									<div className="group-update animated slideInDown">
+										<input onChange={this.handleUpdate} name="email" className="updatedInfo" type="text" placeholder={this.state.email}></input>
+										<div className="profile-btns">
+											<input onClick={this.handleSubmit} type="submit" value="save" />
+											<input type="submit" value="cancel" />
+										</div>
 									</div>
-								</div>
+									: null}
+							</form>
 
-								: null}
+						</div>
 
-						</form>
+						<div className="profile-group">
+							<div className="head">
+								<label>Password</label>
+								<button className="edit-btn" onClick={this.handlePassword}> <i className="fas fa-user-edit"></i></button>
+							</div>
+							<input type="password" value={this.state.password} readOnly={true}></input>
+							<form>
+								{this.state.editPassword ?
+									<div className="group-update animated slideInDown">
+										<input onChange={this.handleUpdate} name="password" className="updatedInfo" type="password" placeholder={this.state.password}></input>
+										<div className="profile-btns">
+											<input onClick={this.handleSubmit} type="submit" value="save" />
+											<input type="submit" value="cancel" />
+										</div>
+									</div>
+
+									: null}
+
+							</form>
+						</div>
 					</div>
 
-					<div className="profile-group">
-						<div className="head">
-							<label>Security Question</label>
-							<button className="edit-btn" onClick={this.handleSecurity}> <i className="fas fa-user-edit"></i></button>
-						</div>
-						<input type="text" value={this.state.securityQuestion} readOnly={true} />
-						<input type="password" value={this.state.securityAnswer} readOnly={true} />
-
-						<form>
-							{this.state.editSecurity ?
-								<div className="group-update animated slideInDown">
-									<select onChange={this.handleSelect} value={this.state.securityQuestion} >
-										<label>Security Question </label>
-										<option>Security Question</option>
-										<option value="What is your mother's maiden name?">What is your mother's maiden name?</option>
-										<option value="What's the name of your favorite pet?">What's the name of your favorite pet?</option>
-										<option value="What's your favorite color?">What's your favorite color?</option>
-										<option value="What's the your first teacher's last name?">What's the your first teacher's last name?</option>
-									</select>
-									<div>
-										<input onChange={this.handleUpdate} name="securityAnswer" type="password" placeholder={this.state.securityAnswer} />
-									</div>
-									<div className="profile-btns">
-										<input onClick={this.handleSubmit} type="submit" value="save" />
-										<input type="submit" value="cancel" />
-									</div>
-								</div>
-								: null}
-
-						</form>
-					</div>
 				</div>
 			</div >
 		)

@@ -56,18 +56,22 @@ class Dashboard extends Component {
 				<div className="first-dash">
 					<div className="account-info">
 						<h4> Account Status: <img src={greenlight} width="20" height="20" alt="greenlight" /></h4>
-						<h4> Account Number: <span>34234464</span></h4>
+						<h4> Account Number: <span> 3423446491</span></h4>
 					</div>
 
 					<div className="info">
-						<h1> ${this.state.balancedDue}</h1>
-						<h4> balanced due on <span>December 20</span></h4>
+						<h1 className="animated zoomIn"> ${this.state.balancedDue}</h1>
+						<h4 className="animated slideInDown"> balanced due on <span>December 20</span></h4>
 						<button type="button" onClick={this.showModal}> Pay This Bill <i className="fas fa-money-bill-alt"></i></button>
 						<button> View Your Bill <i className="fas fa-file-invoice-dollar"></i></button>
-
+						<p> Your previous bill on November 20 was $130.52 </p>
 					</div>
-					<div>
-						<p> Your previous bill on<span> November 20</span> was <span> $130.52</span> </p>
+
+					<div className="billing">
+						<h4>Billing Program Status</h4>
+						<p> Paperless Billing: <span><i class="fas fa-check"></i> </span> </p>
+						<p> Balanced Billing: <span><i className="fas fa-times"></i> </span></p>
+						<p> Direct Pay: <span><i className="fas fa-times"></i></span></p>
 					</div>
 				</div>
 
@@ -80,13 +84,13 @@ class Dashboard extends Component {
 						<div className="second-dash-b">
 							<h3 className="dash-title">Service Address</h3>
 							<div className="info">
-								<label>Street: <span> 232 Eli Street</span> </label><br />
-								<label>City: <span>New York</span> </label><br />
-								<label>State:  <span>New York</span></label><br />
-								<label>Zip Code: <span>23923</span> </label><br />
+								<label><b>Street: </b><span> 232 Eli Street</span> </label><br />
+								<label><b>City: </b><span>New York</span> </label><br />
+								<label><b>State:</b><span>New York</span></label><br />
+								<label><b>Zip Code:</b><span>23923</span> </label><br />
 							</div>
 
-							<div style={{ display: 'flex' }}>
+							<div style={{ display: 'flex', marginTop: '10px' }}>
 								<button className="stopServ">Stop Service <i className="fas fa-times"></i></button>
 								<button className="transferServ">Transfer Service <i className="fas fa-angle-double-right"></i></button>
 							</div>
