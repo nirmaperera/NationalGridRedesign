@@ -1,0 +1,30 @@
+canvas{
+    width:  100% !important;
+    height: 100% !important;
+}
+
+.chart{
+    width: 90%;
+    height: 100%;
+    margin-bottom: 20px;
+    .chart__header{
+        display: flex;
+        justify-content: space-between;
+
+        .chart__energyBtn{
+            border: none;
+            padding: 10px;
+            font-size: 0.4em;
+            background: linear-gradient(
+                152deg
+                , rgba(95,106,167,1) 0%, rgba(9,8,121,1) 100%);
+                    border-radius: 50px;
+            font-weight: bolder;
+            &:hover{
+                background: rgb(95,106,167);
+background: linear-gradient(152deg, rgba(95,106,167,0.7441351540616247) 0%, rgba(9,8,121,0.8141631652661064) 100%);
+            }
+        }
+
+    }
+}

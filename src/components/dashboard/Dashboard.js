@@ -30,7 +30,7 @@ class Dashboard extends Component {
 		super(props);
 		this.state = {
 			showModal: false,
-			balancedDue: "235.65"
+			balancedDue: "250.52"
 		};
 	}
 
@@ -61,17 +61,27 @@ class Dashboard extends Component {
 
 					<div className="info">
 						<h1 className="animated zoomIn"> ${this.state.balancedDue}</h1>
-						<h4 className="animated slideInDown"> balanced due on <span>December 20</span></h4>
+						<h4 className="animated slideInDown"> balanced due on <span>January 25</span></h4>
 						<button type="button" onClick={this.showModal}> Pay This Bill <i className="fas fa-money-bill-alt"></i></button>
 						<button> View Your Bill <i className="fas fa-file-invoice-dollar"></i></button>
-						<p> Your previous bill on November 20 was $130.52 </p>
+						<p> Your previous bill on Decemeber 23 was $226.97 </p>
 					</div>
 
 					<div className="billing">
 						<h4>Billing Program Status</h4>
-						<p> Paperless Billing: <span><i class="fas fa-check"></i> </span> </p>
-						<p> Balanced Billing: <span><i className="fas fa-times"></i> </span></p>
-						<p> Direct Pay: <span><i className="fas fa-times"></i></span></p>
+						<div className="billing__row">
+							<p> Paperless Billing </p>
+							<span><i class="fas fa-check" style={{ color: "white" }}></i> </span>
+						</div>
+
+						<div className="billing__row">
+							<p> Balanced Billing </p>
+							<span><i class="fas fa-times"></i> </span>
+						</div>
+						<div className="billing__row">
+							<p> Direct Billing </p>
+							<span><i class="fas fa-times"></i> </span>
+						</div>
 					</div>
 				</div>
 
@@ -101,7 +111,7 @@ class Dashboard extends Component {
 							<h3 className="dash-title">Has your contact info changed?</h3>
 							<div className="info">
 								<img src={contact} width="200" height="100" alt="houses-bg" />
-								<Link style={{ textDecoration: 'none' }} to="/profile"> <button>Update Info</button></Link>
+								<Link style={{ textDecoration: 'none' }} to="/profile"> <button>Update Info <i class="far fa-edit"></i></button></Link>
 							</div>
 						</div>
 					</div>

@@ -88,6 +88,7 @@ const Cost = (canvas) => {
                 fill: 'start',
                 backgroundColor: gradient,
                 borderColor: '#0C0C7C',
+                pointHoverRadius: 5,
             },
 
         ],
@@ -178,6 +179,7 @@ const Meter = {
             fill: false,
             backgroundColor: 'rgb(54, 162, 235)',
             borderColor: '#3345D3',
+            pointHoverRadius: 5,
         },
 
     ],
@@ -268,6 +270,7 @@ const Usage = {
             backgroundColor: '#0D0F7D',
             borderColor: '#00AFF0',
             yAxisID: 'y-axis-1',
+            pointHoverRadius: 5,
         },
 
         {
@@ -314,6 +317,7 @@ const Usage = {
             backgroundColor: '#1A7007',
             borderColor: 'rgba(26,112,7, 0.5)',
             yAxisID: 'y-axis-2',
+            pointHoverRadius: 5,
         },
 
     ],
@@ -322,5 +326,3 @@ const Usage = {
 
 const data = { Cost, Meter, Usage }
 export default data;
-
-

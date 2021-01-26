@@ -1,7 +1,7 @@
 @import '../../main';
 
 .containerDashboard{
-	background-color:$primary-grey;
+	background: #f3f3f3;
 	padding-top:8%;
 	max-width:100%;
 	margin: 0 auto;
@@ -17,11 +17,11 @@
 	background: radial-gradient(circle, rgba(0,24,166,0.7749474789915967) 0%, rgba(9,8,121,1) 100%);
 	color:#fff;
 	flex:0.4;
-	margin:10px;
+    margin-left: 30px;
 	border-radius:20px;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-evenly;
+	justify-content: space-between;
 
 
 	div {
@@ -45,8 +45,12 @@
 		}
 
 		h4, p{
-			font-size: 0.8em;
-			color:#b5bcde;
+			font-size: 0.7em;
+			color: #b5bcde;
+			width: 65%;
+			line-height: 2;
+			margin: 5% 0 10% 0;
+
 		}
 
 		span{
@@ -99,6 +103,14 @@
 	background: linear-gradient(152deg, rgba(95,106,167,1) 0%, rgba(9,8,121,1) 100%);
 	box-shadow: inset 5px 5px 6px #050444, inset -5px -5px 6px #0d0cae;
 
+	.billing__row{
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		font-size: 1em;
+	}
+
+
 	h4{
 		align-self: center;
 		margin-bottom: 20px;
@@ -137,6 +149,7 @@
 /* Service address box */
 
 .second-dash{
+	padding: 0 30px;
 	flex:1;
 	display: flex;
 	flex-direction: column;
@@ -144,13 +157,10 @@
 }
 
 .second-dash-a{
-	box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.212);
-    background: #F0F0F1;
-    box-shadow: inset -5px 5px 7px #b4b4b5, inset 5px -5px 7px #ffffff;
+	box-shadow: inset -1px 2px 12px #b4b4b5, inset 5px -5px 7px #ffffff;
     flex: 1 1;
     padding: 20px;
     color: #111;
-    margin: 10px;
     border-radius: 50px;
     background: white;
 	@include flexCenter(column);
@@ -206,13 +216,15 @@
 
 	select{
 		border: none;
-		background: linear-gradient(
-	225deg
-	 , #d8d8d9, #ffffff);
-		box-shadow: -5px 5px 7px #b4b4b5, 5px -5px 7px #ffffff;
-		padding: 4px 8px;
-		border-radius: 20px;
-		color:#0018a6;
+		width: 100px;
+		height: 25px;
+		border-radius: 17px;
+		background: #ECEFF3;
+		box-shadow: -5px 5px 10px #e0e3e7, 5px -5px 10px #f8fbff;
+		color: #0018a6;
+		padding-left: 10px;
+		letter-spacing: 1.3px;
+
 	}
 }
 
@@ -246,13 +258,10 @@
 	background-size:cover;
 	margin:10px;
 	border-radius:20px;
-	box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.212);
 	@include flexCenter(column);
 	box-sizing: border-box;
 	background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
-    box-shadow: inset -5px 5px 7px #b4b4b5, inset 5px -5px 7px #ffffff;
-
-
+    box-shadow: inset -1px 2px 9px #b4b4b5, inset 5px -5px 7px #ffffff;
 	h3{
 		text-align: center;
 		color:$primary-blue;
@@ -299,6 +308,7 @@
 
 	   button{
 		margin:20px;
+		margin-bottom:0;
 		font-size: 0.6em;
 	   }
 	}

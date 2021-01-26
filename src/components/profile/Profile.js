@@ -108,8 +108,9 @@ class Profile extends Component {
 	render() {
 		return (
 			<div className="containerProfile">
-				<h1 className="animated slideInDown">Profile <i className="fas fa-users-cog"></i></h1>
+
 				<div className="signIn-creds">
+					<h1 className="animated slideInDown">Profile <i className="fas fa-users-cog"></i></h1>
 					<div className="signIn-cols">
 						<div className="profile-group">
 							<div className="head">
@@ -162,6 +163,7 @@ class Profile extends Component {
 									<div className="group-update animated slideInDown">
 										<input onChange={this.handleUpdate} name="email" className="updatedInfo" type="text" placeholder={this.state.email}></input>
 										<div className="profile-btns">
+
 											<input onClick={this.handleSubmit} type="submit" value="save" />
 											<input type="submit" value="cancel" />
 										</div>

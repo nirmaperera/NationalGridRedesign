@@ -12,17 +12,44 @@
 }
 
 .modal-main {
-	border-radius:10px;
-	border:$blue-border;
-	position: absolute;
-	background: white;
-	overflow-x: hidden;
-	width: 60%;
-	height: auto;
-	top:90%;
-	left:50%;
-	background-color:$primary-grey;
-	transform: translate(-50%,-50%);
+    border-radius: 10px;
+    position: absolute;
+    background: white;
+    width: 60%;
+    height: auto;
+    top: 55%;
+    left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	flex-direction: column;
+	font-family: 'Poppins', sans-serif;
+	background-image: linear-gradient(
+135deg
+ , #f5f7fa 30%, #c3cfe2 100%);
+
+
+	.modal-title{
+		text-align: center;
+		font-size: 1em;
+		color:$primary-blue;
+		letter-spacing: 1.3px;
+
+	}
+	input, select{
+		text-align: center;
+		border:none;
+		background: none;
+		border-bottom: 1px solid #808cc6;
+		font-size: 1.3em;
+		letter-spacing: 1.3px;
+		color: #0f008c;
+	}
+	label{
+		font-weight: bolder;
+		font-size: 1em;
+		color:$primary-blue;
+
+	}
 
 	input:focus{
 		border-bottom: 2px solid $primary-green;
@@ -36,27 +63,16 @@
 .close-modal{
 	padding:5px;
 	font-size:20px;
-	@include inputDeco;
-	flex:1;
-	@include flexCenter(column);
-}
-
-.modal-title {
-	text-align: center;
+	width: 10%;
+	align-self: flex-end;
+	cursor: pointer;
 	color:$primary-blue;
-	font-size: 5vh;
-}
-
-.paymentSelect{
 	@include inputDeco;
-	font-size:4vh;
-	border-bottom:$blue-border;
-	border-radius: none;
-	margin-top:8%;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-	border-radius: 0;
+	i{
+		display: flex;
+		justify-content: flex-end;
+		margin-right: 10px;
+	}
 }
 
 .display-block {
@@ -66,276 +82,69 @@
 .display-none {
 	display: none;
 }
-
-.paymentMethod{
-	text-align: center;
+.paymentMethod, .enrollDirectPay, .paymentDate, .paymentAmount, .paymentSummary,.paymentSubmit{
+  display: flex;
+  justify-content: center;
+  font-size: 0.8rem;
+  margin: 50px 20px;
 }
 
 .enrollDirectPay{
-	margin-top: 40px;
-	display: flex;
-
 	.enrollDirect{
-		letter-spacing: 1px;
-		@include flexCenter(column);
-		flex:1;
-		font-size:2vh;
-		padding:15px;
+		flex:0.5;
+		color: #0f008c;
 
 		.itemsDirect {
-			display: inline-block;
-			padding-left: 30px;
-			position: relative;
-			cursor: pointer;
-			user-select: none;
-			font-size: 4vh;
-			width:30%;
-			text-align: center;
-			color:$primary-blue;
+			font-size: 1rem;
+			display: flex;
 
-			input {
-				display: none;
-			}
 
-			.checkmark {
-				margin-left: -10px;
-				width: 45px;
-				height: 45px;
-				background:$background-grey;
-				position: absolute;
-				left: 0;
-				top: 0;
-				border-radius:5px;
-			}
+		input {
+		   width:25px;
+		   height: 25px;
+		   margin-left: 10px;
 		}
-
+	}
 	}
 }
-
-.itemsDirect .checkmark:hover{
-	background-color:$seconday-grey;
-
-}
-
-.itemsDirect input:checked+.checkmark {
-	background-color: $primary-blue;
-}
-
-.itemsDirect input:checked+.checkmark:after {
-	content: "";
-	position: absolute;
-	height: 4px;
-	width: 9px;
-	border-left: $white-border;
-	border-bottom: $white-border;
-	top: 45%;
-	left: 50%;
-	transform: translate(-50%, -50%) rotate(-45deg);
-}
-
-.itemsDirect input:indeterminate+.checkmark:after {
-	content: "";
-	position: absolute;
-	height: 0px;
-	width: 9px;
-	border-left: $white-border;
-	border-bottom: $white-border;
-	top: 45%;
-	left: 50%;
-	transform: translate(-50%, -50%) rotate(180deg);
-
-}
-
-.paymentDate {
-	margin-top: 40px;
-	@include flexCenter(row);
-	flex: 1;
-	width: 100%;
-	padding:20px;
-	input[type=date]{
-		-webkit-appearance: none;
-		-moz-appearance: none;
-		appearance: none;
-		border-radius: 0;
-		@include inputDeco;
-		border-bottom:3px solid $primary-blue;
-		padding:20px 40px;
-		font-size: 2.3vw;
-	}
-}
-
-.paymentAmount{
-	display: flex;
-
+.paymentAmount {
 	.payAmount{
-		@include inputDeco;
-		margin: 40px;
-		flex:1;
-		width:20%;
-		flex-direction: column;
+		flex: 0.5;
+		display: flex;
+		justify-content: flex-end;
 		align-items: center;
-		font-size:3vh;
-		@include flexCenter(row);
-
-		select{
-			border-bottom:$blue-border;
-		}
-
-		label{
-			margin:5%;
-		}
-
-		input[type=number]{
-			-webkit-appearance: none;
-			-moz-appearance: none;
-			appearance: none;
-			border-radius: 0;
-			text-align: center;
-			@include inputDeco;
-			margin-left:20px;
-			font-size:4vh;
-			border-bottom:$blue-border;
-
-
-		}
-
 	}
 }
-
-
 .paymentSummary{
-	@include flexCenter(column);
-	margin:50px;
-	font-size:4vh;
-	text-align: center;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 10px;
 
-	.finalPay{
-		display: flex;
-		flex-direction: column;
-	}
-
-	input[type=number]{
-		-webkit-appearance: none;
-		-moz-appearance: none;
-		appearance: none;
-		border-radius: 0;
-		@include inputDeco;
-		margin-bottom: 20px;
-		font-size: 4vh;
-		border-bottom: $blue-border;
-		text-align: center;
-	}
 }
 
 .paymentSubmit{
-	margin-top:20px;
-	@include flexCenter(row);
-	width:50%;
-
+	margin-bottom: 10px;
 	input{
-		background-color:$primary-blue;
-		padding:10px 20px;
-		font-size:3.5vh;
-		width:100%;
-		color:#fff;
-		border-radius: 30px;
-			-webkit-appearance: none;
-			-moz-appearance: none;
-			appearance: none;
-			border-radius: 0;
-		cursor: pointer;
+		background: linear-gradient(
+			152deg
+			 , rgba(95, 106, 167, 0.744135) 0%, rgba(9, 8, 121, 0.814163) 100%);
+				padding: 10px 30px;
+				color: white;
+				border-radius: 50px;
+				letter-spacing: 1.5px;
+				font-weight: 700;
+				cursor: pointer;
+				box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
 
-		&:hover{
-			border:3px solid $primary-blue;
-			background-color:#fff;
-			color:$primary-blue;
-			}
+				&:hover{
+					background: linear-gradient(
+152deg
+, rgba(95, 106, 167, 0.744135) 0%, rgba(9, 8, 121, 0.814163) 100%);
+
+				}
+
 	}
-
 }
 
-::-webkit-datetime-edit { padding: 1em; }
-::-webkit-datetime-edit-text { color: #111; padding: 0 0.3em; }
-::-webkit-datetime-edit-month-field { color: $primary-blue }
-::-webkit-datetime-edit-day-field { color: $primary-blue}
-::-webkit-datetime-edit-year-field { color: $primary-blue}
-::-webkit-inner-spin-button { display: none; }
-::-webkit-calendar-picker-indicator { background: $primary-blue; color:#fff }
 
-/* icons */
-.fas.fa-money-bill-alt{
-	margin-right: 10px;
-}
-i.fas.fa-calendar-alt, i.fas.fa-arrow-down{
-	color:$primary-blue;
-}
 
-strong{
-	color:#111;
-}
-
-@media screen and (max-width:768px){
-	.modal{
-		flex-direction: column;
-	}
-
-	.modal-main{
-		width: 100%;
-	}
-
-	.enrollDirectPay .enrollDirect .itemsDirect{
-		padding-left: 45px;
-	}
-
-	.paymentSelect{
-		width: 90%;
-		font-size: 4vw;
-
-	}
-	.paymentDate{
-		display: flex;
-		input[type=date]{
-			font-size: 4vw;
-			width:50%;
-		}
-	}
-
-	.paymentAmount{
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		align-items: flex-end;
-
-	.payAmount{
-		display: flex;
-		width: 30%;
-		flex-direction: column;
-		flex: 1;
-		margin: 0;
-
-		label{
-			margin:0;
-			padding-bottom: 20px;
-			font-size: 4vw;
-		}
-		input{
-			width:100%;
-		}
-	}
-}
-	.paymentSummary input{
-		margin: 20px;
-	}
-	.paymentSubmit{
-		flex-direction: column;
-		input{
-			width:100%;
-			font-size:2.5vh;
-		}
-	}
-
-	.finalPay{
-		font-size: 5vw;
-	}
-
-}

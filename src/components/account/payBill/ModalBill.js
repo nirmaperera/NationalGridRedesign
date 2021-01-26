@@ -92,7 +92,6 @@ class ModalBill extends Component {
 
 				<div className="paymentDate">
 					<input type="date" value={this.state.paymentDate} onChange={this.handleInput} required></input>
-					<i className="fas fa-calendar-alt" ></i>
 				</div>
 
 				<div className="paymentAmount">
@@ -107,7 +106,7 @@ class ModalBill extends Component {
 				</div>
 
 				<div className="paymentSummary">
-					<div>Payment Amount:$ <input type="number" readOnly={true} value={this.state.totalAmount} ref={el => this.finalPayment = el}></input></div>
+					<div><label>Total Payment Amount: $</label><input type="number" readOnly={true} value={this.state.totalAmount} ref={el => this.finalPayment = el}></input></div>
 					<div className="paymentSubmit">
 						<input type="submit" value="Pay Bill" ></input>
 					</div>

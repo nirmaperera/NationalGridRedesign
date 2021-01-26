@@ -2,9 +2,8 @@
 
 .containerProfile{
 	background-color:$primary-grey;
-	padding-top:8%;
 	max-width:100%;
-	height: 100%;
+	height: 100vh;
 	margin: 0 auto;
 	font-size: 2vw;
 	box-sizing: border-box;
@@ -13,6 +12,7 @@
 	h1{
 		color:$primary-blue;
 		letter-spacing: 3px;
+		font-size: 1em;
 
 	}
 }
@@ -20,10 +20,15 @@
 .signIn-creds{
 	@include flexCenter(column);
 	justify-content: space-evenly;
-	width:100%;
 	padding:20px;
-    height: 80vh;
 	font-size:4vh;
+	background-image: linear-gradient(
+		135deg
+		 , #f5f7fa 0%, #c3cfe2 100%);
+    box-shadow: inset 5px 5px 8px #e7e7e7, inset -5px -5px 8px #ffffff;
+    width: 86%;
+	height: 66%;
+	border-radius: 50px;
 
 		hr{
 			width: 90%;
@@ -35,16 +40,17 @@
 			appearance: none;
 			border-radius: 0;
 			@include inputDeco;
-			font-size: 2vw;
+			font-size: 1.5vw;
 			padding:10px;
 			width:100%;
+			color:$primary-blue;
 		}
 
 		label{
-			color:$primary-blue;
-			font-size: 3vh;
+			color:#808cc6;
+			font-size: 2vh;
 			font-weight: 600;
-			letter-spacing: 5px;
+			letter-spacing: 2px;
 		}
 		select{
 			-webkit-appearance: none;
@@ -59,8 +65,8 @@
 		.edit-btn{
 			background-color:$primary-blue;
 			color:#fff;
-			font-size:2vh;
-			border-radius:5px;
+			font-size:1.5vh;
+			border-radius:10px;
 			padding:10px 20px;
 			border: none;
 			cursor: pointer;
@@ -81,14 +87,14 @@
 .signIn-creds input[type="submit"]:first-child{
 	color:$primary-green;
 	font-weight: 600;
-	font-size: 2vw;
+	font-size: 1.2vw;
 	cursor: pointer;
 	border:none;
  }
 
  .signIn-creds input[type="submit"]:last-child{
 	 color:	$seconday-grey;
-	 font-size: 1.5vw;
+	 font-size: 1vw;
 	 cursor: pointer;
 	 border:none;
   }
@@ -100,18 +106,21 @@
 
 .profile-group{
 	border-radius: 20px;
-	min-width: 500px;
-	max-width: 500px;
-	background-color:$primary-grey;
-	border:3px solid white;
+	min-width: 350px;
+	max-width: 350px;
 	padding:20px;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+background: #D2DCE9;
+box-shadow: inset 5px 5px 3px #ced8e4,
+            inset -5px -5px 3px #d6e0ee;
+	//box-shadow: -1px 4px 3px 0 rgba(0, 0, 0, 0%), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
 
 .group-update input{
 	@include inputDeco;
 	border-bottom: 2px solid $background-grey;
-	font-size: 2vw;
+	font-size: 1.2vw;
 
 	&:focus{
 		border-bottom: 2px solid $primary-green;
@@ -120,7 +129,7 @@
 
 .group-update.animated.slideInDown input[type="password"]:last-child{
 	width:90%;
-	font-size: 2.5vw;;
+	font-size: 1vw;;
 }
 
 
