@@ -3,6 +3,7 @@ import './confirmPay.scss';
 
 class ConfirmPay extends React.Component {
 
+
 	handleClose = () => {
 		console.log('form submitting')
 		window.location.reload();
@@ -10,7 +11,7 @@ class ConfirmPay extends React.Component {
 	}
 	render() {
 		return (
-			<div className='popup animated slideInDown'>
+			<div id="unblurred" className='popup animated slideInDown'>
 				<div className="popup-btns">
 					<h1>{this.props.text}</h1>
 				</div>

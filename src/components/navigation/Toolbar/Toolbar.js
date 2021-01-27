@@ -54,16 +54,16 @@ class Toolbar extends Component {
 				</li>
 				<li><a href='/'>Payments</a> <i className="fa fa-angle-down"></i>
 					<ul className="dropdown">
-						<li><a href='https://paynow8.speedpay.com/nationalgrid/index.asp'>Make a credit or debit payment</a></li>
+						<li><a href='/dashboard'>Make a credit or debit payment</a></li>
 						<li><a href='/dashboard'>E@sy Bill</a></li>
-						<li><a href='https://www.nationalgridus.com/NY-Home/Billing-Payments/Automated-Payments'>Direct Pay</a></li>
-						<li><a href='https://www.nationalgridus.com/MA-Gas-Home/Bill-Help/Balanced-Billing'>Balanced Bill</a></li>
+						<li><a href='/dashboard'>Direct Pay</a></li>
+						<li><a href='/dashboard'>Balanced Bill</a></li>
 					</ul>
 				</li>
 				<li><a href="/">Services</a> <i className="fa fa-angle-down"></i>
 					<ul className="dropdown">
-						<li><a href='https://www.nationalgridus.com/MA-Home/Metering/Automated-Meter-Reading'>Enter Meter</a></li>
-						<li><a href='https://www.nationalgridus.com/NY-Home/Check-Start-Stop-or-Transfer-Service'>Start or Stop Service</a></li>
+						<li><a href='/dashboard'>Enter Meter</a></li>
+						<li><a href='/dashboard'>Start or Stop Service</a></li>
 						<li><a href='/dashboard'>Manage Orders</a></li>
 						<li><a href='/dashboard'>Usage History</a></li>
 						<li><a href='https://www.nationalgridus.com/MA-Home/Billing-Payments/Go-Paperless'>Enroll in National Grid Paperless</a></li>

@@ -8,13 +8,14 @@ class ModalBill extends Component {
 		this.state = {
 			paymentMethod: "Last Bank Account used ending in 2312",
 			enrollDirect: false,
-			paymentDate: getDate(),
+			paymentDate: '',
 			paymentAmount: "Balanced Due",
 			totalAmount: "235.65",
 			finalPayment: "235.65",
 			BalancedDue: "235.65",
 			paidBill: false,
-			showModal: false
+			showModal: true
+
 		}
 	}
 
@@ -39,13 +40,18 @@ class ModalBill extends Component {
 
 	}
 	handleInput = (event) => {
+
 		this.setState({
 			[event.target.name]: event.target.value
 		});
-		console.log(event.target.value);
+
+
 		this.setState({ finalPayment: this.state.totalAmount });
 	}
 
+	handleDate = (event) => {
+		this.setState({ paymentDate: event.target.value })
+	}
 	handleSubmit = (event) => {
 		event.preventDefault();
 		console.log('total payment:', this.state.totalAmount);
@@ -60,58 +66,67 @@ class ModalBill extends Component {
 
 	togglePopup() {
 		this.setState({
-			paidBill: !this.state.paidBill
+			paidBill: !this.state.paidBill,
+			showModal: false
 		});
 	}
 
 	render() {
 		const { enrollDirect } = this.state; /*Toggle enroll direct */
+		console.log(this.state.paymentDate, 'payment date');
+		var today = new Date();
+		var dd = today.getDate();
+		var mm = ("0" + (today.getMonth() + 1)).slice(-2)
+		var yyyy = today.getFullYear();
+		today = yyyy + '-' + mm + '-' + dd;
+		console.log(today);
 		return (
-			<form onSubmit={this.handleSubmit}>
-				<h2 className="modal-title">How Would You like to Pay?</h2>
+			<>
+				<form onSubmit={this.handleSubmit}>
+					<h2 className="modal-title">How Would You like to Pay?</h2>
 
-				<div className="paymentMethod">
-					<select className="paymentSelect" onChange={this.handleMethod} value={this.state.paymentMethod}>
-						<option value="Last Bank Account used ending in 2312">Last Bank Account used ending in 2312</option>
-						<option value="Bank Account (Checking)">Bank Account (Checking)</option>
-						<option value="Bank Account(Savings)">Bank Account(Savings)</option>
-						<option value="Credit or Debit Card (fees may apply)">Credit or Debit Card (fees may apply)</option>
-					</select>
-				</div>
+					<div className="paymentMethod">
+						<select className="paymentSelect" onChange={this.handleMethod} value={this.state.paymentMethod}>
+							<option value="Last Bank Account used ending in 2312">Last Bank Account used ending in 2312</option>
+							<option value="Bank Account (Checking)">Bank Account (Checking)</option>
+							<option value="Bank Account (Savings) ">Bank Account(Savings)</option>
+							<option value="Credit or Debit Card (fees may apply)">Credit or Debit Card (fees may apply)</option>
+						</select>
+					</div>
 
-				<div className="enrollDirectPay">
-					<label className="enrollDirect">
-						<div className="itemsDirect"> Enroll
+					<div className="enrollDirectPay">
+						<label className="enrollDirect">
+							<div className="itemsDirect"> Enroll
 							<input type="checkbox" value={this.state.enrollDirect} onClick={() => this.setState({ enrollDirect: !enrollDirect })} />
-							<span className="checkmark"></span>
+								<span className="checkmark"></span>
+							</div>
+						</label>
+
+						<div className="enrollDirect"> I would like to enroll this account in the Direct Payment Program. I understand that starting next month, the full amount I owe will be deducted automatically from this account</div>
+					</div>
+
+					<div className="paymentDate">
+						<input type="date" min={today} value={this.state.paymentDate} onChange={this.handleDate} required></input>
+					</div>
+
+					<div className="paymentAmount">
+						<select className="payAmount" onChange={this.handleAmount} value={this.state.paymentAmount}>
+							<option value="Balanced Due">Balanced Due</option>
+							<option value="Other Amount">Other Amount</option>
+						</select>
+						<div className="payAmount">
+							<label>Payment Amount:</label>
+							<input type="number" step={"any"} name="totalAmount" defaultValue={this.state.BalancedDue} onChange={this.handleInput} ref={el => this.totalAmount = el} ></input>
 						</div>
-					</label>
-
-					<div className="enrollDirect"> I would like to enroll this account in the Direct Payment Program. I understand that starting next month, the full amount I owe will be deducted automatically from this account</div>
-				</div>
-
-				<div className="paymentDate">
-					<input type="date" value={this.state.paymentDate} onChange={this.handleInput} required></input>
-				</div>
-
-				<div className="paymentAmount">
-					<select className="payAmount" onChange={this.handleAmount} value={this.state.paymentAmount}>
-						<option value="Balanced Due">Balanced Due</option>
-						<option value="Other Amount">Other Amount</option>
-					</select>
-					<div className="payAmount">
-						<label>Payment Amount:</label>
-						<input type="number" step={"any"} name="totalAmount" defaultValue={this.state.BalancedDue} onChange={this.handleInput} ref={el => this.totalAmount = el} ></input>
 					</div>
-				</div>
 
-				<div className="paymentSummary">
-					<div><label>Total Payment Amount: $</label><input type="number" readOnly={true} value={this.state.totalAmount} ref={el => this.finalPayment = el}></input></div>
-					<div className="paymentSubmit">
-						<input type="submit" value="Pay Bill" ></input>
+					<div className="paymentSummary">
+						<div><label>Total Payment Amount: $</label><input type="number" readOnly={true} value={this.state.totalAmount} ref={el => this.finalPayment = el}></input></div>
+						<div className="paymentSubmit">
+							<input type="submit" value="Pay Bill" ></input>
+						</div>
 					</div>
-				</div>
-
+				</form>
 				{this.state.paidBill ?
 					<ConfirmPay
 						text={["The payment of ", <strong>{this.state.totalAmount}</strong>, " will be paid on ", <strong>{this.state.paymentDate}</strong>, " from ", <strong>{this.state.paymentMethod}</strong>]}
@@ -122,8 +137,10 @@ class ModalBill extends Component {
 
 					: null
 				}
+			</>
 
-			</form>
+
+
 
 		);
 	}
