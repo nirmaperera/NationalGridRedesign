@@ -36,7 +36,8 @@ class Dashboard extends Component {
 			prevdueDate: '',
 			paperless: true,
 			directPay: false,
-			balanced: false
+			balanced: false,
+			confirm: false
 
 		};
 	}
@@ -111,16 +112,16 @@ class Dashboard extends Component {
 						<h4 className="animated slideInDown"> balanced due on <span>{dueDate}</span></h4>
 						<button type="button" onClick={this.showModal}> Pay This Bill <i className="fas fa-money-bill-alt"></i></button>
 						<button> View Your Bill <i className="fas fa-file-invoice-dollar"></i></button>
-						<p> Your previous bill on {prevdueDate} was $226.97 </p>
+						<p> Your previous bill on {prevdueDate} was <span>$226.97</span> </p>
 					</div>
 
 					<div className="billing">
 						<h4>Billing Program Status</h4>
 						<div className="billing__row">
 							<p> Paperless Billing </p>
-							<span>
+							<span onClick={() => this.setState({ paperless: !this.state.paperless, confirm: true })}>
 								{paperless ? <i class="fas fa-check" style={{ color: "white" }}></i> :
-									<span><i class="fas fa-times"></i> </span>
+									<span><i class="fas fa-times" ></i> </span>
 								}
 
 							</span>
@@ -128,7 +129,7 @@ class Dashboard extends Component {
 
 						<div className="billing__row">
 							<p> Balanced Billing </p>
-							<span>
+							<span onClick={() => this.setState({ balanced: !this.state.balanced })}>
 								{balanced ? <i class="fas fa-check" style={{ color: "white" }}></i> :
 									<span><i class="fas fa-times"></i> </span>
 								}
@@ -136,7 +137,7 @@ class Dashboard extends Component {
 						</div>
 						<div className="billing__row">
 							<p> Direct Billing </p>
-							<span>
+							<span onClick={() => this.setState({ directPay: !this.state.directPay })}>
 								{directPay ? <i class="fas fa-check" style={{ color: "white" }}></i> :
 									<span><i class="fas fa-times"></i> </span>
 								}
@@ -180,7 +181,11 @@ class Dashboard extends Component {
 				<Modal showModal={showModal} handleClose={this.hideModal}>
 					<ModalBill handleClose={this.hideModal} />
 				</Modal>
-			</div >
+
+
+
+
+			</div>
 		)
 	}
 }
