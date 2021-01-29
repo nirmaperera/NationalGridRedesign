@@ -47,7 +47,7 @@
 				background: $secondary-green;
 			}
 			&:last-child{
-				background:$warning-red;
+				background:#808cc6;
 			}
 			&:hover:last-child{
 				background:$secondary-red;
@@ -64,9 +64,8 @@
 		right: 10%;
 		letter-spacing: 2px;
 
-		.popup-btns{
-			font-size: 4vw;
-			flex-direction: column;
+		.popup-btns button{
+			margin: 10px;
 		}
 
 	}

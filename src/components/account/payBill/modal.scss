@@ -146,5 +146,24 @@
 	}
 }
 
+@media screen and (max-width:425px){
+	.modal-main{
+		width: 100%;
+		top: 65%;
+	}
+	.enrollDirectPay{
+		flex-direction: row;
+	}
+	.payAmount{
+		flex-direction: row;
+		padding-top: 44px;
+		justify-content: center;
+	}
+	.paymentSummary > div{
+		display: flex;
+		flex-direction: row;
+	}
 
 
+
+}

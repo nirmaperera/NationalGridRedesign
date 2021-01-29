@@ -1,7 +1,10 @@
 @import '../../main.scss';
 
 .containerProfile{
-	background-color:$primary-grey;
+    background-image: linear-gradient(
+135deg
+ , #f5f7fa 0%, #c3cfe2 100%);
+
 	max-width:100%;
 	height: 100vh;
 	margin: 0 auto;
@@ -22,10 +25,8 @@
 	justify-content: space-evenly;
 	padding:20px;
 	font-size:4vh;
-	background-image: linear-gradient(
-		135deg
-		 , #f5f7fa 0%, #c3cfe2 100%);
-    box-shadow: inset 5px 5px 8px #e7e7e7, inset -5px -5px 8px #ffffff;
+
+    box-shadow: inset 8px 7px 18px #e7e7e7, inset -9px -8px 15px #ffffff;
     width: 86%;
 	height: 66%;
 	border-radius: 50px;
@@ -110,9 +111,11 @@
 	max-width: 350px;
 	padding:20px;
 
-background: #D2DCE9;
-box-shadow: inset 5px 5px 3px #ced8e4,
-            inset -5px -5px 3px #d6e0ee;
+	background-image: linear-gradient(
+		135deg
+		 , #f5f7fa 30%, #c3cfe2 100%);
+	box-shadow: inset 5px 5px 9px #ced8e4, inset 1px 2px 3px #d6e0ee;
+
 	//box-shadow: -1px 4px 3px 0 rgba(0, 0, 0, 0%), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 }
@@ -138,11 +141,11 @@ box-shadow: inset 5px 5px 3px #ced8e4,
 		padding-top: 20%;
 		h1{
 			font-size:5vw;
+			margin-bottom: 33px;
 		}
 	}
 
 	.signIn-creds{
-		width:70%;
 		font-size:3vw;
 
 		.edit-btn{
@@ -153,6 +156,22 @@ box-shadow: inset 5px 5px 3px #ced8e4,
 			font-size: 3vw;
 		}
 	}
+	.signIn-creds {
+		.signIn-cols{
+		flex-flow: column;
+	}
+	.profile-group{
+		max-width: 300px;
+		min-width: 300px;
+		padding:10px;
+		margin-bottom:20px;
+		 input{
+			font-size: 1rem;
+		}
+
+	}
+
+}
 
 	.group-update {
 		flex-wrap: wrap;
@@ -160,6 +179,7 @@ box-shadow: inset 5px 5px 3px #ced8e4,
 
 		input[type='submit']{
 			border:none;
+			font-size: 1rem !important;
 		}
 	}
 

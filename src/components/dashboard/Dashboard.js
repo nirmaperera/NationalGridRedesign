@@ -151,7 +151,7 @@ class Dashboard extends Component {
 						<Chart />
 
 					</div>
-					<div style={{ display: "flex" }}>
+					<div className="second-dash-a_sub" style={{ display: "flex" }}>
 						<div className="second-dash-b">
 							<h3 className="dash-title">Service Address</h3>
 							<div className="info">
