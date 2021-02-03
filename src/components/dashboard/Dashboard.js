@@ -13,11 +13,11 @@ import '../account/payBill/ModalBill';
 
 
 const Modal = ({ handleClose, showModal, children }) => {
-	const showHideClassName = showModal ? "modal animated bounceInDown display-block" : "modal display-none";
+	const showHideClassName = showModal ? "modal display-block" : "modal display-none";
 
 	return (
 		<div className={showHideClassName}>
-			<section className="modal-main ">
+			<section className="modal-main animated bounceInDown">
 				<button className="close-modal" onClick={handleClose}> <i className="fas fa-times"></i></button>
 				{children}
 			</section>
@@ -26,12 +26,13 @@ const Modal = ({ handleClose, showModal, children }) => {
 };
 
 const DUEDATE = '23';
+
 class Dashboard extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			showModal: false,
-			balancedDue: "250.52",
+			balancedDue: 250.52,
 			dueDate: "",
 			prevdueDate: '',
 			paperless: true,
@@ -50,6 +51,12 @@ class Dashboard extends Component {
 	hideModal = () => {
 		this.setState({ showModal: false });
 	};
+
+	setremainingBalance = (val) => {
+		this.setState({
+			balancedDue: val
+		})
+	}
 
 	getDueDate = () => {
 		var now = new Date();
@@ -81,8 +88,6 @@ class Dashboard extends Component {
 			this.setState({ prevdueDate: previous + " " + DUEDATE })
 
 		}
-
-
 	}
 
 	componentDidMount() {
@@ -94,6 +99,14 @@ class Dashboard extends Component {
 		this.getPreviousDate();
 
 	}
+
+	// componentDidUpdate(prevProps, prevState) {
+	// 	const balance = localStorage.getItem('balance');
+	// 	if (prevState.balancedDue !== balance) {
+	// 		this.setState({ balancedDue: balance })
+	// 	}
+
+	// }
 
 	render() {
 
@@ -179,7 +192,7 @@ class Dashboard extends Component {
 				</div>
 
 				<Modal showModal={showModal} handleClose={this.hideModal}>
-					<ModalBill handleClose={this.hideModal} />
+					<ModalBill balancedDue={balancedDue} setremainingBalance={this.setremainingBalance} handleClose={this.hideModal} />
 				</Modal>
 
 

@@ -17,8 +17,8 @@
     background: white;
     width: 60%;
     height: auto;
-    top: 55%;
-    left: 50%;
+    top: 13%;
+    left: 20%;
 	transform: translate(-50%, -50%);
 	display: flex;
 	flex-direction: column;
@@ -43,12 +43,17 @@
 		font-size: 1.3em;
 		letter-spacing: 1.3px;
 		color: #0f008c;
+
 	}
+
 	label{
 		font-weight: bolder;
 		font-size: 1em;
 		color:$primary-blue;
 
+	}
+	input::-webkit-calendar-picker-indicator {
+		filter: invert(0.5);
 	}
 
 	input:focus{

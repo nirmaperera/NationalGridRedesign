@@ -7,12 +7,12 @@
     padding: 20px;
     position: absolute;
     letter-spacing: 2px;
-    width: 100%;
+    width: 60%;
     height: 300px;
     font-size: 2vh;
     bottom: 100px;
     border-radius: 49px;
-    transform: translate(-1%, 20%);
+	left:170px;
     background: radial-gradient(circle, rgba(0, 24, 166, 0.774947) 0%, #090879 100%);
     color: #fff;
 
@@ -25,8 +25,7 @@
 		button{
 
 			display: flex;
-			width: 200px;
-
+			width: 100px;
 			align-items: center;
 			justify-content: space-evenly;
 			padding: 5px;
@@ -55,6 +54,7 @@
 		}
 	}
 }
+
 
 @media screen and (max-width:768px){
 	.popup{
