@@ -100,14 +100,6 @@ class Dashboard extends Component {
 
 	}
 
-	// componentDidUpdate(prevProps, prevState) {
-	// 	const balance = localStorage.getItem('balance');
-	// 	if (prevState.balancedDue !== balance) {
-	// 		this.setState({ balancedDue: balance })
-	// 	}
-
-	// }
-
 	render() {
 
 		const { showModal, balancedDue, dueDate, prevdueDate, paperless, directPay, balanced } = this.state;
@@ -123,9 +115,9 @@ class Dashboard extends Component {
 					<div className="info">
 						<h1 className="animated zoomIn"> ${this.state.balancedDue}</h1>
 						<h4 className="animated slideInDown"> balanced due on <span>{dueDate}</span></h4>
-						<button type="button" onClick={this.showModal}> Pay This Bill <i className="fas fa-money-bill-alt"></i></button>
-						<button> View Your Bill <i className="fas fa-file-invoice-dollar"></i></button>
-						<p> Your previous bill on {prevdueDate} was <span>$226.97</span> </p>
+						<button className="animated slideInUp" type="button" onClick={this.showModal}> Pay This Bill <i className="fas fa-money-bill-alt"></i></button>
+						<button className="animated slideInUp"> View Your Bill <i className="fas fa-file-invoice-dollar"></i></button>
+						<p className="animated pulse"> Your previous bill on {prevdueDate} was <span>$226.97</span> </p>
 					</div>
 
 					<div className="billing">
@@ -160,7 +152,7 @@ class Dashboard extends Component {
 				</div>
 
 				<div className="second-dash">
-					<div className="second-dash-a">
+					<div className="second-dash-a animated pulse">
 						<Chart />
 
 					</div>
