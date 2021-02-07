@@ -43,12 +43,12 @@ class ToggleLogin extends React.Component {
 				<div className="login">
 					<ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="horizontal">
 						<div className="glassContainer">
-							<button className="flipbtn" onMouseEnter={this.onHover} onMouseLeave={this.onHoverLeave} onClick={this.handleClick}>Register</button>
+							<button className="flipbtn register" onMouseEnter={this.onHover} onMouseLeave={this.onHoverLeave} onClick={this.handleClick}>Register</button>
 							<Login />
 						</div>
 
 						<div className="glassContainer">
-							<button className="flipbtn" onClick={this.handleClick}>Login</button>
+							<button className="flipbtn" id="login" onClick={this.handleClick}>Login</button>
 							<Register />
 						</div>
 					</ReactCardFlip>
