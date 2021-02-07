@@ -388,14 +388,17 @@
 			font-size: 2em;
 		}
 		.info{
-			font-size: 1.5em;
+			font-size: 1.8em;
+			width: 70%;
+		}
+		.info:last-child{
+			padding: 25px 0px;
+			width: 100%;
 		}
 		button{
 			font-size: 1em;
 		}
 	}
-	.second-dash-b:last-child{
-		margin-top: 40px;
-	}
+
 
 }

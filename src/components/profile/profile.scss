@@ -136,7 +136,7 @@
 }
 
 
-@media screen and (max-width:768px){
+@media screen and (max-width:425px){
 	.containerProfile{
 		padding-top: 20%;
 		h1{
@@ -159,10 +159,11 @@
 	.signIn-creds {
 		.signIn-cols{
 		flex-flow: column;
+		align-items: center;
 	}
 	.profile-group{
-		max-width: 300px;
-		min-width: 300px;
+		max-width: 250px;
+		min-width: 250px;
 		padding:10px;
 		margin-bottom:20px;
 		 input{
@@ -184,3 +185,21 @@
 	}
 
 }
+
+@media screen and (max-width: 768px){
+	.signIn-creds .signIn-cols {
+		flex-flow: row;
+		align-items: center;
+	}
+	.profile-group{
+		max-width: 250px;
+		min-width: 250px;
+		padding:10px;
+		margin-bottom:20px;
+		 input{
+			font-size: 1rem;
+		}
+
+	}
+}
+
