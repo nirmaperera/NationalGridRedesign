@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './modal.scss';
 import ConfirmPay from './ConfirmPay';
 
+
 class ModalBill extends Component {
 	constructor(props) {
 		super(props);
@@ -11,9 +12,9 @@ class ModalBill extends Component {
 			enrollDirect: false,
 			paymentDate: '',
 			paymentForm: "Balanced Due",
-			totalAmount: this.props.balancedDue, // amount paid by user
+			totalAmount: 0, // amount paid by user
 			finalPayment: this.props.balancedDue, //difference BalanceDue - totalPayment
-			remainingBalance: 0,
+			remainingBalance: 0.00,
 			paidBill: false,
 			showModal: true
 
@@ -24,35 +25,25 @@ class ModalBill extends Component {
 		this.setState({
 			paymentMethod: event.target.value
 		});
-
-		console.log('this.state.paymentMethod', this.state.paymentMethod);
-
 	}
-	handleAmount = (event) => {
-		if (event.target.value === 'Other Amount') {
-			this.totalAmount.value = "";
-			this.finalPayment.value = "";
-		}
+
+	handlePaymentForm = (event) => {
 		this.setState({
 			paymentForm: event.target.value
-		}, () => {
-			console.log('this.state.paymentForm', this.state.paymentForm);
 		});
 
-
-
+		if (event.target.value === 'Balanced Due') {
+			this.setState({
+				finalPayment: this.props.balancedDue,
+				totalAmount: this.props.balancedDue
+			})
+		}
 	}
-	handleInput = (event) => {
-		console.log(event.target.value);
 
+	handleInput = (event) => {
 		this.setState({
 			[event.target.name]: event.target.value
-		}, () => {
-			console.log(this.state.totalAmount);
 		});
-
-
-		this.setState({ finalPayment: this.state.totalAmount });
 	}
 
 	handleDate = (event) => {
@@ -61,13 +52,10 @@ class ModalBill extends Component {
 
 	handleSubmit = (event) => {
 		event.preventDefault();
-
-
 		let remainingBalance = Math.round((this.props.balancedDue - this.state.finalPayment) * 100) / 100;
-		console.log('remaing balance', remainingBalance);
+
 		this.setState({
 			remainingBalance: remainingBalance,
-			balancedDue: remainingBalance,
 			showModal: false
 		})
 
@@ -81,6 +69,14 @@ class ModalBill extends Component {
 		});
 	}
 
+	handlePayAmount = (event) => {
+		if (this.state.paymentForm === 'Other Amount') {
+			this.setState({
+				totalAmount: event.target.value,
+				finalPayment: event.target.value
+			})
+		}
+	}
 	render() {
 		const { enrollDirect } = this.state; /*Toggle enroll direct */
 
@@ -92,6 +88,7 @@ class ModalBill extends Component {
 		var mm = ("0" + (today.getMonth() + 1)).slice(-2)
 		var yyyy = today.getFullYear();
 		today = yyyy + '-' + mm + '-' + dd;
+
 
 		return (
 			<>
@@ -123,15 +120,14 @@ class ModalBill extends Component {
 					</div>
 
 					<div className="paymentAmount">
-						<select className="payAmount" onChange={this.handleAmount} value={this.state.paymentForm}>
+						<select className="payAmount" onChange={this.handlePaymentForm} value={this.state.paymentForm}>
 							<option value="Balanced Due">Balanced Due</option>
 							<option value="Other Amount">Other Amount</option>
 						</select>
 						<div className="payAmount">
 							<label>Payment Amount:</label>
-							{this.state.paymentForm === 'Balanced Due' ? <input type="number" step={"any"} name="totalAmount" readOnly={true} value={this.props.balancedDue} onChange={this.handleInput} ref={el => this.totalAmount = el} ></input> :
-								<input type="number" step={"any"} name="totalAmount"
-									onChange={this.handleInput} ref={el => this.totalAmount = el} ></input>
+							{this.state.paymentForm === 'Balanced Due' ? <input type="number" step={"any"} readOnly={true} value={this.props.balancedDue}></input> :
+								<input type="number" value={this.state.totalAmount} onChange={this.handlePayAmount} ></input>
 							}
 
 						</div>
@@ -140,8 +136,8 @@ class ModalBill extends Component {
 					<div className="paymentSummary">
 						<div><label>Total Payment Amount: $</label>
 							{this.state.paymentForm === 'Balanced Due' ?
-								<input type="number" readOnly={true} value={this.props.balancedDue} ref={el => this.finalPayment = el}></input>
-								: <input type="number" readOnly={true} value={this.state.totalAmount} ref={el => this.finalPayment = el}></input>
+								<input type="number" readOnly={true} value={this.props.balancedDue} ></input>
+								: <input type="number" readOnly={true} value={this.state.finalPayment} ></input>
 							}
 						</div>
 						<div className="paymentSubmit">
@@ -167,20 +163,6 @@ class ModalBill extends Component {
 
 
 		);
-	}
-}
-
-function getDate() {
-	var today = new Date();
-
-	if (today.getDate() <= 9) {
-		let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + 0 + today.getDate();
-		return date;
-	}
-	else {
-		let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-		return date;
-
 	}
 }
 

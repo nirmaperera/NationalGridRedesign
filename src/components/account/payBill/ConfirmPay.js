@@ -2,15 +2,18 @@ import React from 'react';
 import './confirmPay.scss';
 
 
+
 class ConfirmPay extends React.Component {
 	handleClose = () => {
 		console.log(this.props)
 		this.props.setremainingBalance(this.props.remainingBalance);
 		localStorage.setItem('balance', this.props.remainingBalance);
 		this.props.closePopup();
+		this.props.handleClose();
 
 	}
 	render() {
+		console.log(this.props);
 		return (
 
 			<div className='popup animated slideInDown'>
