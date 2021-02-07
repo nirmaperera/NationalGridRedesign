@@ -16,10 +16,10 @@ class ConfirmPay extends React.Component {
 		console.log(this.props);
 		return (
 
-			<div className='popup animated slideInDown'>
+			<div className='popup animated bounceInUp'>
 				<div className="popup-content">
 					<h1>{this.props.text}</h1>
-					<h4 style={{ color: '#808CC6' }}>The remaining balance is <b style={{ color: '#fff' }}>${this.props.remainingBalance}</b></h4>
+					<h4 style={{ color: '#505dbd' }}>The remaining balance is <b style={{ color: '#00148c', fontSize: '2em' }}>${this.props.remainingBalance}</b></h4>
 				</div>
 
 				<div className="popup-btns">

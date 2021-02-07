@@ -13,7 +13,10 @@
     bottom: 100px;
     border-radius: 49px;
 	left:170px;
-    background: radial-gradient(circle, rgba(0, 24, 166, 0.774947) 0%, #090879 100%);
+	background: rgb(245,246,250);
+	line-height:2;
+	border:1px solid $primary-blue;
+	background: radial-gradient(circle, rgba(245,246,250,1) 0%, rgba(151,160,215,1) 45%, rgba(80,93,189,1) 100%);
     color: #fff;
 
 	.popup-btns{
@@ -50,6 +53,9 @@
 			}
 			&:hover:last-child{
 				background:$secondary-red;
+			}
+			i{
+				margin-left: 10px;
 			}
 		}
 	}

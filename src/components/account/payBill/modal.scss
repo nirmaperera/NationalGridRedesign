@@ -23,9 +23,7 @@
 	display: flex;
 	flex-direction: column;
 	font-family: 'Poppins', sans-serif;
-	background-image: linear-gradient(
-135deg
- , #f5f7fa 30%, #c3cfe2 100%);
+    background: radial-gradient(circle, rgba(229,235,243,1) 30%, rgba(161,179,209,1) 100%);
 
 
 	.modal-title{

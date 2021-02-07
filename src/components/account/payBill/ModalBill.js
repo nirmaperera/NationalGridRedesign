@@ -156,7 +156,7 @@ class ModalBill extends Component {
 				</form>
 				{this.state.paidBill ?
 					<ConfirmPay
-						text={["The payment of ", <strong>{this.state.finalPayment}</strong>, " will be paid on ", <strong>{this.state.paymentDate}</strong>, " from ", <strong>{this.state.paymentMethod}</strong>]}
+						text={["The payment of ", <strong style={{ color: '#00148c' }}>{this.state.finalPayment}</strong>, " will be paid on ", <strong style={{ color: '#00148c' }}>{this.state.paymentDate}</strong>, " from ", <strong style={{ color: '#00148c' }}>{this.state.paymentMethod}</strong>]}
 						closePopup={this.togglePopup.bind(this)}
 						remainingBalance={this.state.remainingBalance}
 						setremainingBalance={this.props.setremainingBalance}
