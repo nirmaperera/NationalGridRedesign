@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import './modal.scss';
 import ConfirmPay from './ConfirmPay';
+import { NotificationContainer, NotificationManager } from 'react-notifications';
+import 'react-notifications/lib/notifications.css';
 
 
 class ModalBill extends Component {
@@ -58,8 +60,15 @@ class ModalBill extends Component {
 			remainingBalance: remainingBalance,
 			showModal: false
 		})
+		if (this.state.totalAmount > this.props.balancedDue) {
+			NotificationManager.error('Amount cannot be greater than balance due', 'Payment Error',)
+		} else if (this.state.totalAmount === '0') {
+			NotificationManager.warning('payment must be greater 0', 'Payment Warning',)
+		} else {
+			this.togglePopup();
+		}
 
-		this.togglePopup();
+
 	}
 
 	togglePopup() {
@@ -157,6 +166,7 @@ class ModalBill extends Component {
 
 					: null
 				}
+				<NotificationContainer />
 			</>
 
 
