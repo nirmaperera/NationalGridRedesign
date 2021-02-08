@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './modal.scss';
 import ConfirmPay from './ConfirmPay';
-import { NotificationContainer, NotificationManager } from 'react-notifications';
+import { NotificationManager } from 'react-notifications';
 import 'react-notifications/lib/notifications.css';
 
 
@@ -166,7 +166,6 @@ class ModalBill extends Component {
 
 					: null
 				}
-				<NotificationContainer />
 			</>
 
 

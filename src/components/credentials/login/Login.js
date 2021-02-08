@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { sign_in } from "../../../actions/authAction";
+import { NotificationManager } from 'react-notifications';
 
 import './login.scss';
 
@@ -9,18 +10,8 @@ class Login extends Component {
 	state = {
 		userID: "",
 		password: "",
-		verify: "Invalid User ID or Password.",
-		showError: false,
-		visible: false,
 		isLogged: false
 	};
-
-	componentDidMount() {
-		const userID = localStorage.getItem('userID');
-		const password = localStorage.getItem('password');
-		console.log('the userID in local storage is', userID);
-		console.log('the password in local storae is', password);
-	}
 
 	handleUserInput = (event) => {
 		this.setState({ [event.target.name]: event.target.value });
@@ -32,22 +23,14 @@ class Login extends Component {
 		const password = localStorage.getItem('password');
 
 		if ((userID !== this.state.userID) || (password !== this.state.password)) {
-			this.setState({
-				visible: true,
-				showError: true,
-				isLogged: false
-			})
+			this.setState({ isLogged: false })
 			this.inputUerID.value = "";
 			this.inputPassword.value = "";
+			NotificationManager.error('Invalid User ID or Password', 'Login Error',)
 		}
 		else {
-			console.log('username and password are correct! Logging in')
 			this.props.sign_in();
-			this.setState({
-				visible: false,
-				showError: false,
-				isLogged: true
-			})
+			this.setState({ isLogged: true })
 
 			this.props.history.push({
 				pathname: '/dashboard'
@@ -76,15 +59,13 @@ class Login extends Component {
 				<div className="footer">
 					<input type="submit" className="btn" value="Login" onClick={this.handleSubmit} />
 					<div className="messageError">
-						{this.state.showError && (<input className="message-box" id="message" disabled={true} readOnly={true} value={this.state.verify} size="30" />)}
 					</div>
 					<div className="forgotCreds">
-						<a href="https://online.nationalgridus.com/forgetpass/KSE_Password.jsp">Forgot Password?</a>
+						<a href="/">Forgot Password?</a>
 						<span className="bold-line">  |  </span>
-						<a href="https://online.nationalgridus.com/forgetpass/KSE_userid.jsp">Forgot UserID?</a>
+						<a href="/">Forgot UserID?</a>
 					</div>
 				</div>
-
 			</form >
 		)
 	}

@@ -143,6 +143,7 @@
 
 	.signIn-creds{
 		font-size:3vw;
+		box-shadow: unset;
 
 		.edit-btn{
 			padding: 5px 10px;
@@ -154,14 +155,15 @@
 	}
 	.signIn-creds {
 		.signIn-cols{
-		flex-flow: column !important;
-		align-items: center;
+			flex-flow: column !important;
+			align-items: center;
+			margin: 20px 0;
 	}
 	.profile-group{
 		max-width: 250px;
 		min-width: 250px;
 		padding:10px;
-		margin-bottom:20px;
+		margin-bottom:50px;
 		 input{
 			font-size: 1rem;
 		}

@@ -81,8 +81,8 @@ class Toolbar extends Component {
 		}
 		else {
 			return <ul>
-				<li className="home-links"><a href='https://online.nationalgridus.com/signup/KSE_feedback_pop.html'>Leave Feedback</a></li>
-				<li className="home-links"><a href='https://www.nationalgridus.com/contact-us'>Contact</a></li>
+				<li className="home-links"><a href='/'>Leave Feedback</a></li>
+				<li className="home-links"><a href='/'>Contact</a></li>
 			</ul>
 		}
 	}

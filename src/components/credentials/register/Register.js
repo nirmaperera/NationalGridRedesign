@@ -3,6 +3,8 @@ import { withRouter } from 'react-router-dom';
 
 import { connect } from 'react-redux';
 import { sign_in } from "../../../actions/authAction";
+import { NotificationManager } from 'react-notifications';
+import 'react-notifications/lib/notifications.css';
 
 import './register.scss';
 
@@ -18,24 +20,21 @@ class Register extends Component {
 			verifyEmail: "",
 			password: "",
 			verifyPassword: "",
-			securityQuestion: "What is your mother's maiden name?",
-			securityAnswer: "",
 			zipCode: "",
-			verify: "* The fields do not match",
+			verify: "",
 			empty: "Please fill out empty field(s)",
-			visible: true,
 			showError: false
 		}
 	}
 
-	handleSelect = (event) => {
-		this.setState({
-			securityQuestion: event.target.value
-		});
+	// handleSelect = (event) => {
+	// 	this.setState({
+	// 		securityQuestion: event.target.value
+	// 	});
 
-		console.log('this.state.securityquestion', this.state.securityQuestion);
 
-	}
+
+	// }
 
 	handleUserInput = (event) => {
 		this.setState({
@@ -46,16 +45,8 @@ class Register extends Component {
 
 	handleSubmit = (event) => {
 		event.preventDefault();
-
-
-		console.log("Signing Up")
 		this.props.sign_in();
 
-		if (this.state.showError === true) {
-			console.log(this.state.showError);
-
-
-		}
 		if (this.state.showError === false) {
 			const { userID, password, firstName, lastName, email, securityQuestion, securityAnswer } = this.state;
 			localStorage.setItem('userID', userID);
@@ -72,24 +63,30 @@ class Register extends Component {
 			})
 
 		}
+		else {
+			NotificationManager.error(`${this.state.verify} do not match.`, 'Register Error',)
+		}
 
 	}
 
 	/** Verification */
 	Verification = (evt) => {
 		evt.preventDefault()
-		if ((this.state.password !== this.state.verifyPassword) || (this.state.email !== this.state.verifyEmail)) {
+		if (this.state.password !== this.state.verifyPassword) {
 			this.setState({
-				visible: true,
-				showError: true
+				showError: true,
+				verify: 'password'
+			})
+		} else if (this.state.email !== this.state.verifyEmail) {
+			this.setState({
+				showError: true,
+				verify: 'email'
 			})
 		}
 
 		else {
 			this.setState({
-				visible: false,
 				showError: false,
-				ShowEmptyError: false,
 			})
 		}
 	}
@@ -105,7 +102,6 @@ class Register extends Component {
 		return (
 			<form className="base-container" ref={this.props.containerRef} onSubmit={this.handleSubmit}>
 				<div className="header-reg"><h3>Register</h3></div>
-
 				<div className="content">
 					<div className="form">
 						<div className="form-group-reg">
@@ -144,18 +140,6 @@ class Register extends Component {
 							</div>
 						</div>
 
-						{/* <div className="form-group-reg">
-							<div className="form-row-reg">
-								<select onChange={this.handleSelect} value={this.state.securityQuestion} >
-									<option value="What is your mother's maiden name?">What is your mother's maiden name?</option>
-									<option value="What's the name of your favorite pet?">What's the name of your favorite pet?</option>
-									<option value="What's your favorite color?">What's your favorite color?</option>
-									<option value="What's the your first teacher's last name?">What's the your first teacher's last name?</option>
-								</select>
-								<input onKeyDown={handleEnter} className="form-row-reg" type="text" name="securityAnswer" placeholder="securityAnswer" onChange={this.handleUserInput} required />
-							</div>
-						</div> */}
-
 						<div className="form-group-reg">
 							<input maxLength={5} minLength={5} onKeyDown={handleEnter} onInput={this.maxLengthCheck} type="number" name="zipCode" placeholder="zipcode" onChange={this.handleUserInput} required />
 						</div>
@@ -163,8 +147,7 @@ class Register extends Component {
 				</div>
 
 				<div className="footer">
-					<input type="submit" className="btn" value="Register" disabled={this.state.showError} />
-					{this.state.showError && (<input className="message-box" id="message" disabled={true} readOnly={true} value={this.state.verify} size="30" />)}
+					<input type="submit" className="btn" value="Register" />
 				</div>
 			</form >
 		)
