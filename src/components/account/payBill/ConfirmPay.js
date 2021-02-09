@@ -1,35 +1,27 @@
 import React from 'react';
 import './confirmPay.scss';
 
-
-
-class ConfirmPay extends React.Component {
-	handleClose = () => {
-		console.log(this.props)
-		this.props.setremainingBalance(this.props.remainingBalance);
-		localStorage.setItem('balance', this.props.remainingBalance);
-		this.props.closePopup();
-		this.props.handleClose();
-
+const ConfirmPay = ({ remainingBalance, setremainingBalance, closePopup, handleClose, text }) => {
+	const handleClosePopUp = () => {
+		setremainingBalance(remainingBalance);
+		localStorage.setItem('balance', remainingBalance);
+		closePopup();
+		handleClose();
 	}
-	render() {
-		console.log(this.props);
-		return (
 
-			<div className='popup animated bounceInUp'>
-				<div className="popup-content">
-					<h1>{this.props.text}</h1>
-					<h4 style={{ color: '#505dbd' }}>The remaining balance is <b style={{ color: '#00148c', fontSize: '2em' }}>${this.props.remainingBalance}</b></h4>
-				</div>
-
-				<div className="popup-btns">
-					<button onClick={this.handleClose}>  Confirm <i className="fas fa-money-bill-alt"></i></button>
-					<button onClick={this.props.closePopup}>   Cancel <i className="fas fa-times"></i></button>
-				</div>
+	return (
+		<div className='popup animated bounceInUp'>
+			<div className="popup-content">
+				<h1>{text}</h1>
+				<h4 style={{ color: '#505dbd' }}>The remaining balance is <b style={{ color: '#00148c', fontSize: '2em' }}>${remainingBalance}</b></h4>
 			</div>
 
-		);
-	}
+			<div className="popup-btns">
+				<button onClick={handleClosePopUp}> Confirm <i className="fas fa-money-bill-alt"></i></button>
+				<button onClick={closePopup}>  Cancel <i className="fas fa-times"></i></button>
+			</div>
+		</div>
+	);
 }
 
 export default ConfirmPay;
