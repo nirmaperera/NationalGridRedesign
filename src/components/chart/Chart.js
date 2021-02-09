@@ -37,10 +37,6 @@ const options = {
     },
 }
 
-
-
-
-
 const Chart = () => {
     const [dataNg, setDataNg] = useState(["cost", "meter", "usage"])
     const [option, setOption] = useState("cost");
@@ -62,9 +58,6 @@ const Chart = () => {
                     <Line data={data.Meter} options={options} /> :
                     option === "usage" ?
                         <Line data={data.Usage} options={options} /> : null}
-
-
-
         </div>
     )
 
