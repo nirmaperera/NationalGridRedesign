@@ -4,20 +4,20 @@
 	font-family: 'Poppins', sans-serif;
 	box-sizing: border-box;
 	text-align: center;
-    padding: 20px;
-    position: absolute;
-    letter-spacing: 2px;
-    width: 60%;
-    height: 300px;
-    font-size: 2vh;
-    bottom: 100px;
-    border-radius: 49px;
+	padding: 20px;
+	position: absolute;
+	letter-spacing: 2px;
+	width: 60%;
+	height: 300px;
+	font-size: 2vh;
+	bottom: 100px;
+	border-radius: 49px;
 	left:170px;
 	background: rgb(245,246,250);
 	line-height:2;
 	border:1px solid $primary-blue;
 	background: radial-gradient(circle, rgba(245,246,250,1) 0%, rgba(151,160,215,1) 45%, rgba(80,93,189,1) 100%);
-    color: #fff;
+	color: #fff;
 
 	.popup-btns{
 		display: flex;
@@ -26,7 +26,6 @@
 		justify-content: space-evenly;
 
 		button{
-
 			display: flex;
 			width: 100px;
 			align-items: center;
@@ -40,8 +39,6 @@
 			font-size: 1em;
 			cursor: pointer;
 			border: none;
-
-
 			&:first-child{
 				background: $primary-green;
 			}
@@ -61,7 +58,6 @@
 	}
 }
 
-
 @media screen and (max-width:768px){
 	.popup{
 		height: auto;
@@ -73,7 +69,5 @@
 		.popup-btns button{
 			margin: 10px;
 		}
-
 	}
-
 }

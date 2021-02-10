@@ -12,27 +12,26 @@
 }
 
 .modal-main {
-    border-radius: 10px;
-    position: absolute;
-    background: white;
-    width: 60%;
-    height: auto;
-    top: 13%;
-    left: 20%;
+	border-radius: 10px;
+	position: absolute;
+	background: white;
+	width: 60%;
+	height: auto;
+	top: 13%;
+	left: 20%;
 	transform: translate(-50%, -50%);
 	display: flex;
 	flex-direction: column;
 	font-family: 'Poppins', sans-serif;
-    background: radial-gradient(circle, rgba(229,235,243,1) 30%, rgba(161,179,209,1) 100%);
-
+	background: radial-gradient(circle, rgba(229,235,243,1) 30%, rgba(161,179,209,1) 100%);
 
 	.modal-title{
 		text-align: center;
 		font-size: 1em;
 		color:$primary-blue;
 		letter-spacing: 1.3px;
-
 	}
+
 	input, select{
 		text-align: center;
 		border:none;
@@ -41,23 +40,22 @@
 		font-size: 1.3em;
 		letter-spacing: 1.3px;
 		color: #0f008c;
-
 	}
 
 	label{
 		font-weight: bolder;
 		font-size: 1em;
 		color:$primary-blue;
-
 	}
+
 	input::-webkit-calendar-picker-indicator {
 		filter: invert(0.5);
 	}
 
 	input:focus{
 		border-bottom: 2px solid $primary-green;
-
 	}
+
 	select:focus{
 		box-shadow: 0 0 3pt 2pt $primary-green;
 	}
@@ -71,6 +69,7 @@
 	cursor: pointer;
 	color:$primary-blue;
 	@include inputDeco;
+
 	i{
 		display: flex;
 		justify-content: flex-end;
@@ -85,6 +84,7 @@
 .display-none {
 	display: none;
 }
+
 .paymentMethod, .enrollDirectPay, .paymentDate, .paymentAmount, .paymentSummary,.paymentSubmit{
   display: flex;
   justify-content: center;
@@ -101,15 +101,15 @@
 			font-size: 1rem;
 			display: flex;
 
-
-		input {
-		   width:25px;
-		   height: 25px;
-		   margin-left: 10px;
+			input {
+			width:25px;
+			height: 25px;
+			margin-left: 10px;
+			}
 		}
 	}
-	}
 }
+
 .paymentAmount {
 	.payAmount{
 		flex: 0.5;
@@ -118,33 +118,28 @@
 		align-items: center;
 	}
 }
+
 .paymentSummary{
 	flex-direction: column;
 	align-items: center;
 	margin-bottom: 10px;
-
 }
 
 .paymentSubmit{
 	margin-bottom: 10px;
 	input{
-		background: linear-gradient(
-			152deg
-			 , rgba(95, 106, 167, 0.744135) 0%, rgba(9, 8, 121, 0.814163) 100%);
-				padding: 10px 30px;
-				color: white;
-				border-radius: 50px;
-				letter-spacing: 1.5px;
-				font-weight: 700;
-				cursor: pointer;
-				box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+		background: linear-gradient(152deg, rgba(95, 106, 167, 0.744135) 0%, rgba(9, 8, 121, 0.814163) 100%);
+		padding: 10px 30px;
+		color: white;
+		border-radius: 50px;
+		letter-spacing: 1.5px;
+		font-weight: 700;
+		cursor: pointer;
+		box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
 
-				&:hover{
-					background: linear-gradient(
-152deg
-, rgba(95, 106, 167, 0.744135) 0%, rgba(9, 8, 121, 0.814163) 100%);
-
-				}
+		&:hover{
+			background: linear-gradient(152deg, rgba(95, 106, 167, 0.744135) 0%, rgba(9, 8, 121, 0.814163) 100%);
+		}
 
 	}
 }
@@ -157,25 +152,30 @@
 	.modal-main{
 		width: 100%;
 		left:0;
-		.modal-title{
-			font-size: 3em;
-		}
+			.modal-title{
+				font-size: 3em;
+			}
 	}
+
 	.enrollDirectPay{
 		flex-direction: row;
 	}
+
 	.payAmount{
 		flex-direction: row;
 		padding-top: 44px;
 		justify-content: center;
 	}
+
 	.paymentSummary > div{
 		display: flex;
 		flex-direction: row;
 	}
+
 	.paymentMethod, .enrollDirectPay, .paymentDate, .paymentAmount, .paymentSummary, .paymentSubmit{
 		font-size: 0.5rem;
 	}
+
 	.paymentAmount{
 		justify-content: space-between;
 		.payAmount{
@@ -183,7 +183,4 @@
 			align-items: flex-end;
 		}
 	}
-
-
-
 }

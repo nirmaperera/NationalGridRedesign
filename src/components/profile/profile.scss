@@ -1,10 +1,7 @@
 @import '../../main.scss';
 
 .containerProfile{
-    background-image: linear-gradient(
-135deg
- , #f5f7fa 0%, #c3cfe2 100%);
-
+	background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 	max-width:100%;
 	height: 100vh;
 	margin: 0 auto;
@@ -25,63 +22,63 @@
 	justify-content: space-evenly;
 	padding:20px;
 	font-size:4vh;
-    box-shadow: inset 8px 7px 18px #e7e7e7, inset -9px -8px 15px #ffffff;
-    width: 86%;
+	box-shadow: inset 8px 7px 18px #e7e7e7, inset -9px -8px 15px #ffffff;
+	width: 86%;
 	height: 66%;
 	border-radius: 50px;
 
-		hr{
-			width: 90%;
-		}
+	hr{
+		width: 90%;
+	}
 
-		input{
-			-webkit-appearance: none;
-			-moz-appearance: none;
-			appearance: none;
-			border-radius: 0;
-			@include inputDeco;
-			font-size: 1.5vw;
-			padding:10px;
-			width:100%;
-			color:$primary-blue;
-		}
+	input{
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		border-radius: 0;
+		@include inputDeco;
+		font-size: 1.5vw;
+		padding:10px;
+		width:100%;
+		color:$primary-blue;
+	}
 
-		label{
-			color:#808cc6;
-			font-size: 2vh;
-			font-weight: 600;
-			letter-spacing: 2px;
-		}
-		select{
-			-webkit-appearance: none;
-			-moz-appearance: none;
-			appearance: none;
-			border-radius: 0;
-			@include inputDeco;
-			border-bottom:$blue-border;
-			border-radius: none;
-		}
+	label{
+		color:#808cc6;
+		font-size: 2vh;
+		font-weight: 600;
+		letter-spacing: 2px;
+	}
 
-		.edit-btn{
-			background-color:$primary-blue;
-			color:#fff;
-			font-size:1.5vh;
-			border-radius:10px;
-			padding:10px 20px;
-			border: none;
-			cursor: pointer;
+	select{
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		border-radius: 0;
+		@include inputDeco;
+		border-bottom:$blue-border;
+		border-radius: none;
+	}
 
-			&:hover{
-				background-color:#000f53;
-			}
+	.edit-btn{
+		background-color:$primary-blue;
+		color:#fff;
+		font-size:1.5vh;
+		border-radius:10px;
+		padding:10px 20px;
+		border: none;
+		cursor: pointer;
+
+		&:hover{
+			background-color:#000f53;
 		}
+	}
 }
 
 .signIn-creds .signIn-cols{
 	display: flex;
 	width: 100%;
-    justify-content: space-evenly;
-
+	justify-content: space-evenly;
 }
 
 .signIn-creds input[type="submit"]:first-child{
@@ -109,11 +106,7 @@
 	min-width: 350px;
 	max-width: 350px;
 	padding:20px;
-
 	box-shadow: inset 5px 5px 9px #ced8e4, inset 1px 2px 3px #d6e0ee;
-
-	//box-shadow: -1px 4px 3px 0 rgba(0, 0, 0, 0%), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
 }
 
 .group-update input{
@@ -131,10 +124,10 @@
 	font-size: 1vw;;
 }
 
-
 @media screen and (max-width:425px){
 	.containerProfile{
 		padding-top: 20%;
+
 		h1{
 			font-size:5vw;
 			margin-bottom: 33px;
@@ -149,16 +142,19 @@
 			padding: 5px 10px;
 			font-size:1vh;
 		}
+
 		label{
 			font-size: 3vw;
 		}
 	}
+
 	.signIn-creds {
 		.signIn-cols{
 			flex-flow: column !important;
 			align-items: center;
 			margin: 20px 0;
 	}
+
 	.profile-group{
 		max-width: 250px;
 		min-width: 250px;
@@ -167,9 +163,7 @@
 		 input{
 			font-size: 1rem;
 		}
-
 	}
-
 }
 
 	.group-update {
@@ -181,7 +175,6 @@
 			font-size: 1rem !important;
 		}
 	}
-
 }
 
 @media screen and (max-width: 768px){
@@ -189,6 +182,7 @@
 		flex-flow: row;
 		align-items: center;
 	}
+
 	.profile-group{
 		max-width: 250px;
 		min-width: 250px;
@@ -197,7 +191,6 @@
 		 input{
 			font-size: 1rem;
 		}
-
 	}
 }
 

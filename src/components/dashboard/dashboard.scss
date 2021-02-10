@@ -27,7 +27,6 @@
 		text-align: center;
 		position: relative;
 	}
-
 	.info{
 		width: 100%;
 		@include flexCenter(column);
@@ -105,7 +104,6 @@
 			font-size: 1em;
 		}
 
-
 		h4{
 			align-self: center;
 			margin-bottom: 20px;
@@ -144,7 +142,6 @@
 }
 
 /* Service address box */
-
 .second-dash{
 	padding: 0 30px;
 	flex:1;
@@ -224,7 +221,7 @@
 	}
 }
 
-.second-dash-a button:hover ,.second-dash-b button:hover{
+.second-dash-a button:hover,.second-dash-b button:hover{
 	background-color: #0018a6;
 }
 
@@ -288,8 +285,6 @@
 		}
 	}
 
-
-
 	.info:last-child{
 		display: flex;
 		flex-direction: column;
@@ -341,8 +336,8 @@
 		.account-info {
 			margin-bottom: 50px;
 			h4{
-			font-size: 2.3em;
-		  	}
+				font-size: 2.3em;
+			}
 		}
 
 		h1{
@@ -378,9 +373,9 @@
 			border-radius: 20px;
 		}
 		.second-dash-a_sub{
-		display: flex;
-		flex-direction: column;
-		margin-top: 20px;
+			display: flex;
+			flex-direction: column;
+			margin-top: 20px;
 	}
 }
 	.second-dash-b{
@@ -400,10 +395,8 @@
 			font-size: 1em;
 		}
 
-	&:last-child{
-		margin-top:40px
+		&:last-child{
+			margin-top:40px
+		}
 	}
-	}
-
-
 }
