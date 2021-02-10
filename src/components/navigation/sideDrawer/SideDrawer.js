@@ -1,35 +1,23 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "./sideDrawer.scss";
-
 import { connect } from "react-redux";
 import { sign_out } from "../../../actions/authAction";
 
-class SideDrawer extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			isLogged: false
-		}
+import "./sideDrawer.scss";
+
+const SideDrawer = (props) => {
+	const [isLogged, setIsLogged] = useState(false);
+	useEffect(() => {
+		setIsLogged(props.isLogged)
+	})
+
+	const handleClick = () => {
+		setIsLogged(false);
+		props.sign_out();
 	}
 
-	componentDidMount() {
-		this.setState({
-			isLogged: this.props.isLogged
-		});
-	}
-
-	handleClick = () => {
-		this.setState({
-			isLogged: false
-		}, () => {
-			this.props.sign_out();
-
-		})
-	}
-
-	toggleDropdown() {
-		let loginStat = this.props.isLogged;
+	const toggleDropdown = () => {
+		let loginStat = props.isLogged;
 		const fName = localStorage.getItem('firstName');
 		const lName = localStorage.getItem('lastName');
 
@@ -66,7 +54,7 @@ class SideDrawer extends Component {
 				<li>Hello, <span>{fName} {lName}</span>
 					<ul className="dropdown-side">
 						<li><Link to="/Profile">Profile</Link></li>
-						<li onClick={this.handleClick}><Link to="/">Log Out <i className="fas fa-sign-out-alt"></i></Link></li>
+						<li onClick={handleClick}><Link to="/">Log Out <i className="fas fa-sign-out-alt"></i></Link></li>
 					</ul>
 				</li>
 			</ul >
@@ -79,23 +67,23 @@ class SideDrawer extends Component {
 		}
 	}
 
-	render() {
-		let drawerClasses = 'side-drawer';
+	let drawerClasses = 'side-drawer';
 
-		if (this.props.show) {
-			drawerClasses = 'side-drawer open';
-		}
-		return (
-			<nav className={drawerClasses}>
-				{this.toggleDropdown()}
-			</nav>
-		)
+	if (props.show) {
+		drawerClasses = 'side-drawer open';
 	}
-};
+
+	return (
+		<nav className={drawerClasses}>
+			{toggleDropdown()}
+		</nav>
+	)
+}
 
 const mapStateToProps = (state) => {
 	return {
 		isLogged: state.isLogged
 	}
 }
+
 export default connect(mapStateToProps, { sign_out })(SideDrawer);

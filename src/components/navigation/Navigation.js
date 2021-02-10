@@ -1,38 +1,28 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import Toolbar from './Toolbar/Toolbar';
 import SideDrawer from './sideDrawer/SideDrawer'
 import Backdrop from '../backdrop/Backdrop';
 
+const Navigation = () => {
+	const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
 
-class Navigation extends Component {
-	state = {
-		sideDrawerOpen: false
-	}
-	drawerToggleClickHandler = () => {
-		this.setState((prevState) => {
-			return { sideDrawerOpen: !prevState.sideDrawerOpen }
-		});
-
+	const drawerToggleClickHandler = () => {
+		setSideDrawerOpen(!sideDrawerOpen);
 	};
 
-	backdropClickHandler = () => {
-		this.setState({ sideDrawerOpen: false })
-	};
+	let backdrop;
 
-	render() {
-		let backdrop;
-
-		if (this.state.sideDrawerOpen) {
-			backdrop = <Backdrop click={this.backdropClickHandler} />
-		}
-		return (
-			<div className="navigation">
-				<Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
-				<SideDrawer show={this.state.sideDrawerOpen} />
-				{backdrop}
-			</div>
-		);
+	if (sideDrawerOpen) {
+		backdrop = <Backdrop click={() => setSideDrawerOpen(false)} />
 	}
+
+	return (
+		<div className="navigation">
+			<Toolbar drawerClickHandler={drawerToggleClickHandler} />
+			<SideDrawer show={sideDrawerOpen} />
+			{backdrop}
+		</div>
+	)
 }
 
 export default Navigation;

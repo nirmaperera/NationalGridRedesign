@@ -1,42 +1,27 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { sign_out } from "../../../actions/authAction";
-import { Link } from "react-router-dom";
-
-
 import ToggleBtn from '../sideDrawer/ToggleBtn';
+
 import logo from '../../../assets/images/logo.jpg';
 import './toolbar.scss';
 
-class Toolbar extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			isLogged: false
-		}
+const Toolbar = (props) => {
+	const [isLogged, setIsLogged] = useState(false);
+
+	useEffect(() => {
+		setIsLogged(props.isLogged);
+
+	}, [])
+
+	const handleClick = () => {
+		setIsLogged(false);
+		props.sign_out();
 	}
 
-	componentDidMount() {
-		this.setState({
-			isLogged: this.props.isLogged
-		}, () => { console.log('this.props.isLogged is', this.props.isLogged) })
-	}
-
-	componentDidUpdate() {
-		console.log('in update this.props.isLogged is', this.props.isLogged);
-	}
-
-	handleClick = () => {
-		this.setState({
-			isLogged: false
-		}, () => {
-			this.props.sign_out();
-		})
-	}
-
-	toggleNavbar() {
-		console.log("this.state.success in toolbar is ", this.state.isLogged);
-		let loginStat = this.props.isLogged;
+	const toggleNavbar = () => {
+		let loginStat = props.isLogged;
 		const fName = localStorage.getItem('firstName');
 		const lName = localStorage.getItem('lastName');
 
@@ -69,12 +54,12 @@ class Toolbar extends Component {
 						<li><a href='https://www.nationalgridus.com/MA-Home/Billing-Payments/Go-Paperless'>Enroll in National Grid Paperless</a></li>
 					</ul>
 				</li>
-				<li><a href='https://www.nationalgridus.com/contact-us'>Contact</a></li>
+				<li><a href='/'>Contact</a></li>
 
 				<li>Hello, {fName} {lName}<i className="fas fa-user-circle"></i>
 					<ul className="dropdown">
 						<li><Link to="/Profile">Profile</Link></li>
-						<li onClick={this.handleClick}><Link to="/">Log Out <i className="fas fa-sign-out-alt"></i></Link></li>
+						<li onClick={handleClick}><Link to="/">Log Out <i className="fas fa-sign-out-alt"></i></Link></li>
 					</ul>
 				</li>
 			</ul >
@@ -86,26 +71,24 @@ class Toolbar extends Component {
 			</ul>
 		}
 	}
-	render() {
-		return (
-			<header className="navbar">
-				<nav className="navbar-navigation">
-					<div className="navbar-logo">
-						<a href="https://www.nationalgridus.com/NY-Home/Default.aspx"><img className="animated slideInDown" src={logo} width="170" height="50" alt="logo" /></a>
-					</div>
-					<div className="spacer"></div>
-					<div className="navbartoggle-btn">
-						<ToggleBtn click={this.props.drawerClickHandler} />
-					</div>
-					<div className="navbar-items">
-						<ul>
-							{this.toggleNavbar()}
-						</ul>
-					</div>
-				</nav>
-			</header>
-		);
-	}
+	return (
+		<header className="navbar">
+			<nav className="navbar-navigation">
+				<div className="navbar-logo">
+					<a href="https://www.nationalgridus.com/NY-Home/Default.aspx"><img className="animated slideInDown" src={logo} width="170" height="50" alt="logo" /></a>
+				</div>
+				<div className="spacer"></div>
+				<div className="navbartoggle-btn">
+					<ToggleBtn click={props.drawerClickHandler} />
+				</div>
+				<div className="navbar-items">
+					<ul>
+						{toggleNavbar()}
+					</ul>
+				</div>
+			</nav>
+		</header>
+	)
 }
 
 const mapStateToProps = (state) => {
