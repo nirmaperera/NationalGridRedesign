@@ -3,9 +3,9 @@ import Login from './login/Login';
 import Register from './register/Register';
 import ReactCardFlip from 'react-card-flip';
 
-import '../credentials/login/login.scss';
 import top_grid from '../../assets/images/topGrid.png';
 import bottom_grid from '../../assets/images/bottomGrid.png';
+import '../credentials/login/login.scss';
 
 const ToggleLogin = () => {
 	const [isFlipped, setIsFlipped] = useState(false);
