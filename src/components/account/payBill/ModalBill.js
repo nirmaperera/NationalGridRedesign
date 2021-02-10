@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-
+import React, { useState } from 'react';
 import ConfirmPay from './ConfirmPay';
 import { NotificationManager } from 'react-notifications';
 
