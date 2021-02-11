@@ -20,6 +20,8 @@ const Register = (props) => {
 	const [zipCode, setZipCode] = useState("");
 	const [verify, setVerify] = useState("");
 	const [showError, setShowError] = useState(false);
+	const [showPassword, setShowPassword] = useState(false);
+	const [showVerifyPass, setShowVerifyPass] = useState(false);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -59,6 +61,7 @@ const Register = (props) => {
 			object.target.value = object.target.value.slice(0, object.target.maxLength)
 		}
 	}
+
 	return (
 		<form className="base-container" ref={props.containerRef} onSubmit={handleSubmit}>
 			<div className="header-reg"><h3>Register</h3></div>
@@ -84,10 +87,16 @@ const Register = (props) => {
 
 					<div className="form-group-reg">
 						<div className="form-row-reg">
-							<input onKeyDown={handleEnter} type="password" value={password} placeholder="password" onChange={e => setPassword(e.target.value)} required />
+							<div className="form-row-reg__password">
+								<input onKeyDown={handleEnter} type={showPassword ? "text" : "password"} value={password} placeholder="password" onChange={e => setPassword(e.target.value)} required />
+								<i onClick={() => setShowPassword(!showPassword)} className="far fa-eye"></i>
+							</div>
 						</div>
 						<div className="form-row-reg">
-							<input onKeyDown={handleEnter} type="password" value={verifyPassword} placeholder="confirm password" onChange={e => setVerifyPassword(e.target.value)} onKeyUp={Verification} required />
+							<div className="form-row-reg__password">
+								<input onKeyDown={handleEnter} type={showVerifyPass ? "text" : "password"} value={verifyPassword} placeholder="confirm password" onChange={e => setVerifyPassword(e.target.value)} onKeyUp={Verification} required />
+								<i onClick={() => setShowVerifyPass(!showVerifyPass)} className="far fa-eye"></i>
+							</div>
 						</div>
 					</div>
 
