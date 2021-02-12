@@ -36,16 +36,19 @@
 		text-align: center;
 		border:none;
 		background: none;
-		border-bottom: 1px solid #808cc6;
+		border-bottom: 2px solid #808cc6;
 		font-size: 1.3em;
 		letter-spacing: 1.3px;
 		color: #0f008c;
+		outline:none;
 	}
+
 
 	label{
 		font-weight: bolder;
 		font-size: 1em;
 		color:$primary-blue;
+		letter-spacing: 1.4px;
 	}
 
 	input::-webkit-calendar-picker-indicator {
@@ -148,7 +151,7 @@
 	width: 420px !important;
 }
 
-@media screen and (max-width:425px){
+@media screen and (max-width:630px){
 	.modal-main{
 		width: 100%;
 		left:0;
@@ -168,19 +171,39 @@
 	}
 
 	.paymentSummary > div{
+		margin-top:20px;
 		display: flex;
-		flex-direction: row;
+    	flex-direction: column;
+    	width: 80%;
+		label{
+			margin-bottom: 20px;
+			text-align: center;
+		}
 	}
 
 	.paymentMethod, .enrollDirectPay, .paymentDate, .paymentAmount, .paymentSummary, .paymentSubmit{
-		font-size: 0.5rem;
+		font-size: 0.7rem;
 	}
 
 	.paymentAmount{
-		justify-content: space-between;
+		justify-content: space-around;
 		.payAmount{
 			flex:0.2;
 			align-items: flex-end;
 		}
 	}
+}
+
+@media screen and (max-width:1001px){
+	.paymentAmount{
+		.payAmount:last-child{
+			flex-direction: column;
+			align-items: center;
+			label{
+				margin-bottom: 20px;
+			}
+		}
+	}
+
+
 }

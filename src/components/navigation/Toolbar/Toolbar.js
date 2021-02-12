@@ -51,7 +51,7 @@ const Toolbar = (props) => {
 						<li><a href='/dashboard'>Start or Stop Service</a></li>
 						<li><a href='/dashboard'>Manage Orders</a></li>
 						<li><a href='/dashboard'>Usage History</a></li>
-						<li><a href='https://www.nationalgridus.com/MA-Home/Billing-Payments/Go-Paperless'>Enroll in National Grid Paperless</a></li>
+						<li><a href='/dashboard'>Enroll in National Grid Paperless</a></li>
 					</ul>
 				</li>
 				<li><a href='/'>Contact</a></li>
@@ -75,7 +75,7 @@ const Toolbar = (props) => {
 		<header className="navbar">
 			<nav className="navbar-navigation">
 				<div className="navbar-logo">
-					<a href="https://www.nationalgridus.com/NY-Home/Default.aspx"><img className="animated slideInDown" src={logo} width="170" height="50" alt="logo" /></a>
+					<a href="/"><img className="animated slideInDown" src={logo} width="170" height="50" alt="logo" /></a>
 				</div>
 				<div className="spacer"></div>
 				<div className="navbartoggle-btn">

@@ -13,7 +13,7 @@ const ConfirmPay = ({ remainingBalance, setremainingBalance, closePopup, handleC
 		<div className='popup animated bounceInUp'>
 			<div className="popup-content">
 				<h1>{text}</h1>
-				<h4 style={{ color: '#505dbd' }}>The remaining balance is <b style={{ color: '#00148c', fontSize: '2em' }}>${remainingBalance}</b></h4>
+				<h4 style={{ color: 'white' }}>The remaining balance is <b style={{ color: '#00148c', fontSize: '2em' }}>${remainingBalance}</b></h4>
 			</div>
 
 			<div className="popup-btns">
