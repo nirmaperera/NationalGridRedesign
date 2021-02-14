@@ -10,7 +10,6 @@ import './login.scss';
 const Login = (props) => {
 	const [userID, setUserID] = useState("");
 	const [password, setPassword] = useState("");
-	const [isLogged, setIsLogged] = useState(false);
 	const [showPassword, setShowPassword] = useState(false);
 
 	const handleSubmit = (e) => {
@@ -19,14 +18,12 @@ const Login = (props) => {
 		const password_ = localStorage.getItem('password');
 
 		if ((userID_ !== userID) || (password_ !== password)) {
-			setIsLogged(false);
 			setUserID("");
 			setPassword("");
 			NotificationManager.error('Invalid User ID or Password', 'Login Error',)
 		}
 		else {
 			props.sign_in();
-			setIsLogged(true);
 			props.history.push({
 				pathname: '/dashboard'
 			})

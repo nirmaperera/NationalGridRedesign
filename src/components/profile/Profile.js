@@ -26,7 +26,7 @@ const Profile = () => {
 		setUserID(userID);
 		setPassword(password);
 		setEmail(email);
-	})
+	}, [])
 
 	const handleSubmit = () => {
 		localStorage.setItem('userID', userID);

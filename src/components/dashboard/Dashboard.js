@@ -6,6 +6,7 @@ import { NotificationManager } from 'react-notifications';
 import ModalBill from '../account/payBill/ModalBill';
 import Chart from '../chart/Chart';
 import '../account/payBill/ModalBill';
+import { getPreviousDate, getDueDate } from '../helpers/GetDate';
 
 import contact from '../../assets/images/contact.png';
 import greenlight from '../../assets/images/greenlight.png';
@@ -29,11 +30,10 @@ const Dashboard = ({ isLogged }) => {
 		document.title = 'Dashboard | National Grid';
 		window.scrollTo(0, 0)
 		localStorage.setItem('balance', balancedDue);
-		getDueDate();
-		getPreviousDate();
+		getDueDate(setDueDate, DUEDATE);
+		getPreviousDate(setPrevDueDate, DUEDATE);
 
 	}, [balancedDue, isLogged])
-
 
 	useEffect(() => {
 		if (firstRenderP.current) {
@@ -49,7 +49,6 @@ const Dashboard = ({ isLogged }) => {
 
 	}, [paperless])
 
-
 	useEffect(() => {
 		if (firstRenderB.current) {
 			firstRenderB.current = false;
@@ -63,7 +62,6 @@ const Dashboard = ({ isLogged }) => {
 		}
 
 	}, [balanced])
-
 
 	useEffect(() => {
 		if (firstRenderD.current) {
@@ -81,37 +79,6 @@ const Dashboard = ({ isLogged }) => {
 	const hideModal = () => setShowModal(false);
 
 	const setremainingBalance = (val) => setBalancedDue(val);
-
-	const getDueDate = () => {
-		var now = new Date();
-		var current;
-
-		if (now.getDate() <= 23) {
-			var date = new Date(now.getFullYear(), now.getMonth(), 23);
-			current = date.toLocaleString('default', { month: 'long' });
-			setDueDate(current + " " + DUEDATE);
-
-		} else {
-			var date = new Date(now.getFullYear(), now.getMonth() + 1, 23);
-			current = date.toLocaleString('default', { month: 'long' });
-			setDueDate(current + " " + DUEDATE);
-		}
-	}
-
-	const getPreviousDate = () => {
-		var now = new Date();
-		let previous;
-
-		if (now.getDate() >= 23) {
-			var date = new Date(now.getFullYear(), now.getMonth(), 23);
-			previous = date.toLocaleString('default', { month: 'long' });
-			setPrevDueDate(previous + " " + DUEDATE);
-		} else {
-			let date = new Date(now.getFullYear(), now.getMonth() - 1, 23);
-			previous = date.toLocaleString('default', { month: 'long' });
-			setPrevDueDate(previous + " " + DUEDATE);
-		}
-	}
 
 	const toggleBillingStatus = (content) => {
 		if (content === 'Paperless Billing') {
@@ -143,9 +110,9 @@ const Dashboard = ({ isLogged }) => {
 					<h4>Billing Program Status</h4>
 					<div className="billing__row">
 						<p> Paperless Billing </p>
-						<span onClick={() => toggleBillingStatus("Paperless Billing")}>
-							{paperless ? <i class="fas fa-check" style={{ color: "white" }}></i> :
-								<span><i class="fas fa-times" ></i> </span>
+						<span style={{ cursor: "pointer" }} onClick={() => toggleBillingStatus("Paperless Billing")}>
+							{paperless ? <i className="fas fa-check" style={{ color: "white" }}></i> :
+								<span><i className="fas fa-times" ></i> </span>
 							}
 
 						</span>
@@ -153,17 +120,17 @@ const Dashboard = ({ isLogged }) => {
 
 					<div className="billing__row">
 						<p> Balanced Billing </p>
-						<span onClick={() => toggleBillingStatus("Balanced Billing")}>
-							{balanced ? <i class="fas fa-check" style={{ color: "white" }}></i> :
-								<span><i class="fas fa-times"></i> </span>
+						<span style={{ cursor: "pointer" }} onClick={() => toggleBillingStatus("Balanced Billing")}>
+							{balanced ? <i className="fas fa-check" style={{ color: "white" }}></i> :
+								<span><i className="fas fa-times"></i> </span>
 							}
 						</span>
 					</div>
 					<div className="billing__row">
 						<p> Direct Billing </p>
-						<span onClick={() => toggleBillingStatus("Direct Billing")}>
-							{directPay ? <i class="fas fa-check" style={{ color: "white" }}></i> :
-								<span><i class="fas fa-times"></i> </span>
+						<span style={{ cursor: "pointer" }} onClick={() => toggleBillingStatus("Direct Billing")}>
+							{directPay ? <i className="fas fa-check" style={{ color: "white" }}></i> :
+								<span><i className="fas fa-times"></i> </span>
 							}
 						</span>
 					</div>
@@ -196,7 +163,7 @@ const Dashboard = ({ isLogged }) => {
 						<h3 className="dash-title">Has your contact info changed?</h3>
 						<div className="info">
 							<img src={contact} width="200" height="100" alt="houses-bg" />
-							<Link style={{ textDecoration: 'none' }} to="/profile"> <button>Update Info <i class="far fa-edit"></i></button></Link>
+							<Link style={{ textDecoration: 'none' }} to="/profile"> <button>Update Info <i className="far fa-edit"></i></button></Link>
 						</div>
 					</div>
 				</div>

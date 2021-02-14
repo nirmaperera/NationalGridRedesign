@@ -6,9 +6,7 @@ import Backdrop from '../backdrop/Backdrop';
 const Navigation = () => {
 	const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
 
-	const drawerToggleClickHandler = () => {
-		setSideDrawerOpen(!sideDrawerOpen);
-	};
+	const drawerToggleClickHandler = () => setSideDrawerOpen(!sideDrawerOpen);
 
 	let backdrop;
 

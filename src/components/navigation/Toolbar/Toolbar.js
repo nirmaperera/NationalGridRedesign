@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { sign_out } from "../../../actions/authAction";
@@ -8,17 +8,7 @@ import logo from '../../../assets/images/logo.jpg';
 import './toolbar.scss';
 
 const Toolbar = (props) => {
-	const [isLogged, setIsLogged] = useState(false);
-
-	useEffect(() => {
-		setIsLogged(props.isLogged);
-
-	}, [])
-
-	const handleClick = () => {
-		setIsLogged(false);
-		props.sign_out();
-	}
+	const handleClick = () => props.sign_out();
 
 	const toggleNavbar = () => {
 		let loginStat = props.isLogged;

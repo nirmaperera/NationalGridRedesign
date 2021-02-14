@@ -14,7 +14,6 @@ const ModalBill = ({ balancedDue, setremainingBalance, handleClose }) => {
 	const [finalPayment, setFinalPayment] = useState(balancedDue)
 	const [remainingBalance, setRemainingBalance] = useState(0.00);
 	const [paidBill, setPaidBill] = useState(false);
-	const [showModal, setShowModal] = useState(true);
 
 	const handlePaymentForm = (e) => {
 		setPaymentForm(e.target.value);
@@ -37,7 +36,6 @@ const ModalBill = ({ balancedDue, setremainingBalance, handleClose }) => {
 		let remainingBalance = Math.round((balancedDue - finalPayment) * 100) / 100;
 
 		setRemainingBalance(remainingBalance);
-		setShowModal(false);
 
 		if (totalAmount > balancedDue) {
 			NotificationManager.error('Amount cannot be greater than balance due', 'Payment Error',)
@@ -48,10 +46,7 @@ const ModalBill = ({ balancedDue, setremainingBalance, handleClose }) => {
 		}
 	}
 
-	const togglePopup = () => {
-		setPaidBill(!paidBill);
-		setShowModal(false);
-	}
+	const togglePopup = () => setPaidBill(!paidBill);
 
 	var today = new Date();
 	var dd = today.getDate();

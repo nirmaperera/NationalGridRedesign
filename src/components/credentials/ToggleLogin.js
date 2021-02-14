@@ -9,7 +9,6 @@ import '../credentials/login/login.scss';
 
 const ToggleLogin = () => {
 	const [isFlipped, setIsFlipped] = useState(false);
-	const [isHover, setIsHover] = useState(false);
 
 	const handleClick = (e) => {
 		e.preventDefault();
@@ -24,7 +23,7 @@ const ToggleLogin = () => {
 			<div className="login">
 				<ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
 					<div className="glassContainer">
-						<button className="flipbtn register" onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)} onClick={handleClick}>Register</button>
+						<button className="flipbtn register" onClick={handleClick}>Register</button>
 						<Login />
 					</div>
 

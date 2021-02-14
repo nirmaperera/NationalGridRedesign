@@ -38,7 +38,7 @@ const options = {
 }
 
 const Chart = () => {
-	const [dataNg, setDataNg] = useState(["cost", "meter", "usage"])
+	const dataNg = ['cost', 'meter', 'usage'];
 	const [option, setOption] = useState("cost");
 	const dataTemp = dataNg.map(dataTemp => dataTemp)
 
@@ -47,7 +47,7 @@ const Chart = () => {
 			<div className="chart__header">
 				<select value={option} onChange={((e) => setOption(e.target.value))}>
 					{
-						dataTemp.map((data, key) => <option value={data}>{data}</option>)
+						dataTemp.map((data, key) => <option key={key} value={data}>{data}</option>)
 					}
 				</select>
 				<button className="chart__energyBtn">Energy Saving Tips</button>
