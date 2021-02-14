@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { connect } from 'react-redux';
 import { Link } from "react-router-dom";
+import { NotificationManager } from 'react-notifications';
 
 import ModalBill from '../account/payBill/ModalBill';
 import Chart from '../chart/Chart';
@@ -20,11 +21,13 @@ const Dashboard = ({ isLogged }) => {
 	const [paperless, setPaperLess] = useState(true);
 	const [directPay, setDirectPay] = useState(false);
 	const [balanced, setBalanced] = useState(false);
+	const firstRenderD = useRef(true);
+	const firstRenderP = useRef(true);
+	const firstRenderB = useRef(true);
 
 	useEffect(() => {
 		document.title = 'Dashboard | National Grid';
 		window.scrollTo(0, 0)
-		console.log('this login state in dashboard', isLogged);
 		localStorage.setItem('balance', balancedDue);
 		getDueDate();
 		getPreviousDate();
@@ -32,13 +35,52 @@ const Dashboard = ({ isLogged }) => {
 	}, [balancedDue, isLogged])
 
 
-	const hideModal = () => {
-		setShowModal(false);
-	};
+	useEffect(() => {
+		if (firstRenderP.current) {
+			firstRenderP.current = false;
+			return;
+		} else {
+			if (paperless === false) {
+				NotificationManager.warning('You have cancelled Paperless Billing', 'Billing Program Status Update')
+			} else {
+				NotificationManager.success('You are enrolled in Paperless Billing', 'Billing Program Status Update')
+			}
+		}
 
-	const setremainingBalance = (val) => {
-		setBalancedDue(val);
-	}
+	}, [paperless])
+
+
+	useEffect(() => {
+		if (firstRenderB.current) {
+			firstRenderB.current = false;
+			return;
+		} else {
+			if (balanced === false) {
+				NotificationManager.warning('You have cancelled Balanced Billing', 'Billing Program Status Update')
+			} else {
+				NotificationManager.success('You are enrolled in Balanced Billing', 'Billing Program Status Update')
+			}
+		}
+
+	}, [balanced])
+
+
+	useEffect(() => {
+		if (firstRenderD.current) {
+			firstRenderD.current = false;
+			return;
+		} else {
+			if (directPay === false) {
+				NotificationManager.warning('You have cancelled Direct Pay Billing', 'Billing Program Status Update')
+			} else {
+				NotificationManager.success('You are enrolled in Direct Pay Billing', 'Billing Program Status Update')
+			}
+		}
+	}, [directPay])
+
+	const hideModal = () => setShowModal(false);
+
+	const setremainingBalance = (val) => setBalancedDue(val);
 
 	const getDueDate = () => {
 		var now = new Date();
@@ -71,6 +113,16 @@ const Dashboard = ({ isLogged }) => {
 		}
 	}
 
+	const toggleBillingStatus = (content) => {
+		if (content === 'Paperless Billing') {
+			setPaperLess(!paperless)
+		} else if (content === 'Balanced Billing') {
+			setBalanced(!balanced)
+		} else {
+			setDirectPay(!directPay)
+		}
+	}
+
 	return (
 		<div className="containerDashboard" style={{ height: '100%' }}>
 			<div className="first-dash">
@@ -91,7 +143,7 @@ const Dashboard = ({ isLogged }) => {
 					<h4>Billing Program Status</h4>
 					<div className="billing__row">
 						<p> Paperless Billing </p>
-						<span onClick={() => setPaperLess(!paperless)}>
+						<span onClick={() => toggleBillingStatus("Paperless Billing")}>
 							{paperless ? <i class="fas fa-check" style={{ color: "white" }}></i> :
 								<span><i class="fas fa-times" ></i> </span>
 							}
@@ -101,7 +153,7 @@ const Dashboard = ({ isLogged }) => {
 
 					<div className="billing__row">
 						<p> Balanced Billing </p>
-						<span onClick={() => setBalanced(!balanced)}>
+						<span onClick={() => toggleBillingStatus("Balanced Billing")}>
 							{balanced ? <i class="fas fa-check" style={{ color: "white" }}></i> :
 								<span><i class="fas fa-times"></i> </span>
 							}
@@ -109,7 +161,7 @@ const Dashboard = ({ isLogged }) => {
 					</div>
 					<div className="billing__row">
 						<p> Direct Billing </p>
-						<span onClick={() => setDirectPay(!directPay)}>
+						<span onClick={() => toggleBillingStatus("Direct Billing")}>
 							{directPay ? <i class="fas fa-check" style={{ color: "white" }}></i> :
 								<span><i class="fas fa-times"></i> </span>
 							}
@@ -159,7 +211,6 @@ const Dashboard = ({ isLogged }) => {
 
 const Modal = ({ handleClose, showModal, children }) => {
 	const showHideClassName = showModal ? "modal display-block" : "modal display-none";
-	console.log(showModal, 'showModal');
 
 	return (
 		<div className={showHideClassName}>
