@@ -6,7 +6,7 @@ import { NotificationManager } from 'react-notifications';
 import ModalBill from '../account/payBill/ModalBill';
 import Chart from '../chart/Chart';
 import '../account/payBill/ModalBill';
-import { getPreviousDate, getDueDate } from '../helpers/GetDate';
+import { getPreviousDate, getDueDate, getMeterReadDate } from '../helpers/GetDate';
 
 import contact from '../../assets/images/contact.png';
 import greenlight from '../../assets/images/greenlight.png';
@@ -22,6 +22,7 @@ const Dashboard = ({ isLogged }) => {
 	const [paperless, setPaperLess] = useState(true);
 	const [directPay, setDirectPay] = useState(false);
 	const [balanced, setBalanced] = useState(false);
+	const [meterRead, setMeterRead] = useState("");
 	const firstRenderD = useRef(true);
 	const firstRenderP = useRef(true);
 	const firstRenderB = useRef(true);
@@ -32,6 +33,7 @@ const Dashboard = ({ isLogged }) => {
 		localStorage.setItem('balance', balancedDue);
 		getDueDate(setDueDate, DUEDATE);
 		getPreviousDate(setPrevDueDate, DUEDATE);
+		getMeterReadDate(setMeterRead, '24')
 
 	}, [balancedDue, isLogged])
 
@@ -150,6 +152,10 @@ const Dashboard = ({ isLogged }) => {
 							<label><b>City: </b><span>New York</span> </label><br />
 							<label><b>State:</b><span>New York</span></label><br />
 							<label><b>Zip Code:</b><span>23923</span> </label><br />
+
+							<label><b>Next Meter Read:</b><span style={{ color: "#3345D3", fontSize: "0.9em" }}>{meterRead}</span> </label>
+							<label><b>Service:</b><span style={{ color: "#3345D3", fontSize: "0.9em" }}>Gas Delivery & Supply</span> </label>
+							<br />
 						</div>
 
 						<div style={{ display: 'flex', marginTop: '10px' }}>
@@ -157,7 +163,6 @@ const Dashboard = ({ isLogged }) => {
 							<button className="transferServ">Transfer Service <i className="fas fa-angle-double-right"></i></button>
 						</div>
 					</div>
-
 
 					<div className="second-dash-b">
 						<h3 className="dash-title">Has your contact info changed?</h3>
